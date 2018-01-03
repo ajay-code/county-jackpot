@@ -1,0 +1,583 @@
+nav{
+	
+	font-weight: 600!important;
+	background: #00d2ff;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+	padding-bottom: 0px!important;
+}
+
+.navbar-nav .nav-link{
+	padding-right: 2rem!important;
+	padding-left: 0.5rem!important;
+	color: white!important;
+	font-size: 1.2rem;
+}
+
+
+.navbar-nav .nav-link:hover{
+	background: #fb7f7f;
+	border-radius: 5px;
+
+}
+
+
+
+.logo img{
+
+	width: 110px;
+    height: 110px;
+    margin-top: -10px;
+}
+
+.logo img:hover{
+	animation: expand 0.3s;
+	animation-fill-mode: forwards;
+	transform-origin: top left;
+	transition-timing-function: ease-in-out;
+
+    position: relative;
+    z-index: 20;
+}
+
+
+@keyframes expand {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.4);
+  }
+}
+
+.jumbotron{
+	padding: 14rem 2rem;
+	background:url('../img/money.jpg');
+	background-size: cover;
+	position: relative;
+
+}
+
+.banner-line1{
+	    margin-top: -6rem;
+	    background:rgba(255, 254, 254, 0.7);
+
+		font-weight: 600;
+		color: #4e4c4c;
+		padding-bottom: 0.5rem;
+		margin-bottom: 2rem;
+
+}
+
+.banner-line2{
+		font-family: 'Sniglet', cursive;
+		font-weight: 600;
+		color: #333b58;
+		font-size: 2rem;
+		background:rgba(255, 254, 254, 0.8);
+		margin: auto;
+		width: 80%;
+}
+
+.overlay{
+	position: absolute;
+	top: 0px; bottom: 0px; right: 0px; left: 0px;
+	background: rgba(23, 162, 184, 0.1);
+}
+
+
+
+
+.coin{
+	background: url('../img/coin1.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	left: 50%;
+	transform: translateX(-50%);
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	z-index: 33;
+	bottom: -50px;
+	animation: roll 3s 2s;
+
+	}
+
+.coin:hover{
+	animation: roll 3s infinite;
+
+	}
+
+@keyframes roll {
+  0% {
+    transform: translateX(-50%) rotate(0);
+  }
+  100% {
+    transform: translateX(-50%) rotate(360deg);
+  }
+}
+
+
+.side{
+	background: url('../img/ballset.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	right: 03%;
+	position: absolute;
+	width: 341px;
+    height: 201px;
+	z-index: 33;
+	bottom: 1rem;
+	}
+
+.next{
+	position: absolute;
+	left: 3%;
+	bottom: 1rem;
+	background:rgba(248, 249, 250, 0.8);
+	padding: 0.5rem 2rem;
+	-webkit-box-shadow: 5px 14px 35px -1px rgba(0,0,0,0.75)!important;
+	-moz-box-shadow: 0px 10px 31px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 31px -1px rgba(0,0,0,0.75);
+
+}
+
+.next h1{
+	font-size: 4rem;
+	font-family: 'Passion One', cursive;
+	color: #2699e4;
+
+}
+
+.next h3{
+	font-family: 'Oregano', cursive;
+	font-weight: 600;
+	color: #d42739;
+
+}
+
+
+
+
+.process{
+	background: #00d2ff;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #3a7bd5, #00d2ff);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #3a7bd5, #00d2ff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	border-bottom: none;
+	-webkit-box-shadow: 0px 10px 31px -1px rgba(0,0,0,0.75)!important;
+	-moz-box-shadow: 0px 10px 31px -1px rgba(0,0,0,0.75);
+	box-shadow: 0px 10px 31px -1px rgba(0,0,0,0.75);
+
+	padding-bottom: 5rem;
+    padding-top: 5rem;
+    margin-top: -32px;
+
+}
+
+.card-group{
+	padding-top: 40px;
+
+}
+.card{
+	background:rgba(225, 249, 235, 0)!important;
+
+	border: none;
+}
+
+.card-title{
+		font-family: 'Overpass', sans-serif;
+		color: #e9ecef;
+    	font-weight: 500;
+    	font-size: 2rem;
+    	margin-bottom: 2rem;
+ 
+}
+
+.card-text{
+		color: #e9ecef;
+}
+
+
+.card-img-top
+{
+	width:200px;
+	height:200px;
+	margin-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,400);
+.mb20{
+    margin-bottom:20px;
+}
+#timer {
+    padding: 3rem 0;
+}
+#timer .countdown-wrapper {
+    margin: 0 auto;
+}
+#timer #countdown {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    color: #eee;
+    text-shadow: 1px 1px 5px black;
+    padding: 40px 0;
+}
+#timer .countdown-wrapper #countdown .timer {
+    margin: 10px;
+    padding: 20px;
+    font-size: 90px;
+    border-radius: 4%;
+    cursor: pointer;
+}
+#timer .col-md-4.countdown-wrapper #countdown .timer {
+    margin: 10px;
+    padding: 20px;
+    font-size: 35px;
+    border-radius: 4%;
+    cursor: pointer;
+}
+#timer .countdown-wrapper #countdown #hour {
+    -webkit-box-shadow: 0 0 0 5px rgba(92, 184, 92, .5);
+    -moz-box-shadow: 0 0 0 5px rgba(92, 184, 92, .5);
+    box-shadow: 0 0 0 5px rgba(92, 184, 92, .5);
+}
+#timer .countdown-wrapper #countdown #hour:hover {
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(92, 184, 92, 1);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(92, 184, 92, 1);
+    box-shadow: 0px 0px 15px 1px rgba(92, 184, 92, 1);
+}
+#timer .countdown-wrapper #countdown #min {
+    -webkit-box-shadow: 0 0 0 5px rgba(91, 192, 222, .5);
+    -moz-box-shadow: 0 0 0 5px rgba(91, 192, 222, .5);
+    box-shadow: 0 0 0 5px rgba(91, 192, 222, .5);
+}
+#timer .countdown-wrapper #countdown #min:hover {
+    -webkit-box-shadow: 0px 0px 15px 1px rgb(91, 192, 222);
+    -moz-box-shadow: 0px 0px 15px 1px rgb(91, 192, 222);
+    box-shadow: 0px 0px 15px 1px rgb(91, 192, 222);
+}
+#timer .countdown-wrapper #countdown #sec {
+    -webkit-box-shadow: 0 0 0 5px rgba(2, 117, 216, .5);
+    -moz-box-shadow: 0 0 0 5px rgba(2, 117, 216, .5);
+    box-shadow: 0 0 0 5px rgba(2, 117, 216, .5)
+}
+#timer .countdown-wrapper #countdown #sec:hover {
+    -webkit-box-shadow: 0px 0px 15px 1px rgba(2, 117, 216, 1);
+    -moz-box-shadow: 0px 0px 15px 1px rgba(2, 117, 216, 1);
+    box-shadow: 0px 0px 15px 1px rgba(2, 117, 216, 1);
+}
+#timer .countdown-wrapper .card .card-footer .btn {
+    margin: 2px 0;
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    #timer .countdown-wrapper #countdown .timer {
+        margin: 10px;
+        padding: 20px;
+        font-size: 65px;
+        border-radius: 4%;
+        cursor: pointer;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+     #timer .countdown-wrapper #countdown .timer {
+        margin: 10px;
+        padding: 20px;
+        font-size: 72px;
+        border-radius: 4%;
+        cursor: pointer;
+    }
+
+     .side{
+      visibility: hidden;
+    }
+
+}
+@media (max-width: 768px) {
+    #timer .countdown-wrapper #countdown .timer {
+        margin: 10px;
+        padding: 20px;
+        font-size: 73px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+     .side{
+      visibility: hidden;
+    }
+
+ .navbar-item .nav-link {
+
+      font-size: 0.9rem!important;
+
+    }
+
+
+}
+
+
+@media (max-width: 767px) {
+    #timer .countdown-wrapper #countdown #hour,
+    #timer .countdown-wrapper #countdown #min,
+    #timer .countdown-wrapper #countdown #sec {
+        font-size: 60px;
+        border-radius: 4%;
+    }
+
+     .side{
+      visibility: hidden;
+    }
+
+   
+
+}
+
+
+@media (max-width: 576px){
+    #timer .countdown-wrapper #countdown #hour,
+    #timer .countdown-wrapper #countdown #min,
+    #timer .countdown-wrapper #countdown #sec {
+        font-size: 25px;
+        border-radius: 4%;
+    }
+    #timer .countdown-wrapper #countdown .timer {
+        padding: 13px;
+    }
+
+
+.jumbotron{
+
+  padding: 10rem 0rem;
+}
+    .coin{
+
+        width: 150px;
+        height: 150px;
+
+    }
+
+    .side{
+    	visibility: hidden;
+    }
+
+
+    .banner-line1{
+    	font-size: 2rem;
+    	    	width: 100%;
+    	    	margin-top: : 0.5rem;
+
+    }
+
+    .banner-line2{
+    	font-size: 1.5rem!important;
+    	width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+footer{
+  color: white;
+}
+footer a{
+  color: #bfffff;
+}
+footer a:hover{
+  color: white;
+}
+
+.footer-bottom{
+  background: #3d6277;
+  padding: 2em;
+}
+.footer-top{
+  background: #2d4958;  
+}
+.footer-middle{
+   background: #3d6277;
+  padding-top: 2em;
+  color: white;
+}
+/**Sub Navigation**/
+.subnavigation-container{
+  background: #3d6277;
+}
+.subnavigation .nav-link{
+  color: white;
+  font-weight: bold;
+}
+.subnavigation-container{
+  text-align: center;
+}
+.subnavigation-container .navbar{
+  display: inline-block;
+  margin-bottom: -6px; /* Inline-block margin offffset HACK -Gilron */
+}
+.col-subnav a{
+  padding: 1rem 1rem;
+  color: white;
+  font-weight: bold;
+}
+.col-subnav .active{
+  border-top:5px solid orange;
+ background: white;
+  color: black;
+}
+
+
+
+
+.banner2{
+	background:#1ea5ea;
+	color: white;
+	padding-top: 1rem;
+	padding-bottom: 6rem;
+	position: relative;
+}
+
+
+.banner2 h1{
+	
+	margin-bottom:4rem;
+	font-size: 3rem;
+	margin-top: 1rem;
+	position: relative;
+	z-index: 10;
+}
+
+
+.slider_caption{
+	color: white;
+	font-size: 2rem;
+	font-style: italic;
+
+}
+
+.slider_caption2{
+	color:#1ea5ea;
+	background:white;
+	font-weight: 500;
+	font-size: 1.3rem;
+	border-radius: 15px;
+	padding: auto;
+
+}
+
+.slider_county{
+	color: white;
+	font-weight: 500;
+}
+
+
+.flexslider .slides img {
+    width: 80%!important;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+
+.flexslider {
+    background: inherit!important;
+    border: none!important;
+}
+
+.pl-50{
+	padding-left: 50px;
+}
+
+.pr-50{
+	padding-right: 50px;
+}
+
+
+
+.featured{
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.featured-heading{
+  margin-bottom: 3.5rem;
+    color: #1ea5ea;
+}
+
+
+.featured-line{
+  background: beige;
+  margin-bottom: 1.5rem;
+  padding: 0.3rem;
+}
+
+.featured-content{
+  color: #004188;
+  padding: 2rem 0px;
+}
+
+.featured-play-button{
+  padding: 1px 1rem!important;
+  background: #e23048;
+  border: 1px #e23048;
+}
+
+.featured-price , .featured-timer{
+  padding-top: 4px;
+}
+
+.featured-play{
+  padding-top: 2px;
+ 
+}
+
+
+.featured-logo img{
+  max-width: 130px;
+  height: 60px;
+
+}
+
+
+
+
+.buy-button {
+  display: inline-block;
+  margin: 3rem 0;
+  text-decoration: none;
+  font-size: 18px;
+  color: white;
+  padding: 1em 2em;
+  letter-spacing: 0.1em;
+  border-radius: 3px;
+  -webkit-transition: all 300ms;
+  -moz-transition: all 300ms;
+  transition: all 300ms;
+  background: #0074D9;
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+.buy-button:hover {
+  box-shadow: 2px 2px 0px white, 4px 4px 0px #0074D9;
+  top: -4px;
+  left: -4px;
+  color: white!important;
+  text-decoration: none;
+}
