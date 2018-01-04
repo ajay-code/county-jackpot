@@ -50695,7 +50695,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50754,7 +50754,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             key: Lottery.stripeKey,
             image: "https://stripe.com/img/documentation/checkout/marketplace.png",
             locale: "auto",
-            bitcoin: true,
             token: function token(_token) {
                 _this.formData.stripeEmail = _token.email;
                 _this.formData.stripeToken = _token.id;
@@ -50778,7 +50777,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 } else {
                     return 'End';
                 }
-                // return duration;
                 return duration.format("dd [days] h:mm:ss", true);
             } else {
                 return "";
@@ -50792,7 +50790,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         buy: function buy() {
             this.stripe.open({
                 name: this.lottery.name,
-                email: "ajay10mar96@gmail.com",
+                email: Lottery.user.email,
                 description: this.lottery.name,
                 zipCode: true,
                 amount: this.lottery.entry_fee * 100

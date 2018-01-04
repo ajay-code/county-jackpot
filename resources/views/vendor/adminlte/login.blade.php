@@ -52,6 +52,17 @@
 				<!-- /.col -->
 			</div>
 		</form>
+
+		<div class="social-auth-links text-center">
+			<p>- OR -</p>
+			<a href="{{ url('/auth/facebook') }}" class="btn btn-block btn-social btn-facebook btn-flat">
+				<i class="fa fa-facebook"></i> Sign in using Facebook
+			</a>
+			<a href="{{ url('/auth/google') }}" class="btn btn-block btn-social btn-google btn-flat">
+				<i class="fa fa-google-plus"></i> Sign in using Google+
+			</a>
+		</div>
+
 		<div class="auth-links">
 			<a href="{{ url(config('adminlte.password_reset_url', 'password/reset')) }}" class="text-center">{{ trans('adminlte::adminlte.i_forgot_my_password') }}</a>
 			<br> @if (config('adminlte.register_url', 'register'))

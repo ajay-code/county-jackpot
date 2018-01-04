@@ -40,10 +40,19 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <script>
+        @if (Auth::check())
         var Lottery = {
             csrfToken: '{{ csrf_token() }}',
-            stripeKey: '{{ config('services.stripe.key') }}'
+            stripeKey: '{{ config('services.stripe.key') }}',
+            user: <?=
+                json_encode([
+                    'name' => auth()->user()->name,
+                    'email' => auth()->user()->email,
+                    'status' => auth()->user()->status,
+                ])
+            ?>
         }
+        @endif
     </script>
 </head>
 <body class="hold-transition @yield('body_class')">

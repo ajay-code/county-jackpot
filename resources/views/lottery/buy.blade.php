@@ -15,7 +15,6 @@
                 <div id="app">
                     <lottery :lottery="{{ json_encode($lottery)}}"></lottery>
                 </div>
-                
         </div>
     </div>
     {{--  {{ var_dump($lotteries) }}  --}}

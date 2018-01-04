@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class Lottery extends Model
@@ -35,7 +36,7 @@ class Lottery extends Model
      * Return only active lotteries
      */
     public function scopeActive($query){
-        return $query->where('status', 'active');
+        return $query->whereDate('expire_at', '>', Carbon::today()->toDateString());
     }
 
     /**

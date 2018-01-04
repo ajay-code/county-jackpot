@@ -43,7 +43,6 @@ export default {
             key: Lottery.stripeKey,
             image: "https://stripe.com/img/documentation/checkout/marketplace.png",
             locale: "auto",
-            bitcoin: true,
             token: token => {
                 this.formData.stripeEmail = token.email;
                 this.formData.stripeToken = token.id;
@@ -66,7 +65,6 @@ export default {
                 }else {
                     return 'End'; 
                 }
-                // return duration;
                 return duration.format("dd [days] h:mm:ss", true);
             } else {
                 return "";
@@ -80,7 +78,7 @@ export default {
         buy() {
             this.stripe.open({
                 name: this.lottery.name,
-                email: "ajay10mar96@gmail.com",
+                email: Lottery.user.email,
                 description: this.lottery.name,
                 zipCode: true,
                 amount: this.lottery.entry_fee * 100
