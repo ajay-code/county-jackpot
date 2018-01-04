@@ -17,7 +17,6 @@ class PurchasesLotteryController extends Controller
      */
     public function store(Request $request, Lottery $lottery)
     {
-        // return $request->all();
         $user = auth()->user();
         Stripe::setApiKey(config('services.stripe.secret'));
 

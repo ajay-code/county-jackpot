@@ -13,9 +13,23 @@
             <h4 v-text="remainingTime"></h4>
         </div>
         <div class=" featured-play col-lg-2 text-center">
-            <a class="btn btn-primary" @click.prevent="buy" role="button" :disabled="remainingTime == 'End'">Buy</a>
+            <a class="btn btn-primary" @click.prevent="buy" role="button">Buy</a>
         </div>
-    
+        <!-- <form action="/lottery/{{$lottery->id}}/buy" method="POST">
+                    {{ csrf_field() }}
+                    <script
+                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                        data-key="{{ config('services.stripe.key') }}"
+                        data-amount="{{ $lottery->entry_fee * 100 }}"
+                        data-name="{{$lottery->name}}"
+                        data-description="{{$lottery->name}}"
+                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                        data-locale="auto"
+                        data-zip-code="true"
+                        >
+                    </script>
+                </form> -->
+        
     </div>
 </template>
 
@@ -27,15 +41,15 @@ export default {
             currentTime: new Date(),
             stripe: "",
             formData: {
-                stripeEmail: "",
-                stripeToken: ""
+                stripeEmail: '',
+                stripeToken: ''
             },
-            card: ""
+            card: ''
         };
     },
     props: {
         lottery: {
-            type: Object
+            // type: Object
         }
     },
     created() {
@@ -43,14 +57,13 @@ export default {
             key: Lottery.stripeKey,
             image: "https://stripe.com/img/documentation/checkout/marketplace.png",
             locale: "auto",
-            bitcoin: true,
-            token: token => {
+            token: (token) => {
                 this.formData.stripeEmail = token.email;
                 this.formData.stripeToken = token.id;
-                console.log("Loading....");
-                axios.post(`/lottery/${this.lottery.id}/buy`, this.formData).then(res => {
+                console.log('Loading....')
+                axios.post(`/lottery/${this.lottery.id}/buy`, this.formData).then((res) => {
                     console.log(res.data);
-                    console.log("Done...");
+                    console.log('Done...')
                 });
             }
         });
@@ -59,14 +72,9 @@ export default {
         remainingTime() {
             this.currentTime;
             if (this.lottery.expire_at) {
-                let diff = moment(this.lottery.expire_at).diff(moment(), "milliseconds");
-                let duration = "";
-                if (diff > 0) {
-                    duration = moment.duration(diff);
-                }else {
-                    return 'End'; 
-                }
-                // return duration;
+                let duration = moment.duration(
+                    moment(this.lottery.expire_at).diff(moment(), "milliseconds")
+                );
                 return duration.format("dd [days] h:mm:ss", true);
             } else {
                 return "";
@@ -80,7 +88,7 @@ export default {
         buy() {
             this.stripe.open({
                 name: this.lottery.name,
-                email: "ajay10mar96@gmail.com",
+                email: 'ajay10mar96@gmail.com',
                 description: this.lottery.name,
                 zipCode: true,
                 amount: this.lottery.entry_fee * 100
