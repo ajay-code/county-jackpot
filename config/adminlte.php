@@ -109,15 +109,15 @@ return [
 
     'menu' => [
         'MAIN NAVIGATION',
-        // [
-        //     'text' => 'Blog',
-        //     'url'  => 'admin/blog',
-        //     'can'  => 'manage-blog',
-        // ],
         [
-            'text'        => 'Lottery',
-            'url'         => 'lottery',
+            'text'        => 'Lotteries',
+            'url'         => 'lotteries',
             'icon'        => 'file',
+        ],
+        [
+            'text'        => 'Transactions',
+            'url'         => 'transactions',
+            'icon'        => 'exchange',
         ],
         'ACCOUNT SETTINGS',
         [
@@ -129,19 +129,6 @@ return [
             'text' => 'Change Password',
             'url'  => 'password/change',
             'icon' => 'lock',
-        ],
-        'LABELS',
-        [
-            'text'       => 'Important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'Warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'Information',
-            'icon_color' => 'aqua',
         ],
     ],
 

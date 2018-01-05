@@ -10,6 +10,16 @@ class PurchasesLotteryController extends Controller
 {
 
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Store a newly created purchase in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -25,11 +35,18 @@ class PurchasesLotteryController extends Controller
             'source' => $request->stripeToken,
         ]);
 
-        Charge::create([
+        $charge = Charge::create([
             'customer' => $customer->id,
             'amount' => $lottery->entry_fee * 100,
             'currency' => 'usd',
         ]);
+
+
+        $user->transactions()->create([
+            'charge_id' => $charge->id,
+            'lottery_id' => $lottery->id,
+            'amount' => $charge->amount,
+            ]);
 
         return 'All Dome';
     } 

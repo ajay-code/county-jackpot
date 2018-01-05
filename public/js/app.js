@@ -50579,7 +50579,7 @@ var render = function() {
             "btn btn-primary btn-lg work-button2 featured-play-button",
           staticStyle: { padding: "8px 1.5rem" },
           attrs: {
-            href: "/lottery/" + _vm.lottery.id + "/buy",
+            href: "/lotteries/" + _vm.lottery.id + "/buy",
             role: "button",
             disabled: _vm.remainingTime == "End"
           },
@@ -50695,7 +50695,7 @@ exports = module.exports = __webpack_require__(5)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50758,9 +50758,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.formData.stripeEmail = _token.email;
                 _this.formData.stripeToken = _token.id;
                 console.log("Loading....");
-                axios.post("/lottery/" + _this.lottery.id + "/buy", _this.formData).then(function (res) {
+                axios.post("/lotteries/" + _this.lottery.id + "/buy", _this.formData).then(function (res) {
                     console.log(res.data);
-                    console.log("Done...");
+                    alert('All done');
                 });
             }
         });
@@ -50791,6 +50791,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.stripe.open({
                 name: this.lottery.name,
                 email: Lottery.user.email,
+                currency: 'gbp',
                 description: this.lottery.name,
                 zipCode: true,
                 amount: this.lottery.entry_fee * 100

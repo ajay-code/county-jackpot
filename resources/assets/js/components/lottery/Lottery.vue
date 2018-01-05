@@ -47,9 +47,9 @@ export default {
                 this.formData.stripeEmail = token.email;
                 this.formData.stripeToken = token.id;
                 console.log("Loading....");
-                axios.post(`/lottery/${this.lottery.id}/buy`, this.formData).then(res => {
+                axios.post(`/lotteries/${this.lottery.id}/buy`, this.formData).then(res => {
                     console.log(res.data);
-                    console.log("Done...");
+                    alert("All done");
                 });
             }
         });
@@ -62,8 +62,8 @@ export default {
                 let duration = "";
                 if (diff > 0) {
                     duration = moment.duration(diff);
-                }else {
-                    return 'End'; 
+                } else {
+                    return "End";
                 }
                 return duration.format("dd [days] h:mm:ss", true);
             } else {
@@ -79,6 +79,7 @@ export default {
             this.stripe.open({
                 name: this.lottery.name,
                 email: Lottery.user.email,
+                currency: "gbp",
                 description: this.lottery.name,
                 zipCode: true,
                 amount: this.lottery.entry_fee * 100

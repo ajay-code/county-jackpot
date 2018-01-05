@@ -14,7 +14,7 @@
             <h4 v-text="remainingTime"></h4>
         </div>
         <div class=" featured-play col-lg-2 text-center">
-            <a class="btn btn-primary btn-lg work-button2 featured-play-button" style="padding: 8px 1.5rem;" :href="`/lottery/${lottery.id}/buy`" role="button" @click="preventIfExpired" :disabled="remainingTime == 'End'">{{ remainingTime == 'End' ? 'Closed' : 'Buy Now' }}</a>
+            <a class="btn btn-primary btn-lg work-button2 featured-play-button" style="padding: 8px 1.5rem;" :href="`/lotteries/${lottery.id}/buy`" role="button" @click="preventIfExpired" :disabled="remainingTime == 'End'">{{ remainingTime == 'End' ? 'Closed' : 'Buy Now' }}</a>
         </div>
     </div>
 </template>

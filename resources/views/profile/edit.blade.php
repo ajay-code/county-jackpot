@@ -38,6 +38,7 @@
                 <div class="form-group">
                     <label for="county">County</label>
                     <select name="county_id" id="county" class="form-control">
+                        <option value="">Select County</option>
                         @foreach ($counties as $county)
                             <option value="{{$county->id}}" {{ $user->county_id == $county->id ? 'selected':'' }}>{{$county->name}}</option>
                         @endforeach

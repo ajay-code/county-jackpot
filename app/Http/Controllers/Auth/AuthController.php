@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use Auth;
 use Socialite;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Models\SocialProvider;
 use App\Http\Controllers\Controller;
 
 class AuthController extends Controller
@@ -29,8 +31,11 @@ class AuthController extends Controller
      */
     public function handleProviderCallback($provider)
     {
-        $user = Socialite::driver($provider)->user();
-        return $user;
+        $userProvided = Socialite::driver($provider)->user();
+        // dd($userProvided->getId());
+        $user = $this->findOrCreateUser($userProvided, $provider);
+        auth()->login($user);
+        return redirect()->intended('/home');
     }
 
     /**
@@ -40,17 +45,27 @@ class AuthController extends Controller
      * @param $provider Social auth provider
      * @return  User
      */
-    public function findOrCreateUser($user, $provider)
+    public function findOrCreateUser($userProvided, $provider)
     {
-        $authUser = User::where('provider_id', $user->id)->first();
-        if ($authUser) {
-            return $authUser;
+        $socialProvider = SocialProvider::where('provider_id', $userProvided->getId())
+                                    ->where('provider', $provider)
+                                    ->first();
+        if ($socialProvider) {
+            return $socialProvider->user;
         }
-        return User::create([
-            'name'     => $user->name,
-            'email'    => $user->email,
-            'provider' => $provider,
-            'provider_id' => $user->id
+        $account = new SocialProvider([
+            'provider_id' => $userProvided->getId(),
+            'provider' => $provider
         ]);
+        $user = User::whereEmail($userProvided->getEmail())->first();
+        if (!$user) {
+            $user = User::create([
+                'name'     => $userProvided->getName(),
+                'email'    => $userProvided->getEmail(),
+            ]);
+        }
+        $account->user()->associate($user);
+        $account->save();
+        return $user;
     }
 }
