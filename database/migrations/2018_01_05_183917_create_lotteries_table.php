@@ -15,15 +15,21 @@ class CreateLotteriesTable extends Migration
     {
         Schema::create('lotteries', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('parent_lottery_id')->unsigned();
             $table->integer('county_id')->unsigned();
             $table->string('name');
-            $table->enum('status', ['active', 'deactive'])->default('active');
             $table->integer('entry_fee');
             $table->integer('prize');
             $table->date('expire_at');
+            $table->integer('winner_id')->unsigned()->nullable();
             $table->timestamps();
+
+            $table->foreign('parent_lottery_id')
+                ->references('id')->on('parent_lotteries');
             $table->foreign('county_id')
                 ->references('id')->on('counties');
+            $table->foreign('winner_id')
+                ->references('id')->on('users');
         });
     }
 

@@ -23,7 +23,7 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Lottery Edit Form # {{ $lottery->id }}</h3>
+            <h3 class="box-title">Lottery Edit Form # {{ $parentLottery->id }}</h3>
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -36,13 +36,13 @@
         @endif
         <!-- /.box-header -->
         <!-- form start -->
-        <form method="post" action="{{ route('admin.lotteries.update', ['lottery' => $lottery->id]) }}">
+        <form method="post" action="{{ route('admin.lotteries.update', ['lottery' => $parentLottery->id]) }}">
             {{ csrf_field() }} 
             {{ method_field('PUT') }}
             <div class="box-body">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input autofocus name="name" type="text" class="form-control" id="name" value="{{old('name') ?old('name') :$lottery->name}}" placeholder="Name" required>
+                    <input autofocus name="name" type="text" class="form-control" id="name" value="{{old('name') ?old('name') :$parentLottery->name}}" placeholder="Name" required>
                 </div>
             </div>
             <div class="box-body">
@@ -50,7 +50,7 @@
                     <label for="county">County</label>
                     <select name="county_id" id="county" class="form-control">
                         @foreach ($counties as $county)
-                            <option value="{{$county->id}}" {{ $lottery->county_id == $county->id ? 'selected':'' }}>{{$county->name}}</option>
+                            <option value="{{$county->id}}" {{ $parentLottery->county_id == $county->id ? 'selected':'' }}>{{$county->name}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -58,19 +58,19 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="entry_fee">Entry Fee</label>
-                    <input name="entry_fee" type="number" class="form-control" id="entry_fee" value="{{old('entry_fee') ? old('entry_fee'):$lottery->entry_fee}}" placeholder="Entry Fee" required>
+                    <input name="entry_fee" type="number" class="form-control" id="entry_fee" value="{{old('entry_fee') ? old('entry_fee'):$parentLottery->entry_fee}}" placeholder="Entry Fee" required>
                 </div>
             </div>
             <div class="box-body">
                 <div class="form-group">
                     <label for="expire_at">Run Till</label>
-                    <input name="expire_at" type="date" class="form-control" id="expire_at" value="{{old('expire_at') ? old('expire_at') : $lottery->expire_at->toDateString()}}" placeholder="Entry Fee" required>
+                    <input name="expire_at" type="date" class="form-control" id="expire_at" value="{{old('expire_at') ? old('expire_at') : $parentLottery->expire_at->toDateString()}}" placeholder="Entry Fee" required>
                 </div>
             </div>
             <div class="box-body">
                 <div class="form-group">
                     <label for="prize">prize</label>
-                    <input name="prize" type="prize" class="form-control" id="prize" value="{{old('prize') ? old('prize') : $lottery->prize}}" placeholder="Prize" required>
+                    <input name="prize" type="prize" class="form-control" id="prize" value="{{old('prize') ? old('prize') : $parentLottery->prize}}" placeholder="Prize" required>
                 </div>
             </div>
             <!-- /.box-body -->

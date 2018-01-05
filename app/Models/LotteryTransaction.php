@@ -20,4 +20,7 @@ class LotteryTransaction extends Model
     public function lottery(){
         return $this->belongsTo(Lottery::class);
     }
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

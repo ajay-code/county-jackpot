@@ -5,7 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Lottery extends Model
+class ParentLottery extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,13 +13,12 @@ class Lottery extends Model
      * @var array
      */
     protected $fillable = [
-        'parent_lottery_id',
         'county_id',
         'name',
+        'status',
         'prize',
         'entry_fee',
-        'expire_at',
-        'winner_id',
+        'expire_at'
     ];
 
     /**
@@ -35,11 +34,8 @@ class Lottery extends Model
 
     /**
      * Return only active lotteries
-     * 
-     * @param $query \Illuminate\Database\Eloquent\Builder
      */
     public function scopeActive($query){
-        // var_dump(get_class($query));
         return $query->whereDate('expire_at', '>', Carbon::today()->toDateString());
     }
 
@@ -49,8 +45,7 @@ class Lottery extends Model
     public function county(){
         return $this->hasOne(County::class);
     }
-
-    public function winner(){
-        return $this->hasOne(User::class, 'winner_id');
+    public function lotteries(){
+        return $this->hasMany(Lottery::class, 'parent_lottery_id');
     }
 }

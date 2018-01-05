@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Lottery;
 use Illuminate\Http\Request;
+use App\Models\ParentLottery;
 
 class LotteryController extends Controller
 {
@@ -18,22 +19,22 @@ class LotteryController extends Controller
     }
 
     /**
-     * Buy Lottery
+     * Buy ParentLottery
      */
     public function index()
     {
-        $lotteries = Lottery::active()->get();
+        $lotteries = ParentLottery::active()->get();
         return view('lottery.index', compact('lotteries'));
     }
 
     /**
-     * Buy Lottery
+     * Buy ParentLottery
      *
-     * @param \App\Models\Lottery
+     * @param \App\Models\ParentLottery
      */
-    public function buy(Lottery $lottery)
+    public function buy(ParentLottery $parentLottery)
     {
-        return view('lottery.buy', compact('lottery'));
+        return view('lottery.buy', compact('parentLottery'));
     }
 
 }

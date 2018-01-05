@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\County;
-use App\Models\Lottery;
+use App\Models\ParentLottery;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
@@ -17,7 +17,7 @@ class LotteryController extends Controller
      */
     public function index()
     {
-        $lotteries = Lottery::all();
+        $lotteries = ParentLottery::all();
         return view('admin.lotteries.index', compact('lotteries'));
     }
 
@@ -50,7 +50,9 @@ class LotteryController extends Controller
 
         // return $validatedData;
 
-        Lottery::create($validatedData);
+        $parentLottery = ParentLottery::create($validatedData);
+        
+        $parentLottery->lotteries()->create($validatedData);
 
         return redirect()->route('admin.lotteries.index');
     }
@@ -61,7 +63,7 @@ class LotteryController extends Controller
      * @param  \App\Models\Lottery  $lottery
      * @return \Illuminate\Http\Response
      */
-    public function show(Lottery $lottery)
+    public function show(ParentLottery $parentLottery)
     {
         //
     }
@@ -72,10 +74,10 @@ class LotteryController extends Controller
      * @param  \App\Models\Lottery  $lottery
      * @return \Illuminate\Http\Response
      */
-    public function edit(Lottery $lottery)
+    public function edit(ParentLottery $parentLottery)
     {
         $counties = County::all();
-        return view('admin.lotteries.edit', compact('counties','lottery'));
+        return view('admin.lotteries.edit', compact('counties','parentLottery'));
     }
 
     /**
@@ -85,14 +87,14 @@ class LotteryController extends Controller
      * @param  \App\Models\Lottery  $lottery
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Lottery $lottery)
+    public function update(Request $request, ParentLottery $parentLottery)
     {
         $validatedData = $request->validate([
             'name' => [
                 'required',
                 'string',
                 'max:255',
-                Rule::unique('lotteries')->ignore($lottery->id),
+                Rule::unique('lotteries')->ignore($parentLottery->id),
             ],
             'county_id' => 'required|numeric',
             'entry_fee' =>  'required|numeric',
@@ -100,7 +102,8 @@ class LotteryController extends Controller
             'expire_at' =>  'required|date',
         ]);
 
-        $lottery->update($validatedData);
+        $parentLottery->update($validatedData);
+
 
         return redirect()->route('admin.lotteries.index');
     }
@@ -111,9 +114,9 @@ class LotteryController extends Controller
      * @param  \App\Models\Lottery  $lottery
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Lottery $lottery)
+    public function destroy(ParentLottery $parentLottery)
     {
-        $lottery->delete();
+        $parentLottery->delete();
 
         return back();
     }

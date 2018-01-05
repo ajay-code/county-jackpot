@@ -47,7 +47,8 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="county">County</label>
-                    <select name="county_id" id="county" class="form-control">
+                    <select name="county_id" id="county" class="form-control" required>
+                        <option value="">Select County</option>
                         @foreach ($counties as $county)
                             <option value="{{$county->id}}">{{$county->name}}</option>
                         @endforeach
@@ -56,7 +57,7 @@
             </div>
             <div class="box-body">
                 <div class="form-group">
-                    <label for="entry_fee">Entry Fee</label>
+                    <label for="entry_fee">Entry Fee (In pence)</label>
                     <input name="entry_fee" type="number" class="form-control" id="entry_fee" value="{{old('entry_fee')}}" placeholder="Entry Fee" required>
                 </div>
             </div>
@@ -75,7 +76,7 @@
             <!-- /.box-body -->
             <div class="box-footer">
                 <button type="reset" class="btn btn-default">reset</button>
-                <button type="submit" class="btn btn-info pull-right">Create</button>
+                <button type="submit" class="btn btn-primary pull-right">Create</button>
             </div>
             <!-- /.box-footer -->
         </form>
