@@ -100,9 +100,16 @@ class LotteryController extends Controller
             'entry_fee' =>  'required|numeric',
             'prize' =>  'required|numeric',
             'expire_at' =>  'required|date',
+            'always_active' => [
+                'required',
+                'string',
+                'max:255',
+                Rule::In(['yes', 'no'])
+            ],
         ]);
 
         $parentLottery->update($validatedData);
+        $parentLottery->currentLottery()->update($validatedData);
 
 
         return redirect()->route('admin.lotteries.index');

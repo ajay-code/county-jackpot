@@ -87,7 +87,7 @@
 					</div>
 				</div>
 				@foreach ($lotteries as $lottery)
-				<lottery-display-item :lottery="{{ json_encode($lottery) }}"></lottery-display-item>
+				<lottery-display-item :lottery="{{ json_encode($lottery->currentLottery()) }}"></lottery-display-item>
 				@endforeach
 			</div>
 	</section>

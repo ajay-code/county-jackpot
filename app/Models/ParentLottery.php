@@ -18,7 +18,8 @@ class ParentLottery extends Model
         'status',
         'prize',
         'entry_fee',
-        'expire_at'
+        'expire_at',
+        'always_active',
     ];
 
     /**
@@ -35,9 +36,32 @@ class ParentLottery extends Model
     /**
      * Return only active lotteries
      */
-    public function scopeActive($query){
+    public function scopeNotExpired($query){
         return $query->whereDate('expire_at', '>', Carbon::today()->toDateString());
     }
+
+    /**
+     * Return only deactive lotteries
+     */
+    public function scopeExpired($query){
+        return $query->whereDate('expire_at', '<', Carbon::today()->toDateString());
+    }
+
+    /**
+     * Return only deactive lotteries
+     */
+    public function scopeAlwaysActive($query){
+        return $query->where('always_active', 'yes');
+    }
+
+    /**
+     * Return the Current Active Lottery
+     */
+    public function currentLottery(){
+        return $this->lotteries()->latest()->first();
+    }
+
+
 
     /**
      * Relationships

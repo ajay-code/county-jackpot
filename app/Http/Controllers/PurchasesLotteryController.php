@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Stripe\{Stripe, charge, Customer};
-use App\Models\Lottery;
 use Illuminate\Http\Request;
+use App\Models\ParentLottery;
+use Stripe\Stripe;
+use Stripe\charge;
+use Stripe\Customer;
 
 class PurchasesLotteryController extends Controller
 {
@@ -25,8 +27,9 @@ class PurchasesLotteryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, Lottery $lottery)
+    public function store(Request $request, ParentLottery $parentLottery)
     {
+        $currentLottery = $parentLottery->currentLottery();
         $user = auth()->user();
         Stripe::setApiKey(config('services.stripe.secret'));
 
@@ -37,17 +40,17 @@ class PurchasesLotteryController extends Controller
 
         $charge = Charge::create([
             'customer' => $customer->id,
-            'amount' => $lottery->entry_fee * 100,
+            'amount' => $currentLottery->entry_fee,
             'currency' => 'usd',
         ]);
 
 
         $user->transactions()->create([
             'charge_id' => $charge->id,
-            'lottery_id' => $lottery->id,
+            'lottery_id' => $currentLottery->id,
             'amount' => $charge->amount,
             ]);
 
         return 'All Dome';
-    } 
+    }
 }

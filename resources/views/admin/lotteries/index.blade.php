@@ -40,6 +40,9 @@
                         Expire At
                     </th>
                     <th>
+                        Always Active
+                    </th>
+                    <th>
                         Actions
                     </th>
                 </tr>
@@ -51,7 +54,8 @@
                     <td>{{$lottery->name}}</td>
                     <td>{{$lottery->entry_fee}}</td>
                     <td>{{$lottery->prize}}</td>
-                    <td>{{$lottery->expire_at->toDateString()}}</td>
+                    <td>{{$lottery->expire_at->format('jS M Y')}}</td>
+                    <td>{{$lottery->always_active}}</td>
                     <td>
                         <a href="{{route('admin.lotteries.edit', ['lottery' => $lottery->id])}}">
                             <button class="btn btn-info">

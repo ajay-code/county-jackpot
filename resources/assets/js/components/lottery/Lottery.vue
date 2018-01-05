@@ -47,7 +47,7 @@ export default {
                 this.formData.stripeEmail = token.email;
                 this.formData.stripeToken = token.id;
                 console.log("Loading....");
-                axios.post(`/lotteries/${this.lottery.id}/buy`, this.formData).then(res => {
+                axios.post(`/lotteries/${this.lottery.parent_lottery_id}/buy`, this.formData).then(res => {
                     console.log(res.data);
                     alert("All done");
                 });
@@ -82,7 +82,7 @@ export default {
                 currency: "gbp",
                 description: this.lottery.name,
                 zipCode: true,
-                amount: this.lottery.entry_fee * 100
+                amount: this.lottery.entry_fee
             });
         }
     },

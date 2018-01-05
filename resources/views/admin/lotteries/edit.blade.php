@@ -73,9 +73,18 @@
                     <input name="prize" type="prize" class="form-control" id="prize" value="{{old('prize') ? old('prize') : $parentLottery->prize}}" placeholder="Prize" required>
                 </div>
             </div>
+            <div class="box-body">
+                <div class="form-group">
+                    <label for="always_active">Always Active</label>
+                    <select name="always_active" id="always_active" class="form-control">
+                        <option value="yes" {{ $parentLottery->always_active == 'yes' ? 'selected':'' }}>yes</option>
+                        <option value="no" {{ $parentLottery->always_active == 'no' ? 'selected':'' }}>no</option>
+                    </select>
+                </div>
+            </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit" class="btn btn-info pull-right">Update</button>
+                <button type="submit" class="btn btn-primary pull-right">Update</button>
             </div>
             <!-- /.box-footer -->
         </form>

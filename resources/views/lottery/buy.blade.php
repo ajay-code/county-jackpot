@@ -9,11 +9,11 @@
 @section('content')
     <div  class="box">
         <div class="box-header">
-            <h3 class="box-title">{{ $lottery->name }}</h3>
+            <h3 class="box-title">{{ $parentLottery->name }}</h3>
         </div>
         <div class="box-body">
                 <div id="app">
-                    <lottery :lottery="{{ json_encode($lottery)}}"></lottery>
+                    <lottery :lottery="{{ json_encode($parentLottery->currentLottery())}}"></lottery>
                 </div>
         </div>
     </div>

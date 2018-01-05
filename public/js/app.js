@@ -50579,7 +50579,7 @@ var render = function() {
             "btn btn-primary btn-lg work-button2 featured-play-button",
           staticStyle: { padding: "8px 1.5rem" },
           attrs: {
-            href: "/lotteries/" + _vm.lottery.id + "/buy",
+            href: "/lotteries/" + _vm.lottery.parent_lottery_id + "/buy",
             role: "button",
             disabled: _vm.remainingTime == "End"
           },
@@ -50758,9 +50758,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.formData.stripeEmail = _token.email;
                 _this.formData.stripeToken = _token.id;
                 console.log("Loading....");
-                axios.post("/lotteries/" + _this.lottery.id + "/buy", _this.formData).then(function (res) {
+                axios.post("/lotteries/" + _this.lottery.parent_lottery_id + "/buy", _this.formData).then(function (res) {
                     console.log(res.data);
-                    alert('All done');
+                    alert("All done");
                 });
             }
         });
@@ -50775,7 +50775,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 if (diff > 0) {
                     duration = moment.duration(diff);
                 } else {
-                    return 'End';
+                    return "End";
                 }
                 return duration.format("dd [days] h:mm:ss", true);
             } else {
@@ -50791,10 +50791,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.stripe.open({
                 name: this.lottery.name,
                 email: Lottery.user.email,
-                currency: 'gbp',
+                currency: "gbp",
                 description: this.lottery.name,
                 zipCode: true,
-                amount: this.lottery.entry_fee * 100
+                amount: this.lottery.entry_fee
             });
         }
     },
