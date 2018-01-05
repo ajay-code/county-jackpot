@@ -38,4 +38,8 @@ class User extends Authenticatable
     public function transactions(){
         return $this->hasMany(LotteryTransaction::class);
     }
+
+    public function lotteriesWon(){
+        return $this->hasMany(Lottery::class, 'winner_id');
+    }
 }
