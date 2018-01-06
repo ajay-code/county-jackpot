@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'MainController@index');
+Route::get('/game', 'MainController@game');
 
 Auth::routes();
 

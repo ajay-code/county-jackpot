@@ -17640,6 +17640,7 @@ Vue.component('example-component', __webpack_require__(162));
 Vue.component('user-datatable', __webpack_require__(165));
 Vue.component('lottery-display-item', __webpack_require__(178));
 Vue.component('lottery', __webpack_require__(183));
+Vue.component('game', __webpack_require__(192));
 
 var app = new Vue({
   el: '#app'
@@ -50873,6 +50874,246 @@ if (false) {
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(193)
+}
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(195)
+/* template */
+var __vue_template__ = __webpack_require__(196)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Game.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-fff8b8ae", Component.options)
+  } else {
+    hotAPI.reload("data-v-fff8b8ae", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 193 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(194);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("4f924d7c", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fff8b8ae\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Game.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fff8b8ae\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Game.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 194 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.img-display {\n    padding: 0.5vw;\n    font-size: 0;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 200px;\n}\n.img-display div {\n    -webkit-box-flex: auto;\n    -ms-flex: auto;\n    /* flex: auto; */\n    max-width: 200px;\n    margin: 0.5vw;\n    position: relative;\n    -webkit-animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n            animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n}\n.img-display div .number{\n    position: absolute;\n    left: 2px;\n    padding: 2px 12px;\n    color: white;\n    font-size: 36px;\n    background: #9a0909;\n}\n.img-display div img {\n    width: 100%;\n    height: 100%;\n}\n@media screen and (max-width: 400px) {\n.img-display div {\n        margin: 0;\n}\n.img-display {\n        padding: 0;\n}\n}\n@-webkit-keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n@keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 195 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {},
+
+    props: {
+        lottery: {
+            type: Object
+        }
+    }
+});
+
+/***/ }),
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("section", { staticClass: "img-display" }, [
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("1")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/1.jpg", alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("2")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/2.jpg", alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("3")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/3.jpg", alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("4")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/4.jpg", alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("5")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/5.jpg", alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("6")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/6.jpg", alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("7")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/7.jpg", alt: "" } })
+        ]),
+        _vm._v(" "),
+        _c("div", [
+          _c("span", { staticClass: "number" }, [_vm._v("8")]),
+          _vm._v(" "),
+          _c("img", { attrs: { src: "/game/8.jpg", alt: "" } })
+        ])
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "question hide" })
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-fff8b8ae", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

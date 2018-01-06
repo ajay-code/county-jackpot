@@ -14,4 +14,8 @@ class MainController extends Controller
 
         return view('welcome', compact('lotteries'));
     }
+
+    public function game(){
+        return view('game');
+    }
 }

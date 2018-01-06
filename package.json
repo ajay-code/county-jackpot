@@ -22,6 +22,7 @@
         "vuejs-paginate": "^1.2.0"
     },
     "dependencies": {
+        "localforage": "^1.5.5",
         "moment-duration-format": "^2.1.1"
     }
 }

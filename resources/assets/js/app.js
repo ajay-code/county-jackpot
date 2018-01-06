@@ -19,6 +19,7 @@ Vue.component('example-component', require('./components/ExampleComponent.vue'))
 Vue.component('user-datatable', require('./components/admin/datatables/UserDataTable.vue'));
 Vue.component('lottery-display-item', require('./components/lottery/LotteryDisplayItem.vue'));
 Vue.component('lottery', require('./components/lottery/Lottery.vue'));
+Vue.component('game', require('./components/Game.vue'));
 
 const app = new Vue({
     el: '#app'
