@@ -7,7 +7,7 @@
             <h3><span v-text="lottery.name"></span></h3>
         </div>
         <div class="featured-price col-lg-2 text-center">
-            <h4>€ <span v-text="lottery.prize"></span></h4>
+            <h4><i class="fa fa-gbp"></i> <span v-text="lottery.prize"></span></h4>
 
         </div>
         <div class="featured-timer col-lg-3 text-center">

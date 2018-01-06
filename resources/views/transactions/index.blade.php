@@ -3,7 +3,7 @@
 @section('title', 'Counties')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>Lotteries Bought</h1>
     <ol class="breadcrumb">
         <li>
             <a href="#">
@@ -17,7 +17,7 @@
 @section('content')
 <div class="box">
     <div class="box-header">
-        <h3 class="box-title">Counties List</h3>
+        {{--  <h3 class="box-title">Counties List</h3>  --}}
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -43,7 +43,7 @@
                 <tr>
                     <td>{{$transaction->id}}</td>
                     <td>{{$transaction->charge_id}}</td>
-                    <td>{{(float)$transaction->amount / 100 }}</td>
+                    <td><i class="fa fa-gbp"></i>{{(float)$transaction->amount / 100 }}</td>
                     <td>{{$transaction->lottery->name}}</td>
                 </tr>
                 @endforeach

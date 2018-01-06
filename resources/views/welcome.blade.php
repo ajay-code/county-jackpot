@@ -11,6 +11,8 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Salsa|Share|Sniglet" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oregano|Passion+One" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/flexslider.min.css" />
 </head>
 
@@ -44,7 +46,7 @@
 						<a class="nav-link" href="#">Contact</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Sign in</a>
+						<a class="nav-link" href="/login">Sign in</a>
 					</li>
 				</ul>
 		</nav>
@@ -159,7 +161,7 @@
 	</div>
 	
 	<h2 class="text-center">Jackpot Prize :
-		<span style="color: #28a745; font-weight: 700;"> € 77,200,000</span>
+		<span style="color: #28a745; font-weight: 700;"> <i class="fa fa-gbp"></i> 77,200,000</span>
 	</h2>
 	<div class="text-center">
 		<a href="#" class="buy-button">Buy Lottery</a>
