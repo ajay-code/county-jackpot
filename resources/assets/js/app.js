@@ -15,12 +15,12 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
-Vue.component('user-datatable', require('./components/admin/datatables/UserDataTable.vue'));
-Vue.component('lottery-display-item', require('./components/lottery/LotteryDisplayItem.vue'));
-Vue.component('lottery', require('./components/lottery/Lottery.vue'));
-Vue.component('game', require('./components/Game.vue'));
+window.Vue.component('example-component', require('./components/ExampleComponent.vue'));
+window.Vue.component('user-datatable', require('./components/admin/datatables/UserDataTable.vue'));
+window.Vue.component('lottery-display-item', require('./components/lottery/LotteryDisplayItem.vue'));
+window.Vue.component('lottery', require('./components/lottery/Lottery.vue'));
+window.Vue.component('game', require('./components/game/Game.vue'));
 
-const app = new Vue({
+const app = new window.Vue({
     el: '#app'
 });

@@ -4,7 +4,7 @@ window._ = require('lodash');
 window.moment = require("moment");
 window.momentDurationFormatSetup = require("moment-duration-format");
 
-momentDurationFormatSetup(moment);
+window.momentDurationFormatSetup(window.moment);
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
