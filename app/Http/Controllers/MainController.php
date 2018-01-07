@@ -8,14 +8,16 @@ use App\Http\Resources\LotteryResource;
 
 class MainController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $lotteries = ParentLottery::NotExpired()->get();
         // return $lotteries;
 
         return view('welcome', compact('lotteries'));
     }
 
-    public function game(){
+    public function game()
+    {
         return view('game');
     }
 }

@@ -31,15 +31,18 @@ class User extends Authenticatable
     /**
      * Relationships
      */
-    public function socialProviders(){
+    public function socialProviders()
+    {
         return $this->hasMany(SocialProvider::class);
     }
 
-    public function transactions(){
+    public function transactions()
+    {
         return $this->hasMany(LotteryTransaction::class);
     }
 
-    public function lotteriesWon(){
+    public function lotteriesWon()
+    {
         return $this->hasMany(Lottery::class, 'winner_id');
     }
 }

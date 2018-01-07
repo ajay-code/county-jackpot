@@ -19,6 +19,7 @@ class CreateLotteryTransactionsTable extends Migration
             $table->integer('lottery_id')->unsigned();
             $table->smallInteger('amount');
             $table->string('charge_id');
+            $table->enum('status', ['incomplete', 'entered', 'failed'])->default('incomplete');
             $table->timestamps();
         });
     }

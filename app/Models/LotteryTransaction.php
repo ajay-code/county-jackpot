@@ -17,10 +17,12 @@ class LotteryTransaction extends Model
     /**
      * Relationships
      */
-    public function lottery(){
+    public function lottery()
+    {
         return $this->belongsTo(Lottery::class);
     }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 }

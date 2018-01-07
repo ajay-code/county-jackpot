@@ -36,28 +36,32 @@ class ParentLottery extends Model
     /**
      * Return only active lotteries
      */
-    public function scopeNotExpired($query){
+    public function scopeNotExpired($query)
+    {
         return $query->whereDate('expire_at', '>', Carbon::today()->toDateString());
     }
 
     /**
      * Return only deactive lotteries
      */
-    public function scopeExpired($query){
+    public function scopeExpired($query)
+    {
         return $query->whereDate('expire_at', '<', Carbon::today()->toDateString());
     }
 
     /**
      * Return only deactive lotteries
      */
-    public function scopeAlwaysActive($query){
+    public function scopeAlwaysActive($query)
+    {
         return $query->where('always_active', 'yes');
     }
 
     /**
      * Return the Current Active Lottery
      */
-    public function currentLottery(){
+    public function currentLottery()
+    {
         return $this->lotteries()->latest()->first();
     }
 
@@ -66,10 +70,12 @@ class ParentLottery extends Model
     /**
      * Relationships
      */
-    public function county(){
+    public function county()
+    {
         return $this->hasOne(County::class);
     }
-    public function lotteries(){
+    public function lotteries()
+    {
         return $this->hasMany(Lottery::class, 'parent_lottery_id');
     }
 }

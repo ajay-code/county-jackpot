@@ -50956,7 +50956,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n.interval{\n    text-align: center;\n    padding: 20px;\n    font-size: 20px;\n}\n.img-display {\n    font-size: 0;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 50px 200px;\n}\n.img-display div {\n    -webkit-box-flex: 1;\n        -ms-flex: auto;\n            flex: auto;\n    width: calc(100% * (1/4) - 10px);\n    position: relative;\n    margin: 5px;\n    -webkit-animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n            animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n}\n.img-display div .number {\n    position: absolute;\n    left: 2px;\n    padding: 2px 12px;\n    color: white;\n    font-size: 36px;\n    background: #9a0909;\n}\n.img-display div img {\n    width: 100%;\n    height: 100%;\n}\n@-webkit-keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n@keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.interval {\n    text-align: center;\n    padding: 20px;\n    font-size: 20px;\n}\n.img-display {\n    font-size: 0;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 50px 300px;\n}\n.img-display div {\n    -webkit-box-flex: 1;\n        -ms-flex: auto;\n            flex: auto;\n    width: calc(100% * (1/4) - 10px);\n    position: relative;\n    margin: 5px;\n}\n.shake div {\n    -webkit-animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n            animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n}\n.img-display div .number {\n    position: absolute;\n    left: 2px;\n    padding: 2px 12px;\n    color: white;\n    font-size: 36px;\n    background: #9a0909;\n}\n.img-display div img {\n    width: 100%;\n    height: 100%;\n}\n@-webkit-keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n@keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n.slide-enter-active,\n.slide-leave-active {\n    -webkit-animation: in 1s ease-in-out 600ms forwards;\n            animation: in 1s ease-in-out 600ms forwards;\n}\n.slide-enter,\n.slide-leave-to {\n    -webkit-animation: out 600ms ease-in-out forwards;\n            animation: out 600ms ease-in-out forwards;\n}\n.fade-enter-active,\n.fade-leave-active {\n    -webkit-transition: opacity .5s ease;\n    transition: opacity .5s ease;\n}\n.fade-enter,\n.fade-leave-to {\n    opacity: 0;\n}\n@-webkit-keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@-webkit-keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n@keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n", ""]);
 
 // exports
 
@@ -50988,6 +50988,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -50995,14 +51010,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             images: [],
+            questionImages: [],
             displayableImages: [],
+            questionImagesArrayLength: 4,
+            displayableImagesArrayLenght: 16,
             repeat: {
-                '4': '',
-                '3': '',
-                '2': ''
+                "4": "",
+                "3": "",
+                "2": ""
             },
-            timeleft: 10,
-            answer: ''
+            timeleft: 5,
+            answer: "",
+            answerImageRepeatTime: ""
         };
     },
 
@@ -51022,6 +51041,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         this.selectAnswer();
+        this.selectQuestionImages();
         var interval = setInterval(function () {
             _this.timeleft--;
             if (_this.timeleft <= 0) {
@@ -51032,69 +51052,95 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         init: function init() {
-            var _this2 = this;
-
-            var arrayLenght = 16;
+            var filteredArray = this.selectRepeatingImages();
+            this.setDisplayableImages(filteredArray);
+            this.shuffleDisplayableImages();
+            console.log("done");
+        },
+        selectRepeatingImages: function selectRepeatingImages() {
             var except = [];
             var filteredArray = this.images.filter(function (image) {
                 return !except.includes(image.id);
             });
 
-            this.repeat['4'] = filteredArray[_.random(0, filteredArray.length - 1)];
-            except.push(this.repeat['4'].id);
+            this.repeat["4"] = filteredArray[_.random(0, filteredArray.length - 1)];
+            except.push(this.repeat["4"].id);
             filteredArray = this.images.filter(function (image) {
                 return !except.includes(image.id);
             });
 
-            this.repeat['3'] = filteredArray[_.random(0, filteredArray.length - 1)];
-            except.push(this.repeat['3'].id);
+            this.repeat["3"] = filteredArray[_.random(0, filteredArray.length - 1)];
+            except.push(this.repeat["3"].id);
             filteredArray = this.images.filter(function (image) {
                 return !except.includes(image.id);
             });
 
-            this.repeat['2'] = filteredArray[_.random(0, filteredArray.length - 1)];
-            except.push(this.repeat['2'].id);
+            this.repeat["2"] = filteredArray[_.random(0, filteredArray.length - 1)];
+            except.push(this.repeat["2"].id);
             filteredArray = this.images.filter(function (image) {
                 return !except.includes(image.id);
             });
-
-            filteredArray = _.shuffle(filteredArray);
+            return filteredArray;
+        },
+        setDisplayableImages: function setDisplayableImages(filteredArray) {
+            var _this2 = this;
 
             _.times(4, function () {
-                _this2.displayableImages.push(_this2.repeat['4']);
+                _this2.displayableImages.push(_this2.repeat["4"]);
             });
             _.times(3, function () {
-                _this2.displayableImages.push(_this2.repeat['3']);
+                _this2.displayableImages.push(_this2.repeat["3"]);
             });
             _.times(2, function () {
-                _this2.displayableImages.push(_this2.repeat['2']);
+                _this2.displayableImages.push(_this2.repeat["2"]);
             });
 
             var index = 1;
-            while (this.displayableImages.length < 16) {
+            while (this.displayableImages.length < this.displayableImagesArrayLenght) {
                 this.displayableImages.push(filteredArray[index]);
                 index++;
             }
-
+        },
+        shuffleDisplayableImages: function shuffleDisplayableImages() {
             var shouldShuffle = true;
             while (shouldShuffle) {
                 this.displayableImages = _.shuffle(this.displayableImages);
-                console.log('shuffled');
+                console.log("shuffled");
                 shouldShuffle = false;
-                for (var _index = 0; _index <= this.displayableImages.length - 2; _index++) {
+                for (var index = 0; index <= this.displayableImages.length - 2; index++) {
                     // console.log(`index : ${index}`)
-                    if (this.displayableImages[_index] == this.displayableImages[_index + 1] || this.displayableImages[_index] == this.displayableImages[_index - 4] || this.displayableImages[_index] == this.displayableImages[_index + 4] || this.displayableImages[_index] == this.displayableImages[_index + 5] || this.displayableImages[_index] == this.displayableImages[_index - 5] || this.displayableImages[_index] == this.displayableImages[_index + 3] || this.displayableImages[_index] == this.displayableImages[_index - 3]) {
+                    if (this.displayableImages[index] == this.displayableImages[index + 1] || this.displayableImages[index] == this.displayableImages[index - 4] || this.displayableImages[index] == this.displayableImages[index + 4] || this.displayableImages[index] == this.displayableImages[index + 5] || this.displayableImages[index] == this.displayableImages[index - 5] || this.displayableImages[index] == this.displayableImages[index + 3] || this.displayableImages[index] == this.displayableImages[index - 3]) {
                         shouldShuffle = true;
                     }
                 }
             }
-
-            console.log('done');
         },
         selectAnswer: function selectAnswer() {
-            var selectFrom = ['4', '3', '2'];
+            var selectFrom = ["4", "3", "2"];
             var selectedIndex = _.random(0, 2);
+            this.answerImageRepeatTime = selectFrom[selectedIndex];
             this.answer = this.repeat[selectFrom[selectedIndex]];
+        },
+        selectQuestionImages: function selectQuestionImages() {
+            var _this3 = this;
+
+            this.questionImages.push(this.answer);
+            var filteredArray = this.images.filter(function (image) {
+                return image.id != _this3.answer.id;
+            });
+            var index = 1;
+            while (this.questionImages.length < this.questionImagesArrayLength) {
+                this.questionImages.push(filteredArray[index]);
+                index++;
+            }
+            this.questionImages = _.shuffle(this.questionImages);
+        },
+        checkAnswer: function checkAnswer(id) {
+            if (this.answer.id == id) {
+                alert("you won");
+            } else {
+                alert("you lost");
+            }
         }
     }
 });
@@ -53595,26 +53641,77 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
-    _c("div", { staticClass: "interval" }, [
-      _c("span", { domProps: { textContent: _vm._s(_vm.timeleft) } }),
-      _vm._v(" seconds left\n    ")
-    ]),
-    _vm._v(" "),
-    _vm.timeleft
-      ? _c(
-          "section",
-          { staticClass: "img-display" },
-          _vm._l(_vm.displayableImages, function(image, index) {
-            return _c("div", { key: index }, [
-              _c("img", { attrs: { src: "/game/" + image.name, alt: "" } })
+  return _c(
+    "div",
+    [
+      _c("transition", { attrs: { name: "fade", mode: "out-in" } }, [
+        _vm.timeleft
+          ? _c("div", { key: "time-left", staticClass: "interval" }, [
+              _c("span", { domProps: { textContent: _vm._s(_vm.timeleft) } }),
+              _vm._v(" seconds left\n        ")
             ])
-          })
-        )
-      : _vm._e(),
-    _vm._v(" "),
-    _c("section", { staticClass: "question hide" })
-  ])
+          : _vm._e(),
+        _vm._v(" "),
+        !_vm.timeleft
+          ? _c(
+              "div",
+              { staticClass: "interval", attrs: { ":key": "question" } },
+              [
+                _vm._v("\n            Which image was repeated\n            "),
+                _c("span", {
+                  domProps: { textContent: _vm._s(_vm.answerImageRepeatTime) }
+                }),
+                _vm._v(" Times\n        ")
+              ]
+            )
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "slide" } }, [
+        _vm.timeleft
+          ? _c(
+              "section",
+              { staticClass: "img-display shake" },
+              _vm._l(_vm.displayableImages, function(image, index) {
+                return _c("div", { key: index }, [
+                  _c("img", { attrs: { src: "/game/" + image.name, alt: "" } })
+                ])
+              })
+            )
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "slide" } }, [
+        _vm.timeleft == 0
+          ? _c(
+              "section",
+              { staticClass: "img-display" },
+              _vm._l(_vm.questionImages, function(image, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    on: {
+                      click: function($event) {
+                        _vm.checkAnswer(image.id)
+                      }
+                    }
+                  },
+                  [
+                    _c("img", {
+                      attrs: { src: "/game/" + image.name, alt: "" }
+                    })
+                  ]
+                )
+              })
+            )
+          : _vm._e()
+      ]),
+      _vm._v(" "),
+      _c("section", { staticClass: "question hide" })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

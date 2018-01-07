@@ -35,20 +35,22 @@ class Lottery extends Model
 
     /**
      * Return only Not Expired lotteries
-     * 
+     *
      * @param $query \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeNotExpired($query){
+    public function scopeNotExpired($query)
+    {
         // var_dump(get_class($query));
         return $query->whereDate('expire_at', '>', Carbon::today()->toDateString());
     }
 
     /**
      * Return only Expired lotteries
-     * 
+     *
      * @param $query \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeExpired($query){
+    public function scopeExpired($query)
+    {
         // var_dump(get_class($query));
         return $query->whereDate('expire_at', '<', Carbon::today()->toDateString());
     }
@@ -56,18 +58,21 @@ class Lottery extends Model
     /**
      * Tells if the Lottery Has a winner
      */
-    public function hasWinner(){
+    public function hasWinner()
+    {
         return $this->winner_id ? true : false;
     }
 
     /**
      * Relationships
      */
-    public function county(){
+    public function county()
+    {
         return $this->hasOne(County::class);
     }
 
-    public function winner(){
+    public function winner()
+    {
         return $this->belongsTo(User::class, 'winner_id');
     }
 }

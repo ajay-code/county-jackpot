@@ -19,12 +19,11 @@ class TransactionController extends Controller
     /**
      * List of all the Transactions
      */
-    public function index(){
+    public function index()
+    {
         $user = auth()->user()->load('transactions.lottery');
         $transactions = $user->transactions;
         // return $transactions;
         return view('transactions.index', compact('transactions', 'user'));
     }
-
-    
 }

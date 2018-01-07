@@ -47,5 +47,4 @@ class ProfileController extends Controller
         $user->update($request->all());
         return redirect()->route('profile.index');
     }
-
 }

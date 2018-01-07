@@ -36,5 +36,4 @@ class LotteryController extends Controller
     {
         return view('lottery.buy', compact('parentLottery'));
     }
-
 }
