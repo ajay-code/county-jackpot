@@ -28,7 +28,8 @@ export default {
                 '3': '',
                 '2': '',
             },
-            timeleft: 10
+            timeleft: 10,
+            answer: ''
         };
     },
     props: {
@@ -46,12 +47,14 @@ export default {
         this.init()
     },
     mounted(){
+        this.selectAnswer()
         let interval = setInterval(() => {
             this.timeleft--;
             if(this.timeleft <= 0){
                 window.clearInterval(interval);
             }
         }, 1000)
+
     },
     methods: {
         init(){
@@ -103,8 +106,11 @@ export default {
             }
 
             console.log('done');
-
-            
+        },
+        selectAnswer(){
+            let selectFrom  = ['4', '3', '2'];
+            let selectedIndex = _.random(0,2);
+            this.answer = this.repeat[selectFrom[selectedIndex]];
         }
     }
 };
