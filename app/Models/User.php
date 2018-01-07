@@ -45,4 +45,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Lottery::class, 'winner_id');
     }
+
+    public function lotteries(){
+        return $this->hasMany(UserLottery::class, 'user_id');
+    }
 }

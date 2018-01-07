@@ -21,30 +21,38 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
-        <table id="datatable-transactions" class="table table-bordered table-striped">
+        <table id="datatable-user-lotteries" class="table table-bordered table-striped">
             <thead>
                 <tr>
                     <th>
                         #
                     </th>
                     <th>
-                        Amount
+                        Name
                     </th>
                     <th>
-                        Lottery
+                        Fee Paid
                     </th>
                     <th>
-                        status
+                        Prize
+                    </th>
+                    <th>
+                        Draw Number
+                    </th>
+                    <th>
+                        Purchased On
                     </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($transactions as $transaction)
+                @foreach ($lotteries as $index => $lottery)
                 <tr>
-                    <td>{{$transaction->id}}</td>
-                    <td><i class="fa fa-gbp"></i>{{(float)$transaction->amount / 100 }}</td>
-                    <td>{{$transaction->lottery->name}}</td>
-                    <td>{{$transaction->status}}</td>
+                    <td>{{ $index+1 }}</td>
+                    <td>{{$lottery->lottery->name}}</td>
+                    <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->entry_fee / 100 }}</td>
+                    <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->prize }}</td>
+                    <td>{{$lottery->draw_number}}</td>
+                    <td>{{$lottery->created_at->format('jS F, Y')}}</td>
                 </tr>
                 @endforeach
             </tbody>
@@ -57,7 +65,7 @@
 @section('js')
 <script>
         $(document).ready(function(){
-            $('#datatable-transactions').DataTable();
+            $('#datatable-user-lotteries').DataTable();
         });
 </script>
 @stop

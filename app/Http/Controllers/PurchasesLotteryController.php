@@ -51,6 +51,6 @@ class PurchasesLotteryController extends Controller
             'amount' => $charge->amount,
             ]);
 
-        return 'All Dome';
+        return $charge->id;
     }
 }

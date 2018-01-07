@@ -25,4 +25,8 @@ class LotteryTransaction extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function userLottery()
+    {
+        return $this->hasOne(UserLottery::class);
+    }
 }

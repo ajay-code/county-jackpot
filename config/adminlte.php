@@ -115,6 +115,11 @@ return [
             'icon'        => 'file',
         ],
         [
+            'text'        => 'My Lotteries',
+            'url'         => 'my-lotteries',
+            'icon'        => 'file',
+        ],
+        [
             'text'        => 'Transactions',
             'url'         => 'transactions',
             'icon'        => 'exchange',

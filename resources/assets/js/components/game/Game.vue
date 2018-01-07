@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import Images from "@/data/images";
 import localforage from "localforage";
 export default {
@@ -48,6 +49,7 @@ export default {
             },
             timeleft: 5,
             answer: "",
+            isAnswered: false,
             answerImageRepeatTime: ""
         };
     },
@@ -153,12 +155,35 @@ export default {
             this.questionImages = _.shuffle(this.questionImages);
         },
         checkAnswer(id) {
-            if (this.answer.id == id) {
-                alert("you won");
-            } else {
-                alert("you lost");
+            let result = '';
+            this.isAnswered = true;
+            if(this.answer.id == id){
+                result = 'won';
+            }else{
+                result = 'lost';
             }
+            this.getTransactionChargeId().then(chargeId => {
+                axios.post(`game/result/store`, {
+                    charge_id: chargeId,
+                    result
+                }).then(()=>{
+                    this.clear();
+                    if(result == 'won'){
+                        window.location = '/my-lotteries'
+                    }else{
+                        alert('you lost')
+                        window.location = '/transactions'
+                    }
+                })
+            })
+        },
+        clear(){
+            localforage.clear();
+        },
+        getTransactionChargeId(){
+            return localforage.getItem("lotteryTransactionChargeIdForGame");
         }
+
     }
 };
 </script>
@@ -227,7 +252,7 @@ export default {
 
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity .5s ease;
+    transition: opacity 0.5s ease;
 }
 
 .fade-enter,

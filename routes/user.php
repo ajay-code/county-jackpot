@@ -23,3 +23,13 @@ Route::post('lotteries/{parentLottery}/buy', 'PurchasesLotteryController@store')
  * Transactions
  */
 Route::get('/transactions', 'TransactionController@index');
+
+/**
+ * User Lotteries
+ */
+Route::get('/my-lotteries', 'UserLotteryController@index');
+
+/**
+ * Store game result
+ */
+Route::post('game/result/store', 'TransactionController@storeResult');

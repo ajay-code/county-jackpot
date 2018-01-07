@@ -50697,7 +50697,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -50708,6 +50708,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_localforage__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_localforage__);
 //
 //
 //
@@ -50729,6 +50731,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 // import moment from "moment";
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -50761,8 +50765,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.formData.stripeToken = _token.id;
                 console.log("Loading....");
                 axios.post("/lotteries/" + _this.lottery.parent_lottery_id + "/buy", _this.formData).then(function (res) {
-                    console.log(res.data);
-                    alert("All done");
+                    var chargeId = res.data;
+                    __WEBPACK_IMPORTED_MODULE_0_localforage___default.a.setItem("lotteryTransactionChargeIdForGame", chargeId).then(function () {
+                        return __WEBPACK_IMPORTED_MODULE_0_localforage___default.a.getItem("lotteryTransactionChargeIdForGame");
+                    });
+                }).then(function () {
+                    window.location = '/game';
                 });
             }
         });
@@ -50956,7 +50964,7 @@ exports = module.exports = __webpack_require__(4)(undefined);
 
 
 // module
-exports.push([module.i, "\n.interval {\n    text-align: center;\n    padding: 20px;\n    font-size: 20px;\n}\n.img-display {\n    font-size: 0;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 50px 300px;\n}\n.img-display div {\n    -webkit-box-flex: 1;\n        -ms-flex: auto;\n            flex: auto;\n    width: calc(100% * (1/4) - 10px);\n    position: relative;\n    margin: 5px;\n}\n.shake div {\n    -webkit-animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n            animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n}\n.img-display div .number {\n    position: absolute;\n    left: 2px;\n    padding: 2px 12px;\n    color: white;\n    font-size: 36px;\n    background: #9a0909;\n}\n.img-display div img {\n    width: 100%;\n    height: 100%;\n}\n@-webkit-keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n@keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n.slide-enter-active,\n.slide-leave-active {\n    -webkit-animation: in 1s ease-in-out 600ms forwards;\n            animation: in 1s ease-in-out 600ms forwards;\n}\n.slide-enter,\n.slide-leave-to {\n    -webkit-animation: out 600ms ease-in-out forwards;\n            animation: out 600ms ease-in-out forwards;\n}\n.fade-enter-active,\n.fade-leave-active {\n    -webkit-transition: opacity .5s ease;\n    transition: opacity .5s ease;\n}\n.fade-enter,\n.fade-leave-to {\n    opacity: 0;\n}\n@-webkit-keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@-webkit-keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n@keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n", ""]);
+exports.push([module.i, "\n.interval {\n    text-align: center;\n    padding: 20px;\n    font-size: 20px;\n}\n.img-display {\n    font-size: 0;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 50px 300px;\n}\n.img-display div {\n    -webkit-box-flex: 1;\n        -ms-flex: auto;\n            flex: auto;\n    width: calc(100% * (1/4) - 10px);\n    position: relative;\n    margin: 5px;\n}\n.shake div {\n    -webkit-animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n            animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n}\n.img-display div .number {\n    position: absolute;\n    left: 2px;\n    padding: 2px 12px;\n    color: white;\n    font-size: 36px;\n    background: #9a0909;\n}\n.img-display div img {\n    width: 100%;\n    height: 100%;\n}\n@-webkit-keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n@keyframes shake {\n10% {\n        -webkit-transform: rotate3d(0, 1, 0, 30deg);\n                transform: rotate3d(0, 1, 0, 30deg);\n}\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 30deg);\n                transform: rotate3d(0, 1, 1, 30deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n.slide-enter-active,\n.slide-leave-active {\n    -webkit-animation: in 1s ease-in-out 600ms forwards;\n            animation: in 1s ease-in-out 600ms forwards;\n}\n.slide-enter,\n.slide-leave-to {\n    -webkit-animation: out 600ms ease-in-out forwards;\n            animation: out 600ms ease-in-out forwards;\n}\n.fade-enter-active,\n.fade-leave-active {\n    -webkit-transition: opacity 0.5s ease;\n    transition: opacity 0.5s ease;\n}\n.fade-enter,\n.fade-leave-to {\n    opacity: 0;\n}\n@-webkit-keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@-webkit-keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n@keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n", ""]);
 
 // exports
 
@@ -50967,10 +50975,12 @@ exports.push([module.i, "\n.interval {\n    text-align: center;\n    padding: 20
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_images__ = __webpack_require__(192);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__data_images___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__data_images__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage__ = __webpack_require__(193);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_localforage__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios__ = __webpack_require__(140);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_images__ = __webpack_require__(192);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_images___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__data_images__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_localforage__);
 //
 //
 //
@@ -51003,6 +51013,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
 
 
 
@@ -51021,6 +51032,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             },
             timeleft: 5,
             answer: "",
+            isAnswered: false,
             answerImageRepeatTime: ""
         };
     },
@@ -51031,9 +51043,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         }
     },
     created: function created() {
-        this.images = __WEBPACK_IMPORTED_MODULE_0__data_images___default.a;
-        __WEBPACK_IMPORTED_MODULE_1_localforage___default.a.setItem("lotteryIdForGame", this.lottery.id).then(function () {
-            return __WEBPACK_IMPORTED_MODULE_1_localforage___default.a.getItem("lotteryIdForGame");
+        this.images = __WEBPACK_IMPORTED_MODULE_1__data_images___default.a;
+        __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.setItem("lotteryIdForGame", this.lottery.id).then(function () {
+            return __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem("lotteryIdForGame");
         });
         this.init();
     },
@@ -51136,11 +51148,35 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.questionImages = _.shuffle(this.questionImages);
         },
         checkAnswer: function checkAnswer(id) {
+            var _this4 = this;
+
+            var result = '';
+            this.isAnswered = true;
             if (this.answer.id == id) {
-                alert("you won");
+                result = 'won';
             } else {
-                alert("you lost");
+                result = 'lost';
             }
+            this.getTransactionChargeId().then(function (chargeId) {
+                __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post("game/result/store", {
+                    charge_id: chargeId,
+                    result: result
+                }).then(function () {
+                    _this4.clear();
+                    if (result == 'won') {
+                        window.location = '/my-lotteries';
+                    } else {
+                        alert('you lost');
+                        window.location = '/transactions';
+                    }
+                });
+            });
+        },
+        clear: function clear() {
+            __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.clear();
+        },
+        getTransactionChargeId: function getTransactionChargeId() {
+            return __WEBPACK_IMPORTED_MODULE_2_localforage___default.a.getItem("lotteryTransactionChargeIdForGame");
         }
     }
 });

@@ -24,16 +24,16 @@ class UserLottery extends Model
     
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function transaction()
     {
-        return $this->hasOne(LotteryTransaction::class);
+        return $this->belongsTo(LotteryTransaction::class);
     }
 
     public function lottery()
     {
-        return $this->hasOne(Lottery::class);
+        return $this->belongsTo(Lottery::class);
     }
 }

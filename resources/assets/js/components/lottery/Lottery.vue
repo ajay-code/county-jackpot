@@ -20,6 +20,8 @@
 </template>
 
 <script>
+import localforage from "localforage";
+
 // import moment from "moment";
 export default {
     data() {
@@ -47,10 +49,18 @@ export default {
                 this.formData.stripeEmail = token.email;
                 this.formData.stripeToken = token.id;
                 console.log("Loading....");
-                axios.post(`/lotteries/${this.lottery.parent_lottery_id}/buy`, this.formData).then(res => {
-                    console.log(res.data);
-                    alert("All done");
-                });
+                axios
+                    .post(`/lotteries/${this.lottery.parent_lottery_id}/buy`, this.formData)
+                    .then(res => {
+                        let chargeId = res.data;
+                        localforage
+                            .setItem("lotteryTransactionChargeIdForGame", chargeId)
+                            .then(() => {
+                                return localforage.getItem("lotteryTransactionChargeIdForGame");
+                            });
+                    }).then(() => {
+                        window.location = '/game';
+                    });
             }
         });
     },
