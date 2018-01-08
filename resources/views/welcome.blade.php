@@ -34,9 +34,6 @@
 						<a class="nav-link" href="#">Home</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="#">Buy Lottery</a>
-					</li>
-					<li class="nav-item">
 						<a class="nav-link" href="#">Draw Results</a>
 					</li>
 					<li class="nav-item">
