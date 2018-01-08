@@ -21,8 +21,8 @@ class UserLotteryController extends Controller
      */
     public function index()
     {
-        $user = auth()->user()->load('transactions.lottery');
-        $lotteries = $user->lotteries;
+        $user = auth()->user();
+        $lotteries = $user->lotteries()->latest()->get();
         // return $lotteries;
         return view('user_lotteries.index', compact('lotteries', 'user'));
     }

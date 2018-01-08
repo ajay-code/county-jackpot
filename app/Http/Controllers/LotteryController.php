@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Lottery;
 use Illuminate\Http\Request;
 use App\Models\ParentLottery;
+use App\Models\LotteryTransaction;
 
 class LotteryController extends Controller
 {
@@ -35,5 +36,33 @@ class LotteryController extends Controller
     public function buy(ParentLottery $parentLottery)
     {
         return view('lottery.buy', compact('parentLottery'));
+    }
+
+    /**
+     * Game
+     *
+     * @param \App\Models\LotteryTransaction
+     */
+    public function game(LotteryTransaction $lotteryTransaction)
+    {
+        if($lotteryTransaction->status == 'incomplete'){
+            return view('lottery.game.index', compact('lotteryTransaction'));
+        }else{
+            return redirect()->route('transactions');
+        }
+    }
+    
+    /**
+     * Play Game
+     *
+     * @param \App\Models\LotteryTransaction
+     */
+    public function play(LotteryTransaction $lotteryTransaction)
+    {
+        if($lotteryTransaction->status == 'incomplete'){
+            return view('lottery.game.play', compact('lotteryTransaction'));
+        }else{
+            return redirect()->route('transactions');
+        }
     }
 }

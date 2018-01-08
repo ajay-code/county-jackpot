@@ -15,7 +15,7 @@
 @stop
 
 @section('content')
-<div class="box">
+<div class="box box-success">
     <div class="box-header">
         {{--  <h3 class="box-title">Counties List</h3>  --}}
     </div>
@@ -42,6 +42,9 @@
                     <th>
                         Purchased On
                     </th>
+                    <th>
+                        Result On
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -53,6 +56,7 @@
                     <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->prize }}</td>
                     <td>{{$lottery->draw_number}}</td>
                     <td>{{$lottery->created_at->format('jS F, Y')}}</td>
+                    <td>{{$lottery->lottery->expire_at->addDays(1)->format('jS F, Y')}}</td>
                 </tr>
                 @endforeach
             </tbody>

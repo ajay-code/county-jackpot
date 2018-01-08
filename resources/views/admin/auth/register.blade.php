@@ -52,7 +52,7 @@
                     @endif
                 </div>
                 <button type="submit"
-                        class="btn btn-primary btn-block btn-flat"
+                        class="btn btn-success btn-block btn-flat"
                 >{{ trans('adminlte::adminlte.register') }}</button>
             </form>
             <div class="auth-links">

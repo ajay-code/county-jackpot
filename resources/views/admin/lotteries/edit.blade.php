@@ -21,7 +21,7 @@
 
 @section('content')
 <div class="col-md-8 col-md-offset-2">
-    <div class="box box-primary">
+    <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title">Lottery Edit Form # {{ $parentLottery->id }}</h3>
         </div>
@@ -84,7 +84,7 @@
             </div>
             <!-- /.box-body -->
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">Update</button>
+                <button type="submit" class="btn btn-success pull-right">Update</button>
             </div>
             <!-- /.box-footer -->
         </form>

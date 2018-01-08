@@ -21,7 +21,7 @@
 
 @section('content')
 <div class="col-md-8 col-md-offset-2">
-    <div class="box box-primary">
+    <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title">Counties Form</h3>
         </div>
@@ -47,7 +47,7 @@
             <!-- /.box-body -->
             <div class="box-footer">
                 <button type="reset" class="btn btn-default">reset</button>
-                <button type="submit" class="btn btn-info pull-right">Create</button>
+                <button type="submit" class="btn btn-success pull-right">Create</button>
             </div>
             <!-- /.box-footer -->
         </form>

@@ -45,12 +45,12 @@ class PurchasesLotteryController extends Controller
         ]);
 
 
-        $user->transactions()->create([
+        $transaction  = $user->transactions()->create([
             'charge_id' => $charge->id,
             'lottery_id' => $currentLottery->id,
             'amount' => $charge->amount,
             ]);
 
-        return $charge->id;
+        return $transaction;
     }
 }

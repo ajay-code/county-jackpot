@@ -9,15 +9,13 @@
 @section('content')
     <div  class="box box-success" >
         <div class="box-body">
-                <div id="app">
-                    <lottery :lottery="{{ json_encode($parentLottery->currentLottery())}}"></lottery>
-                </div>
+            <div id="app">
+                <game :lottery-transaction="{{ $lotteryTransaction }}"></game>
+            </div>
         </div>
     </div>
 @stop
 
 @section('js')
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    {{--  <script src="https://js.stripe.com/v3/"></script>  --}}
     <script src="{{ asset('js/app.js') }}"></script>
 @stop

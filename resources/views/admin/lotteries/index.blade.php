@@ -15,7 +15,7 @@
 @stop
 
 @section('content')
-<div class="box">
+<div class="box box-success">
     <div class="box-header">
         <h3 class="box-title">Data Table With Full Features</h3>
     </div>
@@ -58,7 +58,7 @@
                     <td>{{$lottery->always_active}}</td>
                     <td>
                         <a href="{{route('admin.lotteries.edit', ['lottery' => $lottery->id])}}">
-                            <button class="btn btn-info">
+                            <button class="btn btn-success">
                                 <i class="fa fa-edit"></i>
                             </button>
                         </a>
@@ -80,7 +80,7 @@
     <!-- /.box-body -->
     <div class="box-footer">
         <a href="{{route('admin.lotteries.create')}}">
-            <button class="btn btn-primary">
+            <button class="btn btn-success">
                 Create
             </button>
         </a>

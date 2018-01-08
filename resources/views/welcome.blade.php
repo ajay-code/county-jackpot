@@ -45,9 +45,33 @@
 					<li class="nav-item">
 						<a class="nav-link" href="#">Contact</a>
 					</li>
+					@guest
 					<li class="nav-item">
 						<a class="nav-link" href="/login">Sign in</a>
 					</li>
+					@endguest
+					@auth
+					<li class="nav-item dropdown">
+						<a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">My Account</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
+							<a class="dropdown-item" href="/lotteries">Lotteries</a>
+							<a class="dropdown-item" href="/my-lotteries">My Lotteries</a>
+							<a class="dropdown-item" href="/profile">Profile</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="#"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                                >
+                                    {{ trans('adminlte::adminlte.log_out') }}
+                                </a>
+                                <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
+                                    @if(config('adminlte.logout_method'))
+                                        {{ method_field(config('adminlte.logout_method')) }}
+                                    @endif
+                                    {{ csrf_field() }}
+                                </form>
+						</div>
+					</li>
+					@endauth
 				</ul>
 		</nav>
 		<div class="jumbotron jumbotron-fluid">
@@ -170,66 +194,6 @@
 		<a href="#" style=" font-weight: 700; cursor: pointer;">Go to results page</a>
 	</h3>
 	</section>
-	<section class="container-fluid process banner2 clearfix">
-		<div class="text-center">
-			<img src="img/logo.png" width="200px" height="200px">
-		</div>
-		</hr>
-		<h1 class="text-center">Some of our winners from previous lottery draws</h1>
-		<div class="row text-center">
-			<div class="col-12 pl-50 pr-50">
-
-				<!-- Place somewhere in the <body> of your page -->
-				<div class="flexslider">
-					<ul class="slides">
-						<li>
-							<img src="img/winner1.jpg" />
-							<p class="slider_caption">John L</p>
-							<p class="slider_county">Norwington County, 14632 UK</p>
-							<p class="slider_caption2">Winning Amount: $10,000</p>
-						</li>
-						<li>
-							<img src="img/winner2.jpg" />
-							<p class="slider_caption">Kevin R</p>
-							<p class="slider_county">Norwington County, 14632 UK</p>
-							<p class="slider_caption2">Winning Amount: $10,000</p>
-						</li>
-						<li>
-							<img src="img/winner3.jpg" />
-							<p class="slider_caption">Ron M</p>
-							<p class="slider_county">Norwington County, 14632 UK</p>
-							<p class="slider_caption2">Winning Amount: $10,000</p>
-						</li>
-						<li>
-							<img src="img/winner4.jpg" />
-							<p class="slider_caption">John</p>
-							<p class="slider_county">Norwington County, 14632 UK</p>
-							<p class="slider_caption2">Winning Amount: $10,000</p>
-						</li>
-						<li>
-							<img src="img/winner5.jpg" />
-							<p class="slider_caption">Shane G</p>
-							<p class="slider_county">Norwington County, 14632 UK</p>
-							<p class="slider_caption2">Winning Amount: $10,000</p>
-
-						</li>
-						<li>
-							<img src="img/winner1.jpg" />
-							<p class="slider_caption">Paul N</p>
-							<p class="slider_county">Norwington County, 14632 UK</p>
-							<p class="slider_caption2">Winning Amount: $10,000</p>
-						</li>
-						<!-- items mirrored twice, total of 12 -->
-					</ul>
-				</div>
-			</div>
-		</div>
-
-	</section>
-
-
-
-
 
 	<section>
 

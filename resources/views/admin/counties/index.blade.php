@@ -15,7 +15,7 @@
 @stop
 
 @section('content')
-<div class="box">
+<div class="box box-success">
     <div class="box-header">
         <h3 class="box-title">Counties List</h3>
     </div>
@@ -42,7 +42,7 @@
                     <td>{{$county->name}}</td>
                     <td>
                         <a href="{{route('admin.counties.edit', ['county' => $county->id])}}">
-                            <button class="btn btn-info">
+                            <button class="btn btn-success">
                                 <i class="fa fa-edit"></i>
                             </button>
                         </a>
@@ -64,7 +64,7 @@
     <!-- /.box-body -->
     <div class="box-footer">
         <a href="{{route('admin.counties.create')}}">
-            <button class="btn btn-primary">
+            <button class="btn btn-success">
                 Create
             </button>
         </a>

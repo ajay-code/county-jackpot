@@ -9,15 +9,13 @@
                 <span v-text="answerImageRepeatTime"></span> Times
             </div>
         </transition>
-        <transition name="slide">
-            <section v-if="timeleft" class="img-display shake">
+        <transition name="slide" mode="out-in">
+            <section v-if="timeleft" class="img-display shake" :key="'images-displayable'">
                 <div v-for="(image, index) in displayableImages" :key="index">
                     <img :src="`/game/${image.name}`" alt="">
                 </div>
             </section>
-        </transition>
-        <transition name="slide">
-            <section v-if="timeleft == 0" class="img-display">
+            <section v-if="timeleft == 0" class="img-display" :key="'images-question'">
                 <div v-for="(image, index) in questionImages" :key="index" @click="checkAnswer(image.id)">
                     <img :src="`/game/${image.name}`" alt="">
                 </div>
@@ -31,7 +29,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from "axios";
 import Images from "@/data/images";
 import localforage from "localforage";
 export default {
@@ -47,40 +45,42 @@ export default {
                 "3": "",
                 "2": ""
             },
-            timeleft: 5,
+            timeleft: 15,
             answer: "",
             isAnswered: false,
             answerImageRepeatTime: ""
         };
     },
     props: {
-        lottery: {
+        lotteryTransaction: {
             type: Object
         }
     },
     created() {
         this.images = Images;
-        localforage.setItem("lotteryIdForGame", this.lottery.id).then(() => {
-            return localforage.getItem("lotteryIdForGame");
-        });
         this.init();
+        console.log("created");
     },
     mounted() {
-        this.selectAnswer();
-        this.selectQuestionImages();
         let interval = setInterval(() => {
             this.timeleft--;
             if (this.timeleft <= 0) {
                 window.clearInterval(interval);
             }
         }, 1000);
+        console.log("mounted");
     },
     methods: {
         init() {
             let filteredArray = this.selectRepeatingImages();
             this.setDisplayableImages(filteredArray);
             this.shuffleDisplayableImages();
+            this.setUpAnswer();
             console.log("done");
+        },
+        setUpAnswer() {
+            this.selectAnswer();
+            this.selectQuestionImages();
         },
         selectRepeatingImages() {
             let except = [];
@@ -155,35 +155,27 @@ export default {
             this.questionImages = _.shuffle(this.questionImages);
         },
         checkAnswer(id) {
-            let result = '';
+            let result = "";
             this.isAnswered = true;
-            if(this.answer.id == id){
-                result = 'won';
-            }else{
-                result = 'lost';
+            if (this.answer.id == id) {
+                result = "won";
+            } else {
+                result = "lost";
             }
-            this.getTransactionChargeId().then(chargeId => {
-                axios.post(`game/result/store`, {
-                    charge_id: chargeId,
+            axios
+                .post(`/game/result/store`, {
+                    charge_id: this.lotteryTransaction.charge_id,
                     result
-                }).then(()=>{
-                    this.clear();
-                    if(result == 'won'){
-                        window.location = '/my-lotteries'
-                    }else{
-                        alert('you lost')
-                        window.location = '/transactions'
-                    }
                 })
-            })
-        },
-        clear(){
-            localforage.clear();
-        },
-        getTransactionChargeId(){
-            return localforage.getItem("lotteryTransactionChargeIdForGame");
+                .then(() => {
+                    if (result == "won") {
+                        window.location = "/my-lotteries";
+                    } else {
+                        alert("you lost");
+                        window.location = "/transactions";
+                    }
+                });
         }
-
     }
 };
 </script>
@@ -199,8 +191,10 @@ export default {
     font-size: 0;
     flex-flow: row wrap;
     display: flex;
+    max-width: 600px;
+    margin: 20px auto;
     justify-content: center;
-    padding: 50px 300px;
+    padding: 50px;
 }
 
 .img-display div {
@@ -208,6 +202,7 @@ export default {
     width: calc(100% * (1/4) - 10px);
     position: relative;
     margin: 5px;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .shake div {
@@ -228,27 +223,7 @@ export default {
     height: 100%;
 }
 
-@keyframes shake {
-    10% {
-        transform: rotate3d(0, 1, 0, 30deg);
-    }
-    50% {
-        transform: rotate3d(0, 1, 1, 30deg);
-    }
-    100% {
-        transform: rotate3d(0, 0, 0, 0deg);
-    }
-}
 
-.slide-enter-active,
-.slide-leave-active {
-    animation: in 1s ease-in-out 600ms forwards;
-}
-
-.slide-enter,
-.slide-leave-to {
-    animation: out 600ms ease-in-out forwards;
-}
 
 .fade-enter-active,
 .fade-leave-active {
@@ -258,6 +233,13 @@ export default {
 .fade-enter,
 .fade-leave-to {
     opacity: 0;
+}
+
+.slide-enter-active{
+    animation: in 0.5s ease-out;
+}
+.slide-leave-active {
+    animation: out 1s ease-in-out;
 }
 
 @keyframes out {
@@ -277,6 +259,15 @@ export default {
     100% {
         opacity: 1;
         transform: translateX(0px);
+    }
+}
+
+@keyframes shake {
+    50% {
+        transform: rotate3d(0, 1, 1, 5deg);
+    }
+    100% {
+        transform: rotate3d(0, 0, 0, 0deg);
     }
 }
 </style>

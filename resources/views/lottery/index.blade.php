@@ -7,7 +7,7 @@
 @stop
 
 @section('content')
-    <div id="app" class="box">
+    <div id="app" class="box box-success">
         <div class="box-header">
             <h3 class="box-title">Lotteries</h3>
         </div>
@@ -18,6 +18,20 @@
         </div>
     </div>
     {{--  {{ var_dump($lotteries) }}  --}}
+@stop
+
+@section('css')
+<style>
+    .box{
+        min-height: 80vh;
+    }
+    h3{
+        margin-top: 9px;
+    }
+    .featured-content{
+        margin: 25px 0;
+    }
+</style>
 @stop
 
 @section('js')

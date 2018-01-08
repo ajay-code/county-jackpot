@@ -1,16 +1,15 @@
 @extends('admin.layout.master')
 
-@section('title', 'Profile')
+@section('title', 'Profile | Change Password')
 
 @section('content_header')
-    <h1>Profile</h1>
 @stop
 
 @section('content')
 <div class="row">
 
 <div class="col-md-8 col-md-offset-2">
-    <div class="box box-primary">
+    <div class="box box-success">
         <div class="box-header with-border">
             <h3 class="box-title">
                 @if ($user->password)
@@ -49,7 +48,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">
+                <button type="submit" class="btn btn-success pull-right">
                     Set Password
                 </button>
             </div>
@@ -100,7 +99,7 @@
                 </div>
             </div>
             <div class="box-footer">
-                <button type="submit" class="btn btn-primary pull-right">
+                <button type="submit" class="btn btn-success pull-right">
                     Set Password
                 </button>
             </div>

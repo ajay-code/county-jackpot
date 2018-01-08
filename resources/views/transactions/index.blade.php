@@ -3,22 +3,20 @@
 @section('title', 'Counties')
 
 @section('content_header')
-    <h1>Lotteries Bought</h1>
+    <h1>Transactions</h1>
     <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home
             </a>
         </li>
-        <li class="active">Counties</li>
+        <li class="active">Transactions</li>
     </ol>
 @stop
 
 @section('content')
-<div class="box">
-    <div class="box-header">
-        {{--  <h3 class="box-title">Counties List</h3>  --}}
-    </div>
+<div class="box box-success">
+    
     <!-- /.box-header -->
     <div class="box-body">
         <table id="datatable-transactions" class="table table-bordered table-striped">
@@ -36,15 +34,27 @@
                     <th>
                         status
                     </th>
+                    <th>
+                        On
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                @foreach ($transactions as $transaction)
+                @foreach ($transactions as $index =>$transaction)
                 <tr>
-                    <td>{{$transaction->id}}</td>
+                    <td>{{$index + 1}}</td>
                     <td><i class="fa fa-gbp"></i>{{(float)$transaction->amount / 100 }}</td>
                     <td>{{$transaction->lottery->name}}</td>
-                    <td>{{$transaction->status}}</td>
+                    <td>
+                        @if ($transaction->status == 'incomplete')
+                            <a href="lotteries/{{$transaction->id}}/game">{{$transaction->status}}</a>
+                        @elseif($transaction->status == 'entered')
+                            Entered draw successfully
+                        @elseif($transaction->status == 'failed')
+                            Failed to enter draw
+                        @endif
+                    </td>
+                    <td>{{$transaction->created_at->format('jS F, Y')}}</td>
                 </tr>
                 @endforeach
             </tbody>

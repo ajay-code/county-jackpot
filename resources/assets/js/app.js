@@ -20,6 +20,7 @@ window.Vue.component('user-datatable', require('./components/admin/datatables/Us
 window.Vue.component('lottery-display-item', require('./components/lottery/LotteryDisplayItem.vue'));
 window.Vue.component('lottery', require('./components/lottery/Lottery.vue'));
 window.Vue.component('game', require('./components/game/Game.vue'));
+window.Vue.component('loader', require('./components/loader/Loader.vue'));
 
 const app = new window.Vue({
     el: '#app'

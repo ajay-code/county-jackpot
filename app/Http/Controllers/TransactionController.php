@@ -22,8 +22,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $user = auth()->user()->load('transactions.lottery');
-        $transactions = $user->transactions;
+        $user = auth()->user();
+        $transactions = $user->transactions()->latest()->get();
         return view('transactions.index', compact('transactions', 'user'));
     }
 

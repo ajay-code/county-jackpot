@@ -39,7 +39,7 @@
 				</div>
 				<!-- /.col -->
 				<div class="col-xs-4">
-					<button type="submit" class="btn btn-primary btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
+					<button type="submit" class="btn btn-success btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
 				</div>
 				<!-- /.col -->
 			</div>
