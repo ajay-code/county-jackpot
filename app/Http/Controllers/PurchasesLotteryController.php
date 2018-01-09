@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\ParentLottery;
 use Stripe\Stripe;
-use Stripe\charge;
+use Stripe\Charge;
 use Stripe\Customer;
 
 class PurchasesLotteryController extends Controller

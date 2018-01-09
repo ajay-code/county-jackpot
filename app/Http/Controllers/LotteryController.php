@@ -25,6 +25,7 @@ class LotteryController extends Controller
     public function index()
     {
         $lotteries = ParentLottery::notExpired()->get();
+        // $lotteries->load('currentLottery');
         return view('lottery.index', compact('lotteries'));
     }
 

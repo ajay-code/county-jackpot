@@ -74,10 +74,10 @@
 		<div class="jumbotron jumbotron-fluid">
 			<div class="container">
 				<h1 class="display-3 text-center banner-line1">Win Supercash Everyday</h1>
-				<p class="lead text-center banner-line2">We are one of the best and most trusted lottery website in UK</p>
+				<p class="lead text-center banner-line2">We are one of the best and most trusted weekly draw websites in the UK</p>
 			</div>
 			<div class="overlay"></div>
-			<a href="#">
+			<a href="/lotteries">
 				<div class="coin"></div>
 			</a>
 			<div class="side"></div>
@@ -88,7 +88,7 @@
 
 
 	<section id="app" class="featured">
-		<h1 class="text-center featured-heading">Lotteries </h1>
+		<h1 class="text-center featured-heading">Weekly Draws </h1>
 		<div class="container">
 			<div class="container">
 
@@ -124,7 +124,7 @@
 					<img class="card-img-top img-fluid" src="img/cash.png" alt="Card image cap">
 				</div>
 				<div class="card-body">
-					<h4 class="card-title text-center">1. Pay lottery Fees</h4>
+					<h4 class="card-title text-center">1. Pay Entery Fees</h4>
 					<p class="card-text text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
 						bit longer.</p>
 				</div>
