@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             UsersTableSeeder::class,
             AdminTableSeeder::class,
             CountiesTableSeeder::class,
+            LotterySeeder::class,
         ]);
     }
 }

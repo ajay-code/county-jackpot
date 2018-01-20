@@ -77,7 +77,7 @@ class LotteryController extends Controller
     public function edit(ParentLottery $parentLottery)
     {
         $counties = County::all();
-        return view('admin.lotteries.edit', compact('counties','parentLottery'));
+        return view('admin.lotteries.edit', compact('counties', 'parentLottery'));
     }
 
     /**

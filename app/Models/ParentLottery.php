@@ -4,9 +4,12 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class ParentLottery extends Model
 {
+    use SoftDeletes;
+
     /**
      * The attributes that are mass assignable.
      *
@@ -15,7 +18,6 @@ class ParentLottery extends Model
     protected $fillable = [
         'county_id',
         'name',
-        'status',
         'prize',
         'entry_fee',
         'expire_at',
@@ -30,7 +32,8 @@ class ParentLottery extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'expire_at'
+        'expire_at',
+        'deleted_at'
     ];
 
     /**

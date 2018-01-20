@@ -18,7 +18,7 @@ class CreateUserLotteriesTable extends Migration
             $table->integer('lottery_id')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->integer('lottery_transaction_id')->unsigned();
-            $table->varchar('draw_number', 20);
+            $table->string('draw_number', 20);
             $table->timestamps();
 
             $table->foreign('lottery_id')

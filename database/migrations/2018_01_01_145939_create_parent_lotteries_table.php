@@ -22,7 +22,8 @@ class CreateParentLotteriesTable extends Migration
             $table->integer('prize');
             $table->date('expire_at');
             $table->timestamps();
-            
+            $table->softDeletes();
+
             $table->foreign('county_id')
                 ->references('id')->on('counties');
         });

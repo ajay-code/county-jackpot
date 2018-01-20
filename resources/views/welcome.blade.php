@@ -6,8 +6,8 @@
 	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
-	    crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Salsa|Share|Sniglet" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oregano|Passion+One" rel="stylesheet">
@@ -18,7 +18,7 @@
 
 <body>
 	<section>
-		<nav class="navbar navbar-expand-md navbar-light bg-faded clearfix">
+		<nav class="navbar fixed-top navbar-expand-md navbar-light bg-faded clearfix">
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content"
 			    aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -73,14 +73,10 @@
 		</nav>
 		<div class="jumbotron jumbotron-fluid">
 			<div class="container">
-				<h1 class="display-3 text-center banner-line1">Win Supercash Everyday</h1>
-				<p class="lead text-center banner-line2">We are one of the best and most trusted weekly draw websites in the UK</p>
+				<h1 class="display-3 text-center banner-line1">Win your county's next jackpot</h1>
+				{{--  <p class="lead text-center banner-line2">We are one of the best and most trusted weekly draw websites in the UK</p>  --}}
 			</div>
 			<div class="overlay"></div>
-			<a href="/lotteries">
-				<div class="coin"></div>
-			</a>
-			<div class="side"></div>
 
 		</div>
 	</section>
@@ -88,7 +84,7 @@
 
 
 	<section id="app" class="featured">
-		<h1 class="text-center featured-heading">Weekly Draws </h1>
+		<h1 class="text-center featured-heading">Active draws </h1>
 		<div class="container">
 			<div class="container">
 
@@ -304,7 +300,7 @@
 			<div class="footer-bottom">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-12">
+						<div class="col-12">
 							<!--Footer Bottom-->
 							<p class="text-center">&copy; Copyright 2016 - City of USA. All rights reserved.</p>
 						</div>
@@ -317,12 +313,10 @@
 
 	<script src="js/app.js"></script>
 
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-	    crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
-	    crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
-	    crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider-min.js"></script>
 
 	<script type="text/javascript">

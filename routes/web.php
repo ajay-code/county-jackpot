@@ -13,13 +13,14 @@
 
 Route::get('/', 'MainController@index');
 Route::view('/test', 'test');
+Route::view('/terms-and-conditions', 'terms-and-conditions');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/', function(){
+    Route::get('/', function () {
         return redirect()->route('admin.login');
     });
     Route::get('/login', 'AdminAuth\LoginController@showLoginForm')->name('login');
@@ -41,7 +42,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 /**
- * Soclia login 
+ * Soclia login
  */
 Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
 Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');

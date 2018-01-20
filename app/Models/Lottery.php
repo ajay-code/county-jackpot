@@ -4,9 +4,11 @@ namespace App\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Lottery extends Model
 {
+
     /**
      * The attributes that are mass assignable.
      *
@@ -30,7 +32,7 @@ class Lottery extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'expire_at'
+        'expire_at',
     ];
 
     /**
