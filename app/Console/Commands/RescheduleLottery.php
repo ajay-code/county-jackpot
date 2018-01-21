@@ -41,9 +41,9 @@ class RescheduleLottery extends Command
     {
         $parentLotteries = ParentLottery::expired()->alwaysActive()->get();
 
-        foreach($parentLotteries as $parentLottery){
+        foreach ($parentLotteries as $parentLottery) {
             $currentLottery = $parentLottery->currentLottery();
-            if($currentLottery->hasWinner()){
+            if ($currentLottery->hasWinner()) {
                 $parentLottery->expire_at = Carbon::now()->addWeek();
                 $parentLottery->save();
                 $parentLottery->lotteries()->create($parentLottery->toArray());

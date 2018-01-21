@@ -26,13 +26,9 @@
 
                     </h4>
                     
-
-                       
-                    
         
                     <div class="text-center" style="margin-top:6rem">
-
-                        <a href="/lotteries/{{$lotteryTransaction->id}}/play" >
+                        <a href="/lotteries/{{$parentLottery->id}}/play" >
                             <button class="btn btn-success btn-lg" style="padding:11px 67px">Continue</button>
                         </a>
                     </div>

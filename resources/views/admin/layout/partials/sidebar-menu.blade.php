@@ -14,7 +14,13 @@
 <li class="{!! classActivePath('admin/lotteries') !!}">
     <a href="{{route('admin.lotteries.index')}}">
         <i class="fa fa-fw fa-trophy"></i>
-        <span>Lotteries</span>
+        <span>Draws Info</span>
+    </a>
+</li>
+<li class="{!! classActivePath('admin/lotteries/log') !!}">
+    <a href="{{route('admin.lotteries.log')}}">
+        <i class="fa fa-fw fa-trophy"></i>
+        <span>Active/Expired Draws</span>
     </a>
 </li>
 <li class="{!! classActivePath('admin/users') !!}">

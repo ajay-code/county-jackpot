@@ -15,6 +15,12 @@ Route::put('/lotteries/{parentLottery}/', 'Admin\LotteryController@update')->nam
 Route::delete('/lotteries/{parentLottery}/', 'Admin\LotteryController@destroy')->name('lotteries.destroy');
 
 /**
+ * Logs
+ */
+Route::get('/lotteries/log', 'Admin\LotteryLogController@index')->name('lotteries.log');
+
+
+/**
  * Password
  */
 Route::get('password/change', 'Admin\PasswordController@change')->name('password.change');

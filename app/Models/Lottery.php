@@ -66,6 +66,27 @@ class Lottery extends Model
     }
 
     /**
+     * Tells if the Lottery Has Expired
+     */
+    public function hasExpired()
+    {
+        return $this->expire_at->lt(Carbon::now());
+    }
+
+    /**
+     * Tells if the Lottery is Active
+     */
+    public function isActive()
+    {
+        return !$this->expire_at->lt(Carbon::now());
+    }
+
+    public function entryInPound()
+    {
+        return $this->entry_fee / 100;
+    }
+
+    /**
      * Relationships
      */
     public function county()

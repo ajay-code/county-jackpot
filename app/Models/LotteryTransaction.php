@@ -11,7 +11,6 @@ class LotteryTransaction extends Model
         'lottery_id',
         'amount',
         'charge_id',
-        'status',
     ];
 
     /**

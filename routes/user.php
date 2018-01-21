@@ -17,9 +17,9 @@ Route::post('password/update', 'PasswordController@update')->name('password.upda
 Route::get('lotteries', 'LotteryController@index')->name('lotteries');
 Route::get('lotteries/{parentLottery}/buy', 'LotteryController@buy');
 Route::post('lotteries/{parentLottery}/buy', 'PurchasesLotteryController@store');
-
-Route::get('lotteries/{lotteryTransaction}/game', 'LotteryController@game');
-Route::get('lotteries/{lotteryTransaction}/play', 'LotteryController@play');
+// game
+Route::get('lotteries/{parentLottery}/game', 'LotteryController@game');
+Route::get('lotteries/{parentLottery}/play', 'LotteryController@play');
 
 
 /**

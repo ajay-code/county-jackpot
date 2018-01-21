@@ -6,7 +6,6 @@
                 <div class="clash-card__image clash-card__image--barbarian">
                     <img src="/img/logo.png" alt="barbarian" />
                 </div>
-                <!-- <div class="clash-card__level clash-card__level--barbarian">Level 4</div> -->
                 <div class="clash-card__unit-name"><span v-text="lottery.name"></span></div>
                 <div class="clash-card__unit-description">
                     Remaining Time <span v-text="remainingTime"></span><br>
@@ -20,9 +19,9 @@
                         <div class="stat-value">Entry</div>
                     </div>
 
-                    <div class="one-third buy" @click="buy">
-                        <div class="stat">Buy</div>
-                        <div class="stat-value">Now</div>
+                    <div class="one-third buy" @click="play">
+                        <div class="stat">Enter </div>
+                        <div class="stat-value">Draw</div>
                     </div>
  
                     <div class="one-third no-border">
@@ -61,30 +60,8 @@ export default {
             type: Object
         }
     },
-    created() {
-        this.stripe = StripeCheckout.configure({
-            key: Lottery.stripeKey,
-            image: "https://stripe.com/img/documentation/checkout/marketplace.png",
-            locale: "auto",
-            token: token => {
-                this.formData.stripeEmail = token.email;
-                this.formData.stripeToken = token.id;
-                console.log("Loading....");
-                this.loading = true;
-                axios
-                    .post(`/lotteries/${this.lottery.parent_lottery_id}/buy`, this.formData)
-                    .then(res => {
-                        let transaction = res.data;
-                        window.location = `/lotteries/${transaction.id}/game`;
-                    }).catch(err => {
-                        this.loading = false;
-                        alert('something went wrong')
-                    })
-            }
-        });
-    },
     computed: {
-        entry(){
+        entry() {
             return this.lottery.entry_fee / 100;
         },
         expireAt() {
@@ -110,14 +87,8 @@ export default {
         updateTime() {
             this.currentTime = new Date();
         },
-        buy() {
-            this.stripe.open({
-                name: this.lottery.name,
-                email: Lottery.user.email,
-                currency: "gbp",
-                description: this.lottery.name,
-                amount: this.lottery.entry_fee
-            });
+        play() {
+            window.location = `/lotteries/${this.lottery.parent_lottery_id}/game`;
         }
     },
     mounted() {

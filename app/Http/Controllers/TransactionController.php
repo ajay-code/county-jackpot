@@ -47,7 +47,5 @@ class TransactionController extends Controller
         $lotteryTransaction->update([
             'status' => $result
         ]);
-        
-
     }
 }

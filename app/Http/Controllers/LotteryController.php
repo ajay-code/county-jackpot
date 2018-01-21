@@ -42,15 +42,11 @@ class LotteryController extends Controller
     /**
      * Game
      *
-     * @param \App\Models\LotteryTransaction
+     * @param \App\Models\ParentLottery
      */
-    public function game(LotteryTransaction $lotteryTransaction)
+    public function game(ParentLottery $parentLottery)
     {
-        if($lotteryTransaction->status == 'incomplete'){
-            return view('lottery.game.index', compact('lotteryTransaction'));
-        }else{
-            return redirect()->route('transactions');
-        }
+        return view('lottery.game.index', compact('parentLottery'));
     }
     
     /**
@@ -58,12 +54,8 @@ class LotteryController extends Controller
      *
      * @param \App\Models\LotteryTransaction
      */
-    public function play(LotteryTransaction $lotteryTransaction)
+    public function play(ParentLottery $parentLottery)
     {
-        if($lotteryTransaction->status == 'incomplete'){
-            return view('lottery.game.play', compact('lotteryTransaction'));
-        }else{
-            return redirect()->route('transactions');
-        }
+        return view('lottery.game.play', compact('parentLottery'));
     }
 }

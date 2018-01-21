@@ -17,7 +17,5 @@
 @stop
 
 @section('js')
-    <script src="https://checkout.stripe.com/checkout.js"></script>
-    {{--  <script src="https://js.stripe.com/v3/"></script>  --}}
     <script src="{{ asset('js/app.js') }}"></script>
 @stop

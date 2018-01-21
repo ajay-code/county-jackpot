@@ -1,10 +1,11 @@
 <template>
     <div>
+        <loader v-if="loading"></loader>
         <transition name="fade" mode="out-in">
             <div v-if="timeleft" class="interval" :key="'time-left'">
                 <span v-text="timeleft"></span> seconds left
             </div>
-            <div v-if="!timeleft" class="interval" ::key="'question'">
+            <div v-if="timeleft == 0 && !showBuy" class="interval" ::key="'question'">
                 Which image was repeated
                 <span v-text="answerImageRepeatTime"></span> Times
             </div>
@@ -15,7 +16,7 @@
                     <img :src="`/game/${image.name}`" alt="">
                 </div>
             </section>
-            <section v-if="timeleft == 0" class="img-display" :key="'images-question'">
+            <section v-if="timeleft == 0 && !showBuy" class="img-display" :key="'images-question'">
                 <div v-for="(image, index) in questionImages" :key="index" @click="checkAnswer(image.id)">
                     <img :src="`/game/${image.name}`" alt="">
                 </div>
@@ -36,6 +37,13 @@ export default {
     data() {
         return {
             images: [],
+            answer: "",
+            stripe: "",
+            formData: {
+                stripeEmail: "",
+                stripeToken: ""
+            },
+            loading: false,
             questionImages: [],
             displayableImages: [],
             questionImagesArrayLength: 4,
@@ -46,19 +54,21 @@ export default {
                 "2": ""
             },
             timeleft: 15,
-            answer: "",
             isAnswered: false,
-            answerImageRepeatTime: ""
+            answerImageRepeatTime: "",
+            showBuy: false,
+            userAnswer: null
         };
     },
     props: {
-        lotteryTransaction: {
+        parentLottery: {
             type: Object
         }
     },
     created() {
         this.images = Images;
         this.init();
+        this.stripeInit();
         console.log("created");
     },
     mounted() {
@@ -71,6 +81,32 @@ export default {
         console.log("mounted");
     },
     methods: {
+        stripeInit() {
+            this.stripe = StripeCheckout.configure({
+                key: Lottery.stripeKey,
+                image: "https://stripe.com/img/documentation/checkout/marketplace.png",
+                locale: "auto",
+                token: token => {
+                    this.formData.stripeEmail = token.email;
+                    this.formData.stripeToken = token.id;
+                    console.log("Loading....");
+                    this.loading = true;
+                    axios
+                        .post(`/lotteries/${this.parentLottery.id}/buy`, {
+                            ...this.formData,
+                            result: this.userAnswer == this.answer.id ? "won" : "lost"
+                        })
+                        .then(res => {
+                            let transaction = res.data;
+                            window.location = "/my-lotteries";
+                        })
+                        .catch(err => {
+                            this.loading = false;
+                            alert("something went wrong");
+                        });
+                }
+            });
+        },
         init() {
             let filteredArray = this.selectRepeatingImages();
             this.setDisplayableImages(filteredArray);
@@ -155,26 +191,21 @@ export default {
             this.questionImages = _.shuffle(this.questionImages);
         },
         checkAnswer(id) {
-            let result = "";
             this.isAnswered = true;
-            if (this.answer.id == id) {
-                result = "won";
-            } else {
-                result = "lost";
+            this.showBuy = true;
+            if (!this.userAnswer) {
+                this.userAnswer = id;
             }
-            axios
-                .post(`/game/result/store`, {
-                    charge_id: this.lotteryTransaction.charge_id,
-                    result
-                })
-                .then(() => {
-                    if (result == "won") {
-                        window.location = "/my-lotteries";
-                    } else {
-                        alert("you lost");
-                        window.location = "/transactions";
-                    }
-                });
+            setTimeout(this.buy(), 2000);
+        },
+        buy() {
+            this.stripe.open({
+                name: this.parentLottery.name,
+                email: Lottery.user.email,
+                currency: "gbp",
+                description: this.parentLottery.name,
+                amount: this.parentLottery.entry_fee
+            });
         }
     }
 };
@@ -202,7 +233,7 @@ export default {
     width: calc(100% * (1/4) - 10px);
     position: relative;
     margin: 5px;
-    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .shake div {
@@ -223,8 +254,6 @@ export default {
     height: 100%;
 }
 
-
-
 .fade-enter-active,
 .fade-leave-active {
     transition: opacity 0.5s ease;
@@ -235,7 +264,7 @@ export default {
     opacity: 0;
 }
 
-.slide-enter-active{
+.slide-enter-active {
     animation: in 0.5s ease-out;
 }
 .slide-leave-active {

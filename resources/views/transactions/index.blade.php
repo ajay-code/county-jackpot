@@ -32,9 +32,6 @@
                         Lottery
                     </th>
                     <th>
-                        status
-                    </th>
-                    <th>
                         On
                     </th>
                 </tr>
@@ -45,15 +42,6 @@
                     <td>{{$index + 1}}</td>
                     <td><i class="fa fa-gbp"></i>{{(float)$transaction->amount / 100 }}</td>
                     <td>{{$transaction->lottery->name}}</td>
-                    <td>
-                        @if ($transaction->status == 'incomplete')
-                            <a href="lotteries/{{$transaction->id}}/game">{{$transaction->status}}</a>
-                        @elseif($transaction->status == 'entered')
-                            Entered draw successfully
-                        @elseif($transaction->status == 'failed')
-                            Failed to enter draw
-                        @endif
-                    </td>
                     <td>{{$transaction->created_at->format('jS F, Y')}}</td>
                 </tr>
                 @endforeach

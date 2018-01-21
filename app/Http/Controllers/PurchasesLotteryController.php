@@ -49,8 +49,15 @@ class PurchasesLotteryController extends Controller
             'charge_id' => $charge->id,
             'lottery_id' => $currentLottery->id,
             'amount' => $charge->amount,
-            ]);
+        ]);
 
-        return $transaction;
+        $draw = $user->lotteries()->create([
+            'lottery_id' => $currentLottery->id,
+            'lottery_transaction_id' => $transaction->id,
+            'result' => $request->result,
+            'draw_number' => sprintf('%010d', mt_rand(0, 9999999999))
+        ]);
+
+        return $draw;
     }
 }

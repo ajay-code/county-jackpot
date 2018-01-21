@@ -5028,33 +5028,6 @@ module.exports = function normalizeComponent (
 /* 3 */
 /***/ (function(module, exports) {
 
-var g;
-
-// This works in non-strict mode
-g = (function() {
-	return this;
-})();
-
-try {
-	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1,eval)("this");
-} catch(e) {
-	// This works if the window reference is available
-	if(typeof window === "object")
-		g = window;
-}
-
-// g can still be undefined, but nothing to do about it...
-// We return undefined, instead of nothing here, so it's
-// easier to handle this case. if(!global) { ...}
-
-module.exports = g;
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports) {
-
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -5134,7 +5107,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 5 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -5352,6 +5325,33 @@ function applyToTag (styleElement, obj) {
     styleElement.appendChild(document.createTextNode(css))
   }
 }
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || Function("return this")() || (1,eval)("this");
+} catch(e) {
+	// This works if the window reference is available
+	if(typeof window === "object")
+		g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
 
 
 /***/ }),
@@ -20045,14 +20045,14 @@ module.exports = localforage_js;
 
 },{"3":3}]},{},[4])(4)
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5)))
 
 /***/ }),
 /* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(137);
-module.exports = __webpack_require__(195);
+module.exports = __webpack_require__(200);
 
 
 /***/ }),
@@ -20081,7 +20081,7 @@ window.Vue.component('user-datatable', __webpack_require__(166));
 window.Vue.component('lottery-display-item', __webpack_require__(179));
 window.Vue.component('lottery', __webpack_require__(184));
 window.Vue.component('game', __webpack_require__(189));
-window.Vue.component('loader', __webpack_require__(199));
+window.Vue.component('loader', __webpack_require__(195));
 
 var app = new window.Vue({
   el: '#app'
@@ -37242,7 +37242,7 @@ if (token) {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(7)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(7)(module)))
 
 /***/ }),
 /* 140 */
@@ -50558,7 +50558,7 @@ Vue$3.compile = compileToFunctions;
 
 module.exports = Vue$3;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(161).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(161).setImmediate))
 
 /***/ }),
 /* 161 */
@@ -50810,7 +50810,7 @@ exports.clearImmediate = clearImmediate;
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3), __webpack_require__(129)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(5), __webpack_require__(129)))
 
 /***/ }),
 /* 163 */
@@ -50993,7 +50993,7 @@ var content = __webpack_require__(168);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("38dd970b", content, false);
+var update = __webpack_require__(4)("38dd970b", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -51012,7 +51012,7 @@ if(false) {
 /* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(undefined);
+exports = module.exports = __webpack_require__(3)(undefined);
 // imports
 
 
@@ -52877,7 +52877,7 @@ var content = __webpack_require__(181);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("3cdde54c", content, false);
+var update = __webpack_require__(4)("3cdde54c", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -52896,7 +52896,7 @@ if(false) {
 /* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(undefined);
+exports = module.exports = __webpack_require__(3)(undefined);
 // imports
 
 
@@ -53108,7 +53108,7 @@ var content = __webpack_require__(186);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("6f219a82", content, false);
+var update = __webpack_require__(4)("6f219a82", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -53127,7 +53127,7 @@ if(false) {
 /* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(undefined);
+exports = module.exports = __webpack_require__(3)(undefined);
 // imports
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);", ""]);
 
@@ -53145,7 +53145,6 @@ exports.push([module.i, "\n*[data-v-709f841c],\n*[data-v-709f841c]:before,\n*[da
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_localforage__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_localforage__);
-//
 //
 //
 //
@@ -53209,29 +53208,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             type: Object
         }
     },
-    created: function created() {
-        var _this = this;
-
-        this.stripe = StripeCheckout.configure({
-            key: Lottery.stripeKey,
-            image: "https://stripe.com/img/documentation/checkout/marketplace.png",
-            locale: "auto",
-            token: function token(_token) {
-                _this.formData.stripeEmail = _token.email;
-                _this.formData.stripeToken = _token.id;
-                console.log("Loading....");
-                _this.loading = true;
-                axios.post("/lotteries/" + _this.lottery.parent_lottery_id + "/buy", _this.formData).then(function (res) {
-                    var transaction = res.data;
-                    window.location = "/lotteries/" + transaction.id + "/game";
-                }).catch(function (err) {
-                    _this.loading = false;
-                    alert('something went wrong');
-                });
-            }
-        });
-    },
-
     computed: {
         entry: function entry() {
             return this.lottery.entry_fee / 100;
@@ -53259,14 +53235,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         updateTime: function updateTime() {
             this.currentTime = new Date();
         },
-        buy: function buy() {
-            this.stripe.open({
-                name: this.lottery.name,
-                email: Lottery.user.email,
-                currency: "gbp",
-                description: this.lottery.name,
-                amount: this.lottery.entry_fee
-            });
+        play: function play() {
+            window.location = "/lotteries/" + this.lottery.parent_lottery_id + "/game";
         }
     },
     mounted: function mounted() {
@@ -53325,11 +53295,11 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "one-third buy", on: { click: _vm.buy } },
+                { staticClass: "one-third buy", on: { click: _vm.play } },
                 [
-                  _c("div", { staticClass: "stat" }, [_vm._v("Buy")]),
+                  _c("div", { staticClass: "stat" }, [_vm._v("Enter ")]),
                   _vm._v(" "),
-                  _c("div", { staticClass: "stat-value" }, [_vm._v("Now")])
+                  _c("div", { staticClass: "stat-value" }, [_vm._v("Draw")])
                 ]
               ),
               _vm._v(" "),
@@ -53435,7 +53405,7 @@ var content = __webpack_require__(191);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(5)("25756010", content, false);
+var update = __webpack_require__(4)("25756010", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -53454,12 +53424,12 @@ if(false) {
 /* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(4)(undefined);
+exports = module.exports = __webpack_require__(3)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "\n.interval {\n    text-align: center;\n    padding: 20px;\n    font-size: 20px;\n}\n.img-display {\n    font-size: 0;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    max-width: 600px;\n    margin: 20px auto;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 50px;\n}\n.img-display div {\n    -webkit-box-flex: 1;\n        -ms-flex: auto;\n            flex: auto;\n    width: calc(100% * (1/4) - 10px);\n    position: relative;\n    margin: 5px;\n    -webkit-box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);\n            box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);\n}\n.shake div {\n    -webkit-animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n            animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n}\n.img-display div .number {\n    position: absolute;\n    left: 2px;\n    padding: 2px 12px;\n    color: white;\n    font-size: 36px;\n    background: #9a0909;\n}\n.img-display div img {\n    width: 100%;\n    height: 100%;\n}\n.fade-enter-active,\n.fade-leave-active {\n    -webkit-transition: opacity 0.5s ease;\n    transition: opacity 0.5s ease;\n}\n.fade-enter,\n.fade-leave-to {\n    opacity: 0;\n}\n.slide-enter-active{\n    -webkit-animation: in 0.5s ease-out;\n            animation: in 0.5s ease-out;\n}\n.slide-leave-active {\n    -webkit-animation: out 1s ease-in-out;\n            animation: out 1s ease-in-out;\n}\n@-webkit-keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@-webkit-keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n@keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n@-webkit-keyframes shake {\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 5deg);\n                transform: rotate3d(0, 1, 1, 5deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n@keyframes shake {\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 5deg);\n                transform: rotate3d(0, 1, 1, 5deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.interval {\n    text-align: center;\n    padding: 20px;\n    font-size: 20px;\n}\n.img-display {\n    font-size: 0;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n        -ms-flex-flow: row wrap;\n            flex-flow: row wrap;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    max-width: 600px;\n    margin: 20px auto;\n    -webkit-box-pack: center;\n        -ms-flex-pack: center;\n            justify-content: center;\n    padding: 50px;\n}\n.img-display div {\n    -webkit-box-flex: 1;\n        -ms-flex: auto;\n            flex: auto;\n    width: calc(100% * (1/4) - 10px);\n    position: relative;\n    margin: 5px;\n    -webkit-box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n            box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\n}\n.shake div {\n    -webkit-animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n            animation: shake 3s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite;\n}\n.img-display div .number {\n    position: absolute;\n    left: 2px;\n    padding: 2px 12px;\n    color: white;\n    font-size: 36px;\n    background: #9a0909;\n}\n.img-display div img {\n    width: 100%;\n    height: 100%;\n}\n.fade-enter-active,\n.fade-leave-active {\n    -webkit-transition: opacity 0.5s ease;\n    transition: opacity 0.5s ease;\n}\n.fade-enter,\n.fade-leave-to {\n    opacity: 0;\n}\n.slide-enter-active {\n    -webkit-animation: in 0.5s ease-out;\n            animation: in 0.5s ease-out;\n}\n.slide-leave-active {\n    -webkit-animation: out 1s ease-in-out;\n            animation: out 1s ease-in-out;\n}\n@-webkit-keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@keyframes out {\n0% {\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n100% {\n        -webkit-transform: translateX(-100vw);\n                transform: translateX(-100vw);\n}\n}\n@-webkit-keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n@keyframes in {\n0% {\n        opacity: 0;\n        -webkit-transform: translateX(100vw);\n                transform: translateX(100vw);\n}\n100% {\n        opacity: 1;\n        -webkit-transform: translateX(0px);\n                transform: translateX(0px);\n}\n}\n@-webkit-keyframes shake {\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 5deg);\n                transform: rotate3d(0, 1, 1, 5deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n@keyframes shake {\n50% {\n        -webkit-transform: rotate3d(0, 1, 1, 5deg);\n                transform: rotate3d(0, 1, 1, 5deg);\n}\n100% {\n        -webkit-transform: rotate3d(0, 0, 0, 0deg);\n                transform: rotate3d(0, 0, 0, 0deg);\n}\n}\n", ""]);
 
 // exports
 
@@ -53476,6 +53446,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__data_images___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__data_images__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage__ = __webpack_require__(135);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_localforage___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_localforage__);
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+//
 //
 //
 //
@@ -53514,6 +53487,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             images: [],
+            answer: "",
+            stripe: "",
+            formData: {
+                stripeEmail: "",
+                stripeToken: ""
+            },
+            loading: false,
             questionImages: [],
             displayableImages: [],
             questionImagesArrayLength: 4,
@@ -53524,20 +53504,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 "2": ""
             },
             timeleft: 15,
-            answer: "",
             isAnswered: false,
-            answerImageRepeatTime: ""
+            answerImageRepeatTime: "",
+            showBuy: false,
+            userAnswer: null
         };
     },
 
     props: {
-        lotteryTransaction: {
+        parentLottery: {
             type: Object
         }
     },
     created: function created() {
         this.images = __WEBPACK_IMPORTED_MODULE_1__data_images___default.a;
         this.init();
+        this.stripeInit();
         console.log("created");
     },
     mounted: function mounted() {
@@ -53553,6 +53535,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     methods: {
+        stripeInit: function stripeInit() {
+            var _this2 = this;
+
+            this.stripe = StripeCheckout.configure({
+                key: Lottery.stripeKey,
+                image: "https://stripe.com/img/documentation/checkout/marketplace.png",
+                locale: "auto",
+                token: function token(_token) {
+                    _this2.formData.stripeEmail = _token.email;
+                    _this2.formData.stripeToken = _token.id;
+                    console.log("Loading....");
+                    _this2.loading = true;
+                    __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post("/lotteries/" + _this2.parentLottery.id + "/buy", _extends({}, _this2.formData, {
+                        result: _this2.userAnswer == _this2.answer.id ? "won" : "lost"
+                    })).then(function (res) {
+                        var transaction = res.data;
+                        window.location = "/my-lotteries";
+                    }).catch(function (err) {
+                        _this2.loading = false;
+                        alert("something went wrong");
+                    });
+                }
+            });
+        },
         init: function init() {
             var filteredArray = this.selectRepeatingImages();
             this.setDisplayableImages(filteredArray);
@@ -53590,16 +53596,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             return filteredArray;
         },
         setDisplayableImages: function setDisplayableImages(filteredArray) {
-            var _this2 = this;
+            var _this3 = this;
 
             _.times(4, function () {
-                _this2.displayableImages.push(_this2.repeat["4"]);
+                _this3.displayableImages.push(_this3.repeat["4"]);
             });
             _.times(3, function () {
-                _this2.displayableImages.push(_this2.repeat["3"]);
+                _this3.displayableImages.push(_this3.repeat["3"]);
             });
             _.times(2, function () {
-                _this2.displayableImages.push(_this2.repeat["2"]);
+                _this3.displayableImages.push(_this3.repeat["2"]);
             });
 
             var index = 1;
@@ -53629,11 +53635,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.answer = this.repeat[selectFrom[selectedIndex]];
         },
         selectQuestionImages: function selectQuestionImages() {
-            var _this3 = this;
+            var _this4 = this;
 
             this.questionImages.push(this.answer);
             var filteredArray = this.images.filter(function (image) {
-                return image.id != _this3.answer.id;
+                return image.id != _this4.answer.id;
             });
             var index = 1;
             while (this.questionImages.length < this.questionImagesArrayLength) {
@@ -53643,23 +53649,20 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.questionImages = _.shuffle(this.questionImages);
         },
         checkAnswer: function checkAnswer(id) {
-            var result = "";
             this.isAnswered = true;
-            if (this.answer.id == id) {
-                result = "won";
-            } else {
-                result = "lost";
+            this.showBuy = true;
+            if (!this.userAnswer) {
+                this.userAnswer = id;
             }
-            __WEBPACK_IMPORTED_MODULE_0_axios___default.a.post("/game/result/store", {
-                charge_id: this.lotteryTransaction.charge_id,
-                result: result
-            }).then(function () {
-                if (result == "won") {
-                    window.location = "/my-lotteries";
-                } else {
-                    alert("you lost");
-                    window.location = "/transactions";
-                }
+            setTimeout(this.buy(), 2000);
+        },
+        buy: function buy() {
+            this.stripe.open({
+                name: this.parentLottery.name,
+                email: Lottery.user.email,
+                currency: "gbp",
+                description: this.parentLottery.name,
+                amount: this.parentLottery.entry_fee
             });
         }
     }
@@ -53730,6 +53733,8 @@ var render = function() {
   return _c(
     "div",
     [
+      _vm.loading ? _c("loader") : _vm._e(),
+      _vm._v(" "),
       _c("transition", { attrs: { name: "fade", mode: "out-in" } }, [
         _vm.timeleft
           ? _c("div", { key: "time-left", staticClass: "interval" }, [
@@ -53738,7 +53743,7 @@ var render = function() {
             ])
           : _vm._e(),
         _vm._v(" "),
-        !_vm.timeleft
+        _vm.timeleft == 0 && !_vm.showBuy
           ? _c(
               "div",
               { staticClass: "interval", attrs: { ":key": "question" } },
@@ -53766,7 +53771,7 @@ var render = function() {
             )
           : _vm._e(),
         _vm._v(" "),
-        _vm.timeleft == 0
+        _vm.timeleft == 0 && !_vm.showBuy
           ? _c(
               "section",
               { key: "images-question", staticClass: "img-display" },
@@ -53809,27 +53814,18 @@ if (false) {
 
 /***/ }),
 /* 195 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 196 */,
-/* 197 */,
-/* 198 */,
-/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(206)
+  __webpack_require__(196)
 }
 var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(202)
+var __vue_script__ = __webpack_require__(198)
 /* template */
-var __vue_template__ = __webpack_require__(203)
+var __vue_template__ = __webpack_require__(199)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -53868,9 +53864,47 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 200 */,
-/* 201 */,
-/* 202 */
+/* 196 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(197);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(4)("af7c2596", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-518ea9a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Loader.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-518ea9a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Loader.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 197 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(3)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.wrap[data-v-518ea9a8] {\n  text-align: center;\n  vertical-align: middle;\n  margin-bottom: 100px;\n  background: white;\n  padding-bottom: 100px;\n  -webkit-box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);\n          box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);\n}\n.spinner[data-v-518ea9a8] {\n  width: 80px;\n  height: 80px;\n  background: #eee;\n  border-radius: 50%;\n  position: relative;\n  margin: 50px;\n  display: inline-block;\n}\n.spinner[data-v-518ea9a8]:after, .spinner[data-v-518ea9a8]:before {\n    content: \"\";\n    display: block;\n    width: 80px;\n    height: 80px;\n    border-radius: 50%;\n}\n.spinner-5[data-v-518ea9a8] {\n  background: transparent;\n  height: 0px;\n  width: 0px;\n}\n.spinner-5 .span[data-v-518ea9a8] {\n    display: block;\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    background-color: #fff;\n    position: absolute;\n    top: 0px;\n}\n.spinner-5 .span[data-v-518ea9a8]:nth-child(1) {\n      left: -40px;\n      -webkit-animation: bounce-data-v-518ea9a8 1s ease-in-out infinite;\n              animation: bounce-data-v-518ea9a8 1s ease-in-out infinite;\n}\n.spinner-5 .span[data-v-518ea9a8]:nth-child(2) {\n      -webkit-animation: bounce-data-v-518ea9a8 1s ease-in-out 0.33s infinite;\n              animation: bounce-data-v-518ea9a8 1s ease-in-out 0.33s infinite;\n}\n.spinner-5 .span[data-v-518ea9a8]:nth-child(3) {\n      left: 40px;\n      -webkit-animation: bounce-data-v-518ea9a8 1s ease-in-out 0.66s infinite;\n              animation: bounce-data-v-518ea9a8 1s ease-in-out 0.66s infinite;\n}\n@-webkit-keyframes bounce-data-v-518ea9a8 {\n0%,\n  75%,\n  100% {\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n}\n25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px);\n}\n}\n@keyframes bounce-data-v-518ea9a8 {\n0%,\n  75%,\n  100% {\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n}\n25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px);\n}\n}\n.overlay[data-v-518ea9a8] {\n  top: 0;\n  left: 0;\n  z-index: 999999;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.2);\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 198 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53889,7 +53923,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
-/* 203 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -53924,46 +53958,10 @@ if (false) {
 }
 
 /***/ }),
-/* 204 */,
-/* 205 */,
-/* 206 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 200 */
+/***/ (function(module, exports) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(207);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(5)("af7c2596", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-518ea9a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Loader.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-518ea9a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Loader.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-/* 207 */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(4)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.wrap[data-v-518ea9a8] {\n  text-align: center;\n  vertical-align: middle;\n  margin-bottom: 100px;\n  background: white;\n  padding-bottom: 100px;\n  -webkit-box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);\n          box-shadow: 0px 40px 60px -20px rgba(0, 0, 0, 0.2);\n}\n.spinner[data-v-518ea9a8] {\n  width: 80px;\n  height: 80px;\n  background: #eee;\n  border-radius: 50%;\n  position: relative;\n  margin: 50px;\n  display: inline-block;\n}\n.spinner[data-v-518ea9a8]:after, .spinner[data-v-518ea9a8]:before {\n    content: \"\";\n    display: block;\n    width: 80px;\n    height: 80px;\n    border-radius: 50%;\n}\n.spinner-5[data-v-518ea9a8] {\n  background: transparent;\n  height: 0px;\n  width: 0px;\n}\n.spinner-5 .span[data-v-518ea9a8] {\n    display: block;\n    width: 20px;\n    height: 20px;\n    border-radius: 50%;\n    background-color: #fff;\n    position: absolute;\n    top: 0px;\n}\n.spinner-5 .span[data-v-518ea9a8]:nth-child(1) {\n      left: -40px;\n      -webkit-animation: bounce-data-v-518ea9a8 1s ease-in-out infinite;\n              animation: bounce-data-v-518ea9a8 1s ease-in-out infinite;\n}\n.spinner-5 .span[data-v-518ea9a8]:nth-child(2) {\n      -webkit-animation: bounce-data-v-518ea9a8 1s ease-in-out 0.33s infinite;\n              animation: bounce-data-v-518ea9a8 1s ease-in-out 0.33s infinite;\n}\n.spinner-5 .span[data-v-518ea9a8]:nth-child(3) {\n      left: 40px;\n      -webkit-animation: bounce-data-v-518ea9a8 1s ease-in-out 0.66s infinite;\n              animation: bounce-data-v-518ea9a8 1s ease-in-out 0.66s infinite;\n}\n@-webkit-keyframes bounce-data-v-518ea9a8 {\n0%,\n  75%,\n  100% {\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n}\n25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px);\n}\n}\n@keyframes bounce-data-v-518ea9a8 {\n0%,\n  75%,\n  100% {\n    -webkit-transform: translateY(0px);\n            transform: translateY(0px);\n}\n25% {\n    -webkit-transform: translateY(-30px);\n            transform: translateY(-30px);\n}\n}\n.overlay[data-v-518ea9a8] {\n  top: 0;\n  left: 0;\n  z-index: 999999;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  background-color: rgba(0, 0, 0, 0.2);\n}\n", ""]);
-
-// exports
-
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
