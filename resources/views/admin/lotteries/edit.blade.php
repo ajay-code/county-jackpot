@@ -36,7 +36,7 @@
         @endif
         <!-- /.box-header -->
         <!-- form start -->
-        <form method="post" action="{{ route('admin.lotteries.update', ['lottery' => $parentLottery->id]) }}">
+        <form method="post" action="{{ route('admin.county-draw-info.update', ['lottery' => $parentLottery->id]) }}">
             {{ csrf_field() }} 
             {{ method_field('PUT') }}
             <div class="box-body">

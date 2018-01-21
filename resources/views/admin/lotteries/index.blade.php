@@ -57,15 +57,15 @@
                     <td>{{$lottery->expire_at->format('jS M Y')}}</td>
                     <td>{{$lottery->always_active}}</td>
                     <td>
-                        <a href="{{route('admin.lotteries.edit', ['lottery' => $lottery->id])}}">
+                        <a href="{{route('admin.county-draw-info.edit', ['lottery' => $lottery->id])}}">
                             <button class="btn btn-success">
                                 <i class="fa fa-edit"></i>
                             </button>
                         </a>
 
-                        <form method="post" action="{{route('admin.lotteries.destroy', ['lottery' => $lottery->id])}}" style="display:inline-block">
+                        <form method="post" action="{{route('admin.county-draw-info.destroy', ['lottery' => $lottery->id])}}" style="display:inline-block">
                             {{ csrf_field() }} {{ method_field('DELETE') }}
-                            <a href="{{route('admin.lotteries.destroy', ['lottery' => $lottery->id])}}">
+                            <a href="{{route('admin.county-draw-info.destroy', ['lottery' => $lottery->id])}}">
                                 <button type="submit" class="btn btn-danger">
                                     <i class="fa fa-trash"></i>
                                 </button>
@@ -79,7 +79,7 @@
     </div>
     <!-- /.box-body -->
     <div class="box-footer">
-        <a href="{{route('admin.lotteries.create')}}">
+        <a href="{{route('admin.county-draw-info.create')}}">
             <button class="btn btn-success">
                 Create
             </button>

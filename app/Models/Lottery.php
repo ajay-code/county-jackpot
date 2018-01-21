@@ -98,4 +98,15 @@ class Lottery extends Model
     {
         return $this->belongsTo(User::class, 'winner_id');
     }
+
+    public function participants()
+    {
+        return $this->belongsToMany(User::class, 'user_lotteries', 'lottery_id', 'user_id');
+    }
+
+    
+    public function draws()
+    {
+        return $this->belongsTo(User::class, 'winner_id');
+    }
 }

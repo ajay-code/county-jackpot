@@ -11,16 +11,16 @@
         <span>Counties</span>
     </a>
 </li>
-<li class="{!! classActivePath('admin/lotteries') !!}">
-    <a href="{{route('admin.lotteries.index')}}">
+<li class="{!! classActivePath('admin/county-draw-info') !!}">
+    <a href="{{route('admin.county-draw-info.index')}}">
         <i class="fa fa-fw fa-trophy"></i>
-        <span>Draws Info</span>
+        <span>Counties Draws Info</span>
     </a>
 </li>
-<li class="{!! classActivePath('admin/lotteries/log') !!}">
-    <a href="{{route('admin.lotteries.log')}}">
+<li class="{!! classActivePath('admin/county-draws') !!}">
+    <a href="{{route('admin.county-draws.draws')}}">
         <i class="fa fa-fw fa-trophy"></i>
-        <span>Active/Expired Draws</span>
+        <span>On Going / Expired Draws</span>
     </a>
 </li>
 <li class="{!! classActivePath('admin/users') !!}">

@@ -48,11 +48,11 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($lotteries as $index => $lottery)
+                @foreach ($user->lotteries as $index => $lottery)
                 <tr>
                     <td>{{ $index+1 }}</td>
                     <td>{{$lottery->lottery->name}}</td>
-                    <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->entry_fee / 100 }}</td>
+                    <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->entryInPound() }}</td>
                     <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->prize }}</td>
                     <td>{{$lottery->draw_number}}</td>
                     <td>{{$lottery->created_at->format('jS F, Y')}}</td>

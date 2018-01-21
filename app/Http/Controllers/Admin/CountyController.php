@@ -16,7 +16,7 @@ class CountyController extends Controller
      */
     public function index()
     {
-        $counties = County::all(); 
+        $counties = County::all();
         return view('admin.counties.index', compact('counties'));
     }
 
@@ -39,7 +39,7 @@ class CountyController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|unique:counties|max:255',
+            'name' => 'required|string|unique:counties,name|max:255',
         ]);
 
         County::create($validatedData);

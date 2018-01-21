@@ -50,4 +50,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(UserLottery::class, 'user_id');
     }
+    public function draws()
+    {
+        return $this->belongsToMany(User::class, 'user_lotteries', 'user_id', 'lottery_id');
+    }
 }

@@ -36,7 +36,7 @@
         @endif
         <!-- /.box-header -->
         <!-- form start -->
-        <form method="post" action="{{ route('admin.lotteries.store') }}">
+        <form method="post" action="{{ route('admin.county-draw-info.store') }}">
             {{ csrf_field() }}
             <div class="box-body">
                 <div class="form-group">

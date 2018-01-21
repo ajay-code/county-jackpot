@@ -54,7 +54,7 @@ class LotteryController extends Controller
         
         $parentLottery->lotteries()->create($validatedData);
 
-        return redirect()->route('admin.lotteries.index');
+        return redirect()->route('admin.county-draw-info.index');
     }
 
     /**
@@ -90,12 +90,7 @@ class LotteryController extends Controller
     public function update(Request $request, ParentLottery $parentLottery)
     {
         $validatedData = $request->validate([
-            'name' => [
-                'required',
-                'string',
-                'max:255',
-                Rule::unique('lotteries')->ignore($parentLottery->id),
-            ],
+            'name' => 'required|string|max:255|unique:parent_lotteries,name,'.$parentLottery->id,
             'county_id' => 'required|numeric',
             'entry_fee' =>  'required|numeric',
             'prize' =>  'required|numeric',
@@ -112,7 +107,7 @@ class LotteryController extends Controller
         $parentLottery->currentLottery()->update($validatedData);
 
 
-        return redirect()->route('admin.lotteries.index');
+        return redirect()->route('admin.county-draw-info.index');
     }
 
     /**
