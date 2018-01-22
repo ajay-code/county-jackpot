@@ -26,6 +26,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('reschedule:lotteries')
                  ->everyMinute();
+        $schedule->command('lottery:pick-winner')
+                ->everyMinute();
     }
 
     /**

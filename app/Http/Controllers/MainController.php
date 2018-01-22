@@ -11,6 +11,8 @@ class MainController extends Controller
     public function index()
     {
         $lotteries = ParentLottery::NotExpired()->get();
+        $lotteries->load('currentLottery');
+
         // return $lotteries;
 
         return view('welcome', compact('lotteries'));

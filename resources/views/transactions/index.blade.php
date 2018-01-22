@@ -37,7 +37,7 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($transactions as $index =>$transaction)
+                @foreach ($user->transactions as $index =>$transaction)
                 <tr>
                     <td>{{$index + 1}}</td>
                     <td><i class="fa fa-gbp"></i>{{(float)$transaction->amount / 100 }}</td>

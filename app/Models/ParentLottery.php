@@ -65,7 +65,7 @@ class ParentLottery extends Model
      */
     public function currentLottery()
     {
-        return $this->lotteries()->latest()->first();
+        return $this->hasOne(Lottery::class, 'parent_lottery_id')->latest();
     }
 
 

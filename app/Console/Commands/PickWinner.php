@@ -2,18 +2,17 @@
 
 namespace App\Console\Commands;
 
-use Carbon\Carbon;
 use App\Models\ParentLottery;
 use Illuminate\Console\Command;
 
-class RescheduleLottery extends Command
+class PickWinner extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'reschedule:lotteries';
+    protected $signature = 'lottery:pick-winner';
 
     /**
      * The console command description.
@@ -39,15 +38,22 @@ class RescheduleLottery extends Command
      */
     public function handle()
     {
-        $parentLotteries = ParentLottery::with('currentLottery')->expired()->alwaysActive()->get();
+        $parentLotteries = ParentLottery::with('currentLottery')->expired()->get();
         
         foreach ($parentLotteries as $parentLottery) {
             $currentLottery = $parentLottery->currentLottery;
-            if ($currentLottery->hasWinner()) {
-                $parentLottery->expire_at = Carbon::now()->addWeek();
-                $parentLottery->save();
-                $parentLottery->lotteries()->create($parentLottery->toArray());
-                $this->info("Id is {$parentLottery->id}");
+            if (!$currentLottery->hasWinner()) {
+                $currentLottery->load(['draws' => function ($q) {
+                    $q = $q->with('user')->where('result', 'won');
+                }]);
+
+                $users = $currentLottery->draws->pluck('user');
+                
+                $winner = $users->shuffle()[0];
+                
+                $currentLottery->update([
+                    'winner_id' => $winner->id
+                ]);
             }
         }
     }

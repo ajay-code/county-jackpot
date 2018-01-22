@@ -46,18 +46,32 @@
                             <th>
                                 Result On
                             </th>
+                            <th>
+                                Won / Not Won
+                            </th>
                     </tr>
                 </thead>
                 <tbody>
-                        @foreach ($user->lotteries as $index => $lottery)
+                        @foreach ($user->lotteries as $index => $draw)
                         <tr>
                             <td>{{ $index+1 }}</td>
-                            <td>{{$lottery->lottery->name}}</td>
-                            <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->entry_fee / 100 }}</td>
-                            <td><i class="fa fa-gbp"></i>{{(float) $lottery->lottery->prize }}</td>
-                            <td>{{$lottery->draw_number}}</td>
-                            <td>{{$lottery->created_at->format('jS F, Y')}}</td>
-                            <td>{{$lottery->lottery->expire_at->addDays(1)->format('jS F, Y')}}</td>
+                            <td>{{$draw->lottery->name}}</td>
+                            <td><i class="fa fa-gbp"></i>{{(float) $draw->lottery->entry_fee / 100 }}</td>
+                            <td><i class="fa fa-gbp"></i>{{(float) $draw->lottery->prize }}</td>
+                            <td>{{$draw->draw_number}}</td>
+                            <td>{{$draw->created_at->format('jS F, Y')}}</td>
+                            <td>{{$draw->lottery->expire_at->addDays(1)->format('jS F, Y')}}</td>
+                            <td>
+                                @if ($draw->lottery->hasWinner())
+                                    @if ($user->id == $draw->lottery->winner_id)
+                                        Won
+                                    @else
+                                        Not Won
+                                    @endif
+                                @else
+                                    to be declared
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                 </tbody>
@@ -70,18 +84,13 @@
 
 @section('css')
     <style>
-            td { white-space:pre }
     </style>
 @endsection
 
 @section('js')
 <script>
         $(document).ready(function () {
-            $('#datatable').DataTable({
-                "order": [
-                    [0, "desc"]
-                ]
-            });
+            $('#datatable').DataTable();
         });
 </script>
 @stop
