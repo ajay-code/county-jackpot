@@ -52,8 +52,8 @@
                 <tr>
                     <td>{{$lottery->id}}</td>
                     <td>{{$lottery->name}}</td>
-                    <td>{{$lottery->entry_fee}}</td>
-                    <td>{{$lottery->prize}}</td>
+                    <td> <i class="fa fa-gbp"></i> {{$lottery->entryInPound()}}</td>
+                    <td> <i class="fa fa-gbp"></i> {{$lottery->prize}}</td>
                     <td>{{$lottery->expire_at->format('jS M Y')}}</td>
                     <td>{{$lottery->always_active}}</td>
                     <td>

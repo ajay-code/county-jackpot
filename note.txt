@@ -1,0 +1,4 @@
+id
+lottery_id
+user_id
+timestamp

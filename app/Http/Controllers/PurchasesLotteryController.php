@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\ParentLottery;
 use Stripe\Stripe;
 use Stripe\Charge;
 use Stripe\Customer;
+use Illuminate\Http\Request;
+use App\Models\ParentLottery;
+use App\Notifications\SuccessFullyEnteredDraw;
 
 class PurchasesLotteryController extends Controller
 {
+    public $draw;
 
     /**
      * Create a new controller instance.
@@ -58,6 +60,8 @@ class PurchasesLotteryController extends Controller
             'draw_number' => sprintf('%010d', mt_rand(0, 9999999999))
         ]);
 
+        $user->notify(new SuccessFullyEnteredDraw($draw));
+        
         return $draw;
     }
 }

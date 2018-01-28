@@ -22,6 +22,7 @@ class CreateLotteriesTable extends Migration
             $table->integer('prize');
             $table->date('expire_at');
             $table->integer('winner_id')->unsigned()->nullable();
+            $table->boolean('prize_money_approved')->default(false);
             $table->timestamps();
 
             $table->foreign('parent_lottery_id')

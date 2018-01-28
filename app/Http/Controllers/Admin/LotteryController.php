@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use DB;
 use App\Models\County;
 use App\Models\ParentLottery;
 use Illuminate\Http\Request;
@@ -120,6 +121,26 @@ class LotteryController extends Controller
     {
         $parentLottery->delete();
 
+        return back();
+    }
+
+    public function featured()
+    {
+        $featured = ParentLottery::featured()->first();
+        $lotteries = ParentLottery::all();
+        return view('admin.lotteries.featured', compact('featured', 'lotteries'));
+    }
+
+    public function changeFeatured(Request $request)
+    {
+        $this->validate($request, [
+            'featured' => 'required'
+        ]);
+        $affected = DB::table('parent_lotteries')->where('featured', 1)->update(['featured' => 0]);
+        $featured = ParentLottery::find($request->featured);
+        $status = $featured->update([
+            'featured' => true
+        ]);
         return back();
     }
 }

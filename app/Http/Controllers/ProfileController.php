@@ -28,6 +28,17 @@ class ProfileController extends Controller
      */
     public function index()
     {
+        $user = Auth::user()->with('bankDetail')->first();
+        return view('profile.index', compact('user'));
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function edit()
+    {
         $user = Auth::user();
         $counties = County::all();
         // return $user;

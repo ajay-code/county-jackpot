@@ -36,7 +36,9 @@ export default {
         remainingTime() {
             this.currentTime;
             if (this.lottery.expire_at) {
-                let diff = moment(this.lottery.expire_at).diff(moment(), "milliseconds");
+                let diff = moment(this.lottery.expire_at)
+                    .endOf("day")
+                    .diff(moment(), "milliseconds");
                 let duration = "";
                 if (diff > 0) {
                     duration = moment.duration(diff);
@@ -53,9 +55,9 @@ export default {
         updateTime() {
             this.currentTime = new Date();
         },
-        preventIfExpired(e){
-            if(this.remainingTime == 'End'){
-                e.preventDefault()
+        preventIfExpired(e) {
+            if (this.remainingTime == "End") {
+                e.preventDefault();
             }
         }
     },

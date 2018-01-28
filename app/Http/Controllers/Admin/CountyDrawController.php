@@ -34,4 +34,48 @@ class CountyDrawController extends Controller
         // return $lottery;
         return view('admin.lotteries.child_lotteries.participants', compact('lottery'));
     }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function winner(Lottery $countyDraw)
+    {
+        if ($countyDraw->hasWinner()) {
+            $lottery = $countyDraw->load(['winner' => function ($q) {
+                $q = $q->withCount('lotteries');
+            }]);
+            return view('admin.lotteries.child_lotteries.winner', compact('lottery'));
+        }
+        return redirect('admin/county-draws');
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function approvePrize(Lottery $countyDraw)
+    {
+        if ($countyDraw->hasWinner() && !$countyDraw->prize_money_approved) {
+            $countyDraw->update([
+                'prize_money_approved' => true
+            ]);
+
+            $countyDraw->approvals()->create([
+                'user_id' => $countyDraw->winner_id
+            ]);
+
+            $winner = $countyDraw->winner;
+
+            $status = $winner->update([
+                'balance' => $winner->balance + $countyDraw->prize
+            ]);
+
+            return back();
+        }
+
+        return redirect('/admin/county-draws');
+    }
 }

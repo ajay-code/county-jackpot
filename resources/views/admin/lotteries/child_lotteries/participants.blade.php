@@ -21,6 +21,17 @@
     </div>
     <!-- /.box-header -->
     <div class="box-body">
+        <div class="form-group">
+            @if ($lottery->hasWinner())
+                <a href="/admin/county-draws/{{$lottery->id}}/winner" class="btn btn-primary">Show Winner</a>
+            @else
+                @if ($lottery->hasExpired())
+                    Winner Not Decided
+                @else
+                    Draw Still Ongoing
+                @endif
+            @endif
+        </div>
         <div class="table-responsive">
             <table id="datatable" class="table table-bordered table-striped">
                 <thead>

@@ -46,9 +46,6 @@
                             <th>
                                 Result On
                             </th>
-                            <th>
-                                Won / Not Won
-                            </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,17 +58,6 @@
                             <td>{{$draw->draw_number}}</td>
                             <td>{{$draw->created_at->format('jS F, Y')}}</td>
                             <td>{{$draw->lottery->expire_at->addDays(1)->format('jS F, Y')}}</td>
-                            <td>
-                                @if ($draw->lottery->hasWinner())
-                                    @if ($user->id == $draw->lottery->winner_id)
-                                        Won
-                                    @else
-                                        Not Won
-                                    @endif
-                                @else
-                                    to be declared
-                                @endif
-                            </td>
                         </tr>
                         @endforeach
                 </tbody>

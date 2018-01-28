@@ -22,6 +22,7 @@ class Lottery extends Model
         'entry_fee',
         'expire_at',
         'winner_id',
+        'prize_money_approved'
     ];
 
     /**
@@ -70,7 +71,7 @@ class Lottery extends Model
      */
     public function hasExpired()
     {
-        return $this->expire_at->lt(Carbon::now());
+        return $this->expire_at->lt(Carbon::now()->startOfDay());
     }
 
     /**
@@ -107,5 +108,10 @@ class Lottery extends Model
     public function draws()
     {
         return $this->hasMany(UserLottery::class);
+    }
+
+    public function approvals()
+    {
+        return $this->hasMany(Approval::class);
     }
 }

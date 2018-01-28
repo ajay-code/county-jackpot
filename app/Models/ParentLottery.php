@@ -22,6 +22,7 @@ class ParentLottery extends Model
         'entry_fee',
         'expire_at',
         'always_active',
+        'featured'
     ];
 
     /**
@@ -41,7 +42,7 @@ class ParentLottery extends Model
      */
     public function scopeNotExpired($query)
     {
-        return $query->whereDate('expire_at', '>', Carbon::today()->toDateString());
+        return $query->whereDate('expire_at', '>=', Carbon::today()->toDateString());
     }
 
     /**
@@ -61,11 +62,45 @@ class ParentLottery extends Model
     }
 
     /**
+     * Return only deactive lotteries
+     */
+    public function scopeFeatured($query)
+    {
+        return $query->where('featured', true);
+    }
+
+    /**
+     * Return only deactive lotteries
+     */
+    public function scopeNotFeatured($query)
+    {
+        return $query->where('featured', false);
+    }
+
+    /**
      * Return the Current Active Lottery
      */
     public function currentLottery()
     {
         return $this->hasOne(Lottery::class, 'parent_lottery_id')->latest();
+    }
+
+    /**
+     * Tells if the Lottery is Active
+     */
+    public function isActive()
+    {
+        return !$this->expire_at->lt(Carbon::now());
+    }
+
+    public function isFeatured()
+    {
+        return !!$this->featured;
+    }
+
+    public function entryInPound()
+    {
+        return $this->entry_fee / 100;
     }
 
 

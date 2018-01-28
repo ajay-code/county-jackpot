@@ -47,7 +47,7 @@
                             # Participents
                         </th>
                         <th>
-                            Actions
+                            Prize Approved Status
                         </th>
                     </tr>
                 </thead>
@@ -59,7 +59,7 @@
                             <td>{{$lottery->name}}</td>
                             <td>
                                 @if ($lottery->winner)
-                                    <a href="#">{{$lottery->winner->name}}</a>
+                                    <a href="/admin/users/{{$lottery->winner->id}}/profile">{{$lottery->winner->name}}</a>
                                 @else
                                     --
                                 @endif
@@ -73,7 +73,16 @@
                                 @endif
 
                             </td>
-                            <td></td>
+                            <td>
+                                @if ($lottery->hasWinner())
+                                    @if ($lottery->prize_money_approved)
+                                    <span class="label label-success">Approved</span>
+                                    @else
+                                    <span class="label label-warning">Pending</span> 
+                                    <a href="/admin/county-draws/{{$lottery->id}}/approve" > <span class="btn btn-primary btn-sm pull-right">Click to Approve</span></a>
+                                    @endif
+                                @endif
+                            </td>
                         </tr>
                         @endforeach
                 </tbody>

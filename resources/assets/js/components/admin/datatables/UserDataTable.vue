@@ -38,10 +38,10 @@
                                 <option value="contains">contains</option>
                                 <option value="starts_with">starts with</option>
                                 <option value="ends_with">ends with</option>
-                                <option value="greater_than">></option>
-                                <option value="less_than"><</option>
+                                <option value="greater_than">&gt;</option>
+                                <option value="less_than">&lt;</option>
                                 <option value="greater_than_or_equal_to">>=</option>
-                                <option value="less_than_or_equal_to"><=</option>
+                                <option value="less_than_or_equal_to">&lt;=</option>
                             </select>
                         </div>
                         <div class="col-md-6">
@@ -94,20 +94,20 @@
                                 <th v-if="canSelectItems">
                                     <input type="checkbox" @change="toggleSelectAll" :checked="filteredRecords.length === selected.length">
                                 </th>
-                                <th v-for="column in response.displayable">
+                                <th v-for="column in response.displayable" :key="'sort-'+column">
                                     <span class="sortable" @click="sortBy(column)">{{ cloumn(column) }}</span>
                                     <span v-if="sort.key === column" class="arrow" :class="{ 'arrow--asc': sort.order === 'asc', 'arrow--desc': sort.order === 'desc' }"></span>
                                 </th>
-                                <th>&nbsp;</th>
+                                <th>Visit</th>
                                 <th>&nbsp;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="record in filteredRecords">
+                            <tr v-for="record in filteredRecords" :key="record.id">
                                 <td v-if="canSelectItems">
                                     <input type="checkbox" :value="record.id" v-model="selected">
                                 </td>
-                                <td v-for="columnValue, column in record">
+                                <td v-for="(columnValue, column) in record" :key="column+record.id">
                                     <template v-if="editing.id === record.id && isUpdatable(column)">
                                         <div class="form-group" :class="{ 'has-error': editing.errors[column] }">
                                             <template v-if="column == 'status'">
@@ -145,6 +145,9 @@
                                     </template>
                                 </td>
                                 <td>
+                                  <a :href="`/admin/users/${record.id}/profile`">Profile</a>
+                                </td>
+                                <td>
                                     <a v-if="editing.id !== record.id" href="#" @click.prevent="edit(record)">Edit</a>
                                     <template v-if="editing.id === record.id">
                                         <a href="#" @click.prevent="update">Save</a><br>
@@ -172,214 +175,212 @@ import queryString from "query-string";
 import eventHub from "@/eventHub";
 
 export default {
-  props: ["endpoint"],
-  data() {
-    return {
-      creating: {
-        active: false,
-        form: {},
-        errors: []
-      },
-      editing: {
-        id: null,
-        form: {},
-        errors: []
-      },
-      sort: {
-        key: "id",
-        order: "asc"
-      },
-      search: {
-        column: "id",
-        operator: "equals",
-        value: null
-      },
-      quickSearchQuery: "",
-      limit: 50,
-      response: {
-        table: null,
-        records: [],
-        displayable: [],
-        updatable: [],
-        allow: []
-      },
-      selected: [],
-      page: {
-        current: 1
-      }
-    };
-  },
-  components: {
-    paginator: require("@/components/Paginator.vue")
-  },
-  computed: {
-    filteredRecords() {
-      let data = this.response.records;
+    props: ["endpoint"],
+    data() {
+        return {
+            creating: {
+                active: false,
+                form: {},
+                errors: []
+            },
+            editing: {
+                id: null,
+                form: {},
+                errors: []
+            },
+            sort: {
+                key: "id",
+                order: "asc"
+            },
+            search: {
+                column: "id",
+                operator: "equals",
+                value: null
+            },
+            quickSearchQuery: "",
+            limit: 50,
+            response: {
+                table: null,
+                records: [],
+                displayable: [],
+                updatable: [],
+                allow: []
+            },
+            selected: [],
+            page: {
+                current: 1
+            }
+        };
+    },
+    components: {
+        paginator: require("@/components/Paginator.vue")
+    },
+    computed: {
+        filteredRecords() {
+            let data = this.response.records;
 
-      data = data.filter(row => {
-        return Object.keys(row).some(key => {
-          return (
-            String(row[key])
-              .toLowerCase()
-              .indexOf(this.quickSearchQuery.toLowerCase()) > -1
-          );
-        });
-      });
+            data = data.filter(row => {
+                return Object.keys(row).some(key => {
+                    return (
+                        String(row[key])
+                            .toLowerCase()
+                            .indexOf(this.quickSearchQuery.toLowerCase()) > -1
+                    );
+                });
+            });
 
-      if (this.sort.key) {
-        data = _.orderBy(
-          data,
-          i => {
-            let value = i[this.sort.key];
+            if (this.sort.key) {
+                data = _.orderBy(
+                    data,
+                    i => {
+                        let value = i[this.sort.key];
 
-            if (!isNaN(parseFloat(value)) && isFinite(value)) {
-              return parseFloat(value);
+                        if (!isNaN(parseFloat(value)) && isFinite(value)) {
+                            return parseFloat(value);
+                        }
+
+                        return String(i[this.sort.key]).toLowerCase();
+                    },
+                    this.sort.order
+                );
             }
 
-            return String(i[this.sort.key]).toLowerCase();
-          },
-          this.sort.order
-        );
-      }
-
-      return data;
-    },
-    canSelectItems() {
-      return this.filteredRecords.length <= 500;
-    }
-  },
-  methods: {
-    getRecords() {
-      return axios
-        .get(`${this.endpoint}?${this.getQueryParameters()}`)
-        .then(response => {
-          this.response = response.data.data;
-        });
-    },
-    getRecordsFromFirstPage() {
-      this.page.current = 1;
-      this.getRecords();
-    },
-    getQueryParameters() {
-      return queryString.stringify({
-        limit: this.limit,
-        ...this.search,
-        page: this.page.current
-      });
-    },
-    sortBy(key) {
-      this.sort.key = key;
-      this.sort.order = this.sort.order === "asc" ? "desc" : "asc";
-    },
-    edit(record) {
-      this.editing.errors = [];
-      this.editing.id = record.id;
-      this.editing.form = _.pick(record, this.response.updatable);
-    },
-    update() {
-      axios
-        .patch(`${this.endpoint}/${this.editing.id}`, this.editing.form)
-        .then(() => {
-          this.getRecords().then(() => {
-            this.editing.id = null;
-            this.editing.form = null;
-          });
-        })
-        .catch(error => {
-          if (error.response.status === 422) {
-            this.editing.errors = error.response.data;
-          }
-        });
-    },
-    store() {
-      axios
-        .post(`${this.endpoint}`, this.creating.form)
-        .then(() => {
-          this.getRecords().then(() => {
-            this.creating.active = false;
-            this.creating.form = {};
-            this.creating.errors = [];
-          });
-        })
-        .catch(error => {
-          if (error.response.status === 422) {
-            this.creating.errors = error.response.data;
-          }
-        });
-    },
-    destroy(record) {
-      if (!window.confirm(`Are you sure you want to delete this?`)) {
-        return;
-      }
-
-      axios.delete(`${this.endpoint}/${record}`).then(() => {
-        this.getRecords();
-
-        if (this.selected.length) {
-          this.toggleSelectAll();
+            return data;
+        },
+        canSelectItems() {
+            return this.filteredRecords.length <= 500;
         }
-      });
     },
-    isUpdatable(column) {
-      return this.response.updatable.includes(column);
-    },
-    toggleSelectAll() {
-      if (this.selected.length > 0) {
-        this.selected = [];
-        return;
-      }
+    methods: {
+        getRecords() {
+            return axios.get(`${this.endpoint}?${this.getQueryParameters()}`).then(response => {
+                this.response = response.data.data;
+            });
+        },
+        getRecordsFromFirstPage() {
+            this.page.current = 1;
+            this.getRecords();
+        },
+        getQueryParameters() {
+            return queryString.stringify({
+                limit: this.limit,
+                ...this.search,
+                page: this.page.current
+            });
+        },
+        sortBy(key) {
+            this.sort.key = key;
+            this.sort.order = this.sort.order === "asc" ? "desc" : "asc";
+        },
+        edit(record) {
+            this.editing.errors = [];
+            this.editing.id = record.id;
+            this.editing.form = _.pick(record, this.response.updatable);
+        },
+        update() {
+            axios
+                .patch(`${this.endpoint}/${this.editing.id}`, this.editing.form)
+                .then(() => {
+                    this.getRecords().then(() => {
+                        this.editing.id = null;
+                        this.editing.form = null;
+                    });
+                })
+                .catch(error => {
+                    if (error.response.status === 422) {
+                        this.editing.errors = error.response.data;
+                    }
+                });
+        },
+        store() {
+            axios
+                .post(`${this.endpoint}`, this.creating.form)
+                .then(() => {
+                    this.getRecords().then(() => {
+                        this.creating.active = false;
+                        this.creating.form = {};
+                        this.creating.errors = [];
+                    });
+                })
+                .catch(error => {
+                    if (error.response.status === 422) {
+                        this.creating.errors = error.response.data;
+                    }
+                });
+        },
+        destroy(record) {
+            if (!window.confirm(`Are you sure you want to delete this?`)) {
+                return;
+            }
 
-      this.selected = _.map(this.filteredRecords, "id");
+            axios.delete(`${this.endpoint}/${record}`).then(() => {
+                this.getRecords();
+
+                if (this.selected.length) {
+                    this.toggleSelectAll();
+                }
+            });
+        },
+        isUpdatable(column) {
+            return this.response.updatable.includes(column);
+        },
+        toggleSelectAll() {
+            if (this.selected.length > 0) {
+                this.selected = [];
+                return;
+            }
+
+            this.selected = _.map(this.filteredRecords, "id");
+        },
+        changePage(page) {
+            this.page.current = page;
+            this.getRecords();
+        },
+        cloumn(columnName) {
+            return columnName.replace("_", " ").toUpperCase();
+        },
+        nl2br(columnValue) {
+            return columnValue.replace(/\n/g, "<br />");
+        }
     },
-    changePage(page) {
-      this.page.current = page;
-      this.getRecords();
-    },
-    cloumn(columnName) {
-      return columnName.replace("_", " ").toUpperCase();
-    },
-    nl2br(columnValue) {
-      return columnValue.replace(/\n/g, "<br />");
+    mounted() {
+        this.getRecords();
+        eventHub.$on("load-page", this.changePage);
     }
-  },
-  mounted() {
-    this.getRecords();
-    eventHub.$on("load-page", this.changePage);
-  }
 };
 </script>
 
 <style lang="scss">
 .sortable {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .match {
-  color: #4fc08d;
+    color: #4fc08d;
 }
 
 .well {
-  border-radius: 0;
+    border-radius: 0;
 }
 
 .arrow {
-  display: inline-block;
-  vertical-align: middle;
-  width: 0;
-  height: 0;
-  margin-left: 5px;
-  opacity: 0.66;
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    margin-left: 5px;
+    opacity: 0.66;
 
-  &--asc {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-bottom: 4px solid #222;
-  }
+    &--asc {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 4px solid #222;
+    }
 
-  &--desc {
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
-    border-top: 4px solid #222;
-  }
+    &--desc {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid #222;
+    }
 }
 </style>

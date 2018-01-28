@@ -51236,180 +51236,183 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
 
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["endpoint"],
-  data: function data() {
-    return {
-      creating: {
-        active: false,
-        form: {},
-        errors: []
-      },
-      editing: {
-        id: null,
-        form: {},
-        errors: []
-      },
-      sort: {
-        key: "id",
-        order: "asc"
-      },
-      search: {
-        column: "id",
-        operator: "equals",
-        value: null
-      },
-      quickSearchQuery: "",
-      limit: 50,
-      response: {
-        table: null,
-        records: [],
-        displayable: [],
-        updatable: [],
-        allow: []
-      },
-      selected: [],
-      page: {
-        current: 1
-      }
-    };
-  },
-
-  components: {
-    paginator: __webpack_require__(174)
-  },
-  computed: {
-    filteredRecords: function filteredRecords() {
-      var _this = this;
-
-      var data = this.response.records;
-
-      data = data.filter(function (row) {
-        return Object.keys(row).some(function (key) {
-          return String(row[key]).toLowerCase().indexOf(_this.quickSearchQuery.toLowerCase()) > -1;
-        });
-      });
-
-      if (this.sort.key) {
-        data = _.orderBy(data, function (i) {
-          var value = i[_this.sort.key];
-
-          if (!isNaN(parseFloat(value)) && isFinite(value)) {
-            return parseFloat(value);
-          }
-
-          return String(i[_this.sort.key]).toLowerCase();
-        }, this.sort.order);
-      }
-
-      return data;
+    props: ["endpoint"],
+    data: function data() {
+        return {
+            creating: {
+                active: false,
+                form: {},
+                errors: []
+            },
+            editing: {
+                id: null,
+                form: {},
+                errors: []
+            },
+            sort: {
+                key: "id",
+                order: "asc"
+            },
+            search: {
+                column: "id",
+                operator: "equals",
+                value: null
+            },
+            quickSearchQuery: "",
+            limit: 50,
+            response: {
+                table: null,
+                records: [],
+                displayable: [],
+                updatable: [],
+                allow: []
+            },
+            selected: [],
+            page: {
+                current: 1
+            }
+        };
     },
-    canSelectItems: function canSelectItems() {
-      return this.filteredRecords.length <= 500;
+
+    components: {
+        paginator: __webpack_require__(174)
+    },
+    computed: {
+        filteredRecords: function filteredRecords() {
+            var _this = this;
+
+            var data = this.response.records;
+
+            data = data.filter(function (row) {
+                return Object.keys(row).some(function (key) {
+                    return String(row[key]).toLowerCase().indexOf(_this.quickSearchQuery.toLowerCase()) > -1;
+                });
+            });
+
+            if (this.sort.key) {
+                data = _.orderBy(data, function (i) {
+                    var value = i[_this.sort.key];
+
+                    if (!isNaN(parseFloat(value)) && isFinite(value)) {
+                        return parseFloat(value);
+                    }
+
+                    return String(i[_this.sort.key]).toLowerCase();
+                }, this.sort.order);
+            }
+
+            return data;
+        },
+        canSelectItems: function canSelectItems() {
+            return this.filteredRecords.length <= 500;
+        }
+    },
+    methods: {
+        getRecords: function getRecords() {
+            var _this2 = this;
+
+            return axios.get(this.endpoint + "?" + this.getQueryParameters()).then(function (response) {
+                _this2.response = response.data.data;
+            });
+        },
+        getRecordsFromFirstPage: function getRecordsFromFirstPage() {
+            this.page.current = 1;
+            this.getRecords();
+        },
+        getQueryParameters: function getQueryParameters() {
+            return __WEBPACK_IMPORTED_MODULE_0_query_string___default.a.stringify(_extends({
+                limit: this.limit
+            }, this.search, {
+                page: this.page.current
+            }));
+        },
+        sortBy: function sortBy(key) {
+            this.sort.key = key;
+            this.sort.order = this.sort.order === "asc" ? "desc" : "asc";
+        },
+        edit: function edit(record) {
+            this.editing.errors = [];
+            this.editing.id = record.id;
+            this.editing.form = _.pick(record, this.response.updatable);
+        },
+        update: function update() {
+            var _this3 = this;
+
+            axios.patch(this.endpoint + "/" + this.editing.id, this.editing.form).then(function () {
+                _this3.getRecords().then(function () {
+                    _this3.editing.id = null;
+                    _this3.editing.form = null;
+                });
+            }).catch(function (error) {
+                if (error.response.status === 422) {
+                    _this3.editing.errors = error.response.data;
+                }
+            });
+        },
+        store: function store() {
+            var _this4 = this;
+
+            axios.post("" + this.endpoint, this.creating.form).then(function () {
+                _this4.getRecords().then(function () {
+                    _this4.creating.active = false;
+                    _this4.creating.form = {};
+                    _this4.creating.errors = [];
+                });
+            }).catch(function (error) {
+                if (error.response.status === 422) {
+                    _this4.creating.errors = error.response.data;
+                }
+            });
+        },
+        destroy: function destroy(record) {
+            var _this5 = this;
+
+            if (!window.confirm("Are you sure you want to delete this?")) {
+                return;
+            }
+
+            axios.delete(this.endpoint + "/" + record).then(function () {
+                _this5.getRecords();
+
+                if (_this5.selected.length) {
+                    _this5.toggleSelectAll();
+                }
+            });
+        },
+        isUpdatable: function isUpdatable(column) {
+            return this.response.updatable.includes(column);
+        },
+        toggleSelectAll: function toggleSelectAll() {
+            if (this.selected.length > 0) {
+                this.selected = [];
+                return;
+            }
+
+            this.selected = _.map(this.filteredRecords, "id");
+        },
+        changePage: function changePage(page) {
+            this.page.current = page;
+            this.getRecords();
+        },
+        cloumn: function cloumn(columnName) {
+            return columnName.replace("_", " ").toUpperCase();
+        },
+        nl2br: function nl2br(columnValue) {
+            return columnValue.replace(/\n/g, "<br />");
+        }
+    },
+    mounted: function mounted() {
+        this.getRecords();
+        __WEBPACK_IMPORTED_MODULE_1__eventHub___default.a.$on("load-page", this.changePage);
     }
-  },
-  methods: {
-    getRecords: function getRecords() {
-      var _this2 = this;
-
-      return axios.get(this.endpoint + "?" + this.getQueryParameters()).then(function (response) {
-        _this2.response = response.data.data;
-      });
-    },
-    getRecordsFromFirstPage: function getRecordsFromFirstPage() {
-      this.page.current = 1;
-      this.getRecords();
-    },
-    getQueryParameters: function getQueryParameters() {
-      return __WEBPACK_IMPORTED_MODULE_0_query_string___default.a.stringify(_extends({
-        limit: this.limit
-      }, this.search, {
-        page: this.page.current
-      }));
-    },
-    sortBy: function sortBy(key) {
-      this.sort.key = key;
-      this.sort.order = this.sort.order === "asc" ? "desc" : "asc";
-    },
-    edit: function edit(record) {
-      this.editing.errors = [];
-      this.editing.id = record.id;
-      this.editing.form = _.pick(record, this.response.updatable);
-    },
-    update: function update() {
-      var _this3 = this;
-
-      axios.patch(this.endpoint + "/" + this.editing.id, this.editing.form).then(function () {
-        _this3.getRecords().then(function () {
-          _this3.editing.id = null;
-          _this3.editing.form = null;
-        });
-      }).catch(function (error) {
-        if (error.response.status === 422) {
-          _this3.editing.errors = error.response.data;
-        }
-      });
-    },
-    store: function store() {
-      var _this4 = this;
-
-      axios.post("" + this.endpoint, this.creating.form).then(function () {
-        _this4.getRecords().then(function () {
-          _this4.creating.active = false;
-          _this4.creating.form = {};
-          _this4.creating.errors = [];
-        });
-      }).catch(function (error) {
-        if (error.response.status === 422) {
-          _this4.creating.errors = error.response.data;
-        }
-      });
-    },
-    destroy: function destroy(record) {
-      var _this5 = this;
-
-      if (!window.confirm("Are you sure you want to delete this?")) {
-        return;
-      }
-
-      axios.delete(this.endpoint + "/" + record).then(function () {
-        _this5.getRecords();
-
-        if (_this5.selected.length) {
-          _this5.toggleSelectAll();
-        }
-      });
-    },
-    isUpdatable: function isUpdatable(column) {
-      return this.response.updatable.includes(column);
-    },
-    toggleSelectAll: function toggleSelectAll() {
-      if (this.selected.length > 0) {
-        this.selected = [];
-        return;
-      }
-
-      this.selected = _.map(this.filteredRecords, "id");
-    },
-    changePage: function changePage(page) {
-      this.page.current = page;
-      this.getRecords();
-    },
-    cloumn: function cloumn(columnName) {
-      return columnName.replace("_", " ").toUpperCase();
-    },
-    nl2br: function nl2br(columnValue) {
-      return columnValue.replace(/\n/g, "<br />");
-    }
-  },
-  mounted: function mounted() {
-    this.getRecords();
-    __WEBPACK_IMPORTED_MODULE_1__eventHub___default.a.$on("load-page", this.changePage);
-  }
 });
 
 /***/ }),
@@ -52304,7 +52307,7 @@ var render = function() {
                           : _vm._e(),
                         _vm._v(" "),
                         _vm._l(_vm.response.displayable, function(column) {
-                          return _c("th", [
+                          return _c("th", { key: "sort-" + column }, [
                             _c(
                               "span",
                               {
@@ -52330,7 +52333,7 @@ var render = function() {
                           ])
                         }),
                         _vm._v(" "),
-                        _c("th", [_vm._v(" ")]),
+                        _c("th", [_vm._v("Visit")]),
                         _vm._v(" "),
                         _c("th", [_vm._v(" ")])
                       ],
@@ -52343,6 +52346,7 @@ var render = function() {
                     _vm._l(_vm.filteredRecords, function(record) {
                       return _c(
                         "tr",
+                        { key: record.id },
                         [
                           _vm.canSelectItems
                             ? _c("td", [
@@ -52391,6 +52395,7 @@ var render = function() {
                           _vm._l(record, function(columnValue, column) {
                             return _c(
                               "td",
+                              { key: column + record.id },
                               [
                                 _vm.editing.id === record.id &&
                                 _vm.isUpdatable(column)
@@ -52683,6 +52688,18 @@ var render = function() {
                             )
                           }),
                           _vm._v(" "),
+                          _c("td", [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: "/admin/users/" + record.id + "/profile"
+                                }
+                              },
+                              [_vm._v("Profile")]
+                            )
+                          ]),
+                          _vm._v(" "),
                           _c(
                             "td",
                             [
@@ -52901,7 +52918,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -52951,7 +52968,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         remainingTime: function remainingTime() {
             this.currentTime;
             if (this.lottery.expire_at) {
-                var diff = moment(this.lottery.expire_at).diff(moment(), "milliseconds");
+                var diff = moment(this.lottery.expire_at).endOf("day").diff(moment(), "milliseconds");
                 var duration = "";
                 if (diff > 0) {
                     duration = moment.duration(diff);
@@ -52969,7 +52986,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             this.currentTime = new Date();
         },
         preventIfExpired: function preventIfExpired(e) {
-            if (this.remainingTime == 'End') {
+            if (this.remainingTime == "End") {
                 e.preventDefault();
             }
         }
@@ -53218,7 +53235,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         remainingTime: function remainingTime() {
             this.currentTime;
             if (this.lottery.expire_at) {
-                var diff = moment(this.lottery.expire_at).diff(moment(), "milliseconds");
+                var diff = moment(this.lottery.expire_at).endOf("day").diff(moment(), "milliseconds");
                 var duration = "";
                 if (diff > 0) {
                     duration = moment.duration(diff);

@@ -29,6 +29,18 @@
         <span>Users</span>
     </a>
 </li>
+<li class="{!! classActivePath('admin/payment-requests') !!}">
+    <a href="{{route('admin.payment-requests')}}">
+        <i class="fa fa-fw fa-user"></i>
+        <span>Payment Requests</span>
+    </a>
+</li>
+<li class="{!! classActivePath('admin/featured') !!}">
+    <a href="{{route('admin.featured')}}">
+        <i class="fa fa-fw fa-user"></i>
+        <span>Featured Draw</span>
+    </a>
+</li>
 <li class="header">ACCOUNT SSETTINGS</li>
 <li class="{!! classActivePath('admin/password/change') !!}">
     <a href="{{route('admin.password.change')}}">

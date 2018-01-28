@@ -24,7 +24,8 @@ class UserController extends Controller
      */
     public function profile(User $user)
     {
-        return $user;
+        // return $user;
+        return view('admin.users.profile', compact('user'));
     }
 
     /**
@@ -35,5 +36,15 @@ class UserController extends Controller
         $user->load('lotteries.lottery');
 
         return view('admin.users.draws', compact('user'));
+    }
+
+    /**
+     * Show user Profile
+     */
+    public function drawsWon(User $user)
+    {
+        $user->load('lotteriesWon');
+        // return $user;
+        return view('admin.users.draws-won', compact('user'));
     }
 }

@@ -45,7 +45,7 @@ class PasswordController extends Controller
         auth()->user()->update([
             'password' => bcrypt($request->password)
         ]);
-
+        
         // alert()->success('Password Successfully Set');
         $request->session()->flash('pwd', 'Password successfully set');
 

@@ -151,9 +151,10 @@
 
 	<div class="container clearfix">
 		<section id="timer">
-			<h1 class="text-center" style="font-size: 2.5rem; color: #1ea5ea; padding-bottom:2rem ;"> Featured Lottery</h1>
+			<h1 class="text-center" style="font-size: 2.5rem; color: #1ea5ea; padding-bottom:2rem ;"> Featured Draw</h1>
 			<div class="text-center ">
-				<img class="img-fluid" src="img/powerball.png" width="500px" height="120px">
+				{{--  <img class="img-fluid" src="img/powerball.png" width="500px" height="120px">  --}}
+				<img class="img-fluid" width="500" src="img/logo.png" alt="" srcset="">
 			</div>
 
 			<div class="row">
@@ -317,18 +318,21 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.4/jquery.flexslider-min.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function () {
-			setInterval(function time() {
-				var d = new Date();
-				var hours = 24 - d.getHours();
-				var min = 60 - d.getMinutes();
+			var t = new Date('{{ $featured->expire_at->endOfDay()->toW3cString() }}');
+			var interval = setInterval(function time() {
+				d = new Date()
+				if(t - d <= 0){
+					clearInterval(interval)
+				}
+				var hours =  t.getHours() - d.getHours();
+				var min =  t.getMinutes() - d.getMinutes();
 				if ((min + '').length == 1) {
 					min = '0' + min;
 				}
-				var sec = 60 - d.getSeconds();
+				var sec = t.getSeconds() - d.getSeconds();
 				if ((sec + '').length == 1) {
 					sec = '0' + sec;
 				}
@@ -337,39 +341,7 @@
 				jQuery('#countdown #sec').html(sec);
 			}, 1000);
 		});
-		(function () {
-
-			// store the slider in a local variable
-			var $window = $(window),
-				flexslider = {
-					vars: {}
-				};
-
-			// tiny helper function to add breakpoints
-			function getGridSize() {
-				return (window.innerWidth < 600) ? 2 :
-					(window.innerWidth < 900) ? 3 : 4;
-			}
-
-			$window.on('load', function () {
-				$('.flexslider').flexslider({
-					animation: "slide",
-					animationLoop: false,
-					itemWidth: 210,
-					itemMargin: 5,
-					minItems: getGridSize(), // use function to pull in initial value
-					maxItems: getGridSize() // use function to pull in initial value
-				});
-			});
-
-			// check grid size on resize event
-			$window.resize(function () {
-				var gridSize = getGridSize();
-
-				flexslider.vars.minItems = gridSize;
-				flexslider.vars.maxItems = gridSize;
-			});
-		}());
+		
 	</script>
 </body>
 

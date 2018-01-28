@@ -131,6 +131,16 @@ return [
             'icon' => 'user',
         ],
         [
+            'text' => 'Balance',
+            'url'  => '/balance',
+            'icon' => 'gbp',
+        ],
+        [
+            'text' => 'WithDrawal History',
+            'url'  => '/withdrawal-history',
+            'icon' => 'history',
+        ],
+        [
             'text' => 'Change Password',
             'url'  => 'password/change',
             'icon' => 'lock',

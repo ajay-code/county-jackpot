@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'gender', 'county_id' ,'phone', 'street_address', 'status'
+        'name', 'email', 'password', 'gender', 'county_id' ,'phone', 'street_address', 'status', 'balance'
     ];
 
     /**
@@ -27,6 +27,25 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * This method is called on booting of model
+     */
+    protected static function boot()
+    {
+        parent::boot();
+        static::created(function ($user) {
+            $user->bankDetail()->create();
+        });
+    }
+
+    /**
+     * Helpers
+     */
+    public function hasBalance()
+    {
+        return $this->balance > 0;
+    }
 
     /**
      * Relationships
@@ -48,6 +67,27 @@ class User extends Authenticatable
 
     public function lotteries()
     {
-        return $this->hasMany(UserLottery::class, 'user_id');
+        return $this->hasMany(UserLottery::class);
     }
+
+    public function approvals()
+    {
+        return $this->hasMany(Approval::class);
+    }
+    public function bankDetail()
+    {
+        return $this->hasOne(BankDetail::class);
+    }
+    public function getPaids()
+    {
+        return $this->hasMany(GetPaid::class);
+    }
+
+    /**
+     * Create Bank Details
+     */
+    // public function bank()
+    // {
+    //     $this->bankDetail()->create();
+    // }
 }

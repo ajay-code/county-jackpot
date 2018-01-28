@@ -1,6 +1,7 @@
 <?php
 
 Route::get('profile', 'ProfileController@index')->name('profile.index');
+Route::get('profile/edit', 'ProfileController@edit')->name('profile.edit');
 Route::put('profile/{user}', 'ProfileController@update')->name('profile.update');
 
 /**
@@ -30,9 +31,23 @@ Route::get('/transactions', 'TransactionController@index')->name('transactions')
 /**
  * User Lotteries
  */
-Route::get('/my-lotteries', 'UserLotteryController@index')->name('user.lotteries');
+Route::get('/my-lotteries', 'UserLotteryController@index')->name('lotteries');
 
 /**
  * Store game result
  */
 Route::post('game/result/store', 'TransactionController@storeResult');
+
+/**
+ * Balance and approvals
+ */
+Route::get('balance', 'BalanceAppeovalConyroller@balance')->name('balance');
+Route::get('balance/log', 'BalanceAppeovalConyroller@log')->name('balance');
+Route::get('bank-details/edit', 'BankDetailsController@edit')->name('bank-detail.edit');
+Route::put('bank-details', 'BankDetailsController@update')->name('bank-detail.update');
+
+/**
+ * Get Paid
+ */
+Route::post('/get-paid', 'UserPaidController@getPaid')->name('get-paid');
+Route::get('/withdrawal-history', 'UserPaidController@withdrawalHistory')->name('withdrawal-history');
