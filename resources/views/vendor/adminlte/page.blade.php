@@ -58,6 +58,15 @@
 
                     <ul class="nav navbar-nav">
                         <li>
+                            <a href="/"> <i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li>
+                            <a href="/terms-and-conditions"> <i class="fa fa-chain"></i> Terms</a>
+                        </li>
+                        <li>
+                            <a href="/policy"> <i class="fa fa-file-text"></i> Policy</a>
+                        </li>
+                        <li>
                             @if(config('adminlte.logout_method') == 'GET' || !config('adminlte.logout_method') && version_compare(\Illuminate\Foundation\Application::VERSION, '5.3.0', '<'))
                                 <a href="{{ url(config('adminlte.logout_url', 'auth/logout')) }}">
                                     <i class="fa fa-fw fa-power-off"></i> {{ trans('adminlte::adminlte.log_out') }}

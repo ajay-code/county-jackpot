@@ -3,27 +3,26 @@
 @section('title', 'Counties')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>Counties Draws Edit</h1>
     <ol class="breadcrumb">
         <li>
             <a href="/admin/home">
                 <i class="fa fa-dashboard"></i> Home
             </a>
         </li>
-        <li>
-            <a href="{{route('admin.counties.index')}}">
-                <i class="fa fa-flag"></i> Counties
-            </a>
-        </li>
-        <li class="active">Create</li>
+        
+        <li class="active"><i class="fa fa-trophy"></i> Counties Draws Info</li>
+        <li class="active"> <i class="fa fa-edit"></i> Edit</li>
     </ol>
 @stop
 
 @section('content')
+<div class="row">
+
 <div class="col-md-8 col-md-offset-2">
     <div class="box box-success">
         <div class="box-header with-border">
-            <h3 class="box-title">Lottery Edit Form # {{ $parentLottery->id }}</h3>
+            <h3 class="box-title">Counties Draws Edit Form # {{ $parentLottery->id }}</h3>
         </div>
         @if ($errors->any())
         <div class="alert alert-danger">
@@ -90,4 +89,6 @@
         </form>
     </div>
 </div>
+</div>
+
 @stop

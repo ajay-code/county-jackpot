@@ -3,22 +3,20 @@
 @section('title', 'Counties')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>User Draws</h1>
     <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home
             </a>
         </li>
-        <li class="active">Counties</li>
+        <li class="active">Users</li>
+        <li class="active">Draws</li>
     </ol>
 @stop
 
 @section('content')
 <div class="box box-success">
-    <div class="box-header">
-        <h3 class="box-title">Data Table With Full Features</h3>
-    </div>
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive">

@@ -15,12 +15,12 @@ Route::post('password/update', 'PasswordController@update')->name('password.upda
 /**
  * Lottery
  */
-Route::get('lotteries', 'LotteryController@index')->name('lotteries');
-Route::get('lotteries/{parentLottery}/buy', 'LotteryController@buy');
-Route::post('lotteries/{parentLottery}/buy', 'PurchasesLotteryController@store');
+Route::get('county-draw', 'LotteryController@index');
+Route::get('county-draw/{parentLottery}/buy', 'LotteryController@buy');
+Route::post('county-draw/{parentLottery}/buy', 'PurchasesLotteryController@store');
 // game
-Route::get('lotteries/{parentLottery}/game', 'LotteryController@game');
-Route::get('lotteries/{parentLottery}/play', 'LotteryController@play');
+Route::get('county-draw/{parentLottery}/game', 'LotteryController@game');
+Route::get('county-draw/{parentLottery}/play', 'LotteryController@play');
 
 
 /**
@@ -31,7 +31,7 @@ Route::get('/transactions', 'TransactionController@index')->name('transactions')
 /**
  * User Lotteries
  */
-Route::get('/my-lotteries', 'UserLotteryController@index')->name('lotteries');
+Route::get('/my-draws', 'UserLotteryController@index');
 
 /**
  * Store game result

@@ -1,24 +1,22 @@
 @extends('admin.layout.master')
 
-@section('title', 'Counties')
+@section('title', 'Admin | Counties Draws Participants')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>Counties Draws Participants</h1>
     <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home
             </a>
         </li>
-        <li class="active">Counties</li>
+        <li class="active">Counties Draws</li>
+        <li class="active">Participants</li>
     </ol>
 @stop
 
 @section('content')
 <div class="box box-success">
-    <div class="box-header">
-        <h3 class="box-title">Data Table With Full Features</h3>
-    </div>
     <!-- /.box-header -->
     <div class="box-body">
         <div class="form-group">

@@ -54,12 +54,12 @@
 						<a class="nav-link" href="/results">Draw Results</a>
 					</li>
                     <li class="nav-item">
-                            <a class="nav-link" href="/terms-and-conditions">Terms</a>
-                        </li>
+                        <a class="nav-link" href="/terms-and-conditions">Terms</a>
+                    </li>
     
-                        <li class="nav-item">
-                                <a class="nav-link" href="/policy">Policy</a>
-                            </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/policy">Privacy Policy</a>
+                    </li>
 					@guest
 					<li class="nav-item">
 						<a class="nav-link" href="/login">Sign in</a>
@@ -69,21 +69,21 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">My Account</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="/lotteries">Lotteries</a>
-							<a class="dropdown-item" href="/my-lotteries">My Lotteries</a>
+							<a class="dropdown-item" href="/county-draw">County Draws</a>
+							<a class="dropdown-item" href="/my-draws">My Draws</a>
 							<a class="dropdown-item" href="/profile">Profile</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                 >
-                                    {{ trans('adminlte::adminlte.log_out') }}
-                                </a>
-                                <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
-                                    @if(config('adminlte.logout_method'))
-                                        {{ method_field(config('adminlte.logout_method')) }}
-                                    @endif
-                                    {{ csrf_field() }}
-                                </form>
+                                {{ trans('adminlte::adminlte.log_out') }}
+                            </a>
+                            <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
+                                @if(config('adminlte.logout_method'))
+                                    {{ method_field(config('adminlte.logout_method')) }}
+                                @endif
+                                {{ csrf_field() }}
+                            </form>
 						</div>
 					</li>
 					@endauth

@@ -110,13 +110,13 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text'        => 'Lotteries',
-            'url'         => 'lotteries',
+            'text'        => 'County Draws',
+            'url'         => 'county-draw',
             'icon'        => 'file',
         ],
         [
-            'text'        => 'My Lotteries',
-            'url'         => 'my-lotteries',
+            'text'        => 'My Draws',
+            'url'         => 'my-draws',
             'icon'        => 'file',
         ],
         [

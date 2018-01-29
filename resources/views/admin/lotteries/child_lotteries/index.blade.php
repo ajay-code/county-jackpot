@@ -1,24 +1,21 @@
 @extends('admin.layout.master')
 
-@section('title', 'Counties')
+@section('title', 'Admin | On Going / Expired Draws')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>On Going / Expired Draws</h1>
     <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home
             </a>
         </li>
-        <li class="active">Counties</li>
+        <li class="active">On Going / Expired Draws</li>
     </ol>
 @stop
 
 @section('content')
 <div class="box box-success">
-    <div class="box-header">
-        <h3 class="box-title">Data Table With Full Features</h3>
-    </div>
     <!-- /.box-header -->
     <div class="box-body">
         <div class="table-responsive">

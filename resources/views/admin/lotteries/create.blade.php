@@ -1,9 +1,9 @@
 @extends('admin.layout.master')
 
-@section('title', 'Counties')
+@section('title', 'Admin | Counties Draws Create')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>Counties Draws Create</h1>
     <ol class="breadcrumb">
         <li>
             <a href="/admin/home">
@@ -12,7 +12,7 @@
         </li>
         <li>
             <a href="{{route('admin.counties.index')}}">
-                <i class="fa fa-flag"></i> Counties
+                <i class="fa fa-flag"></i> Counties Draws
             </a>
         </li>
         <li class="active">Create</li>
@@ -23,7 +23,7 @@
 <div class="col-md-8 col-md-offset-2">
     <div class="box box-success">
         <div class="box-header with-border">
-            <h3 class="box-title">Lottery Form</h3>
+            <h3 class="box-title">Counties Draws Form</h3>
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">

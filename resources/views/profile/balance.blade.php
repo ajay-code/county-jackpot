@@ -1,16 +1,16 @@
 @extends('adminlte::page')
 
-@section('title', 'Counties')
+@section('title', 'Balance')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>Balance</h1>
     <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home
             </a>
         </li>
-        <li class="active">Counties</li>
+        <li class="active">Balance</li>
     </ol>
 @stop
 
@@ -51,12 +51,6 @@
     </div>
     <div class="col-xs-12">
         <div class="box">
-            <div class="box-header">
-                <h3 class="box-title">Responsive Hover Table</h3>
-                <div class="box-tools">
-
-                </div>
-            </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive no-padding">
                 <table class="table table-hover">
@@ -97,7 +91,7 @@
                     <a href="bank-details/edit" class="btn btn-primary btn-lg"> Complete Bank Details </a>
                 </div>
                 @else
-                <p class="h4">Current Payment Datails</p>
+                <p class="h4">Bank Account Datails</p>
                 <br>
                 <div class="row">
 

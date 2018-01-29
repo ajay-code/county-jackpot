@@ -28,7 +28,7 @@
                     
         
                     <div class="text-center" style="margin-top:6rem">
-                        <a href="/lotteries/{{$parentLottery->id}}/play" >
+                        <a href="/county-draw/{{$parentLottery->id}}/play" >
                             <button class="btn btn-success btn-lg" style="padding:11px 67px">Continue</button>
                         </a>
                     </div>

@@ -90,7 +90,7 @@ export default {
             this.currentTime = new Date();
         },
         play() {
-            window.location = `/lotteries/${this.lottery.parent_lottery_id}/game`;
+            window.location = `/county-draw/${this.lottery.parent_lottery_id}/game`;
         }
     },
     mounted() {

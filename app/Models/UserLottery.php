@@ -14,6 +14,7 @@ class UserLottery extends Model
     protected $fillable = [
         'lottery_id',
         'user_id',
+        'result',
         'lottery_transaction_id',
         'draw_number',
     ];

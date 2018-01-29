@@ -92,13 +92,13 @@ export default {
                     console.log("Loading....");
                     this.loading = true;
                     axios
-                        .post(`/lotteries/${this.parentLottery.id}/buy`, {
+                        .post(`/county-draw/${this.parentLottery.id}/buy`, {
                             ...this.formData,
                             result: this.userAnswer == this.answer.id ? "won" : "lost"
                         })
                         .then(res => {
                             let transaction = res.data;
-                            window.location = "/my-lotteries";
+                            window.location = "/my-draws";
                         })
                         .catch(err => {
                             this.loading = false;

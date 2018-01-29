@@ -40,7 +40,7 @@
 					</li>
 
 					<li class="nav-item">
-							<a class="nav-link" href="/policy">Policy</a>
+							<a class="nav-link" href="/policy">Privacy Policy</a>
 						</li>
 					@guest
 					<li class="nav-item">
@@ -51,8 +51,8 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">My Account</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="/lotteries">Draws</a>
-							<a class="dropdown-item" href="/my-lotteries">My draws</a>
+							<a class="dropdown-item" href="/county-draw">County Draws</a>
+							<a class="dropdown-item" href="/my-draws">My draws</a>
 							<a class="dropdown-item" href="/profile">Profile</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#"
@@ -119,8 +119,7 @@
 				</div>
 				<div class="card-body">
 					<h4 class="card-title text-center">1. Pay Entery Fees</h4>
-					<p class="card-text text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
-						bit longer.</p>
+					<p class="card-text text-center"></p>
 				</div>
 			</div>
 			<div class="card">
@@ -129,7 +128,7 @@
 				</div>
 				<div class="card-body">
 					<h4 class="card-title text-center">2. Play a game and answer</h4>
-					<p class="card-text text-center">This card has supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text text-center"></p>
 				</div>
 			</div>
 			<div class="card">
@@ -138,7 +137,7 @@
 				</div>
 				<div class="card-body">
 					<h4 class="card-title text-center">3. Wait for the draw results</h4>
-					<p class="card-text text-center">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+					<p class="card-text text-center"></p>
 				</div>
 			</div>
 		</div>
@@ -177,7 +176,7 @@
 		<span style="color: #28a745; font-weight: 700;"> <i class="fa fa-gbp"></i> {{ number_format($featured->prize, 2, '.', ',') }}</span>
 	</h2>
 	<div class="text-center">
-		<a href="/lotteries/{{ $featured->id }}/buy" class="buy-button">Enter Draw</a>
+		<a href="/county-draw/{{ $featured->id }}/buy" class="buy-button">Enter Draw</a>
 	</div>
 	<h3 class="text-center" style="margin-bottom: 4rem!important;">
 		<a href="/results" style=" font-weight: 700; cursor: pointer;">Go to results page</a>
@@ -315,22 +314,20 @@
 
 
 	<script type="text/javascript">
+		var featured = <?= json_encode($featured) ?> ;
+		var t = moment('{{ $featured->expire_at->endOfDay()->toW3cString() }}');
 		$(document).ready(function () {
-			var t = new Date('{{ $featured->expire_at->endOfDay()->toW3cString() }}');
 			var interval = setInterval(function time() {
-				d = new Date()
-				if(t - d <= 0){
+				d = moment()
+				var diff = moment.duration(t.diff(d))
+				if(t.diff(d) <= 0){
 					clearInterval(interval)
 				}
-				var hours =  t.getHours() - d.getHours();
-				var min =  t.getMinutes() - d.getMinutes();
-				if ((min + '').length == 1) {
-					min = '0' + min;
-				}
-				var sec = t.getSeconds() - d.getSeconds();
-				if ((sec + '').length == 1) {
-					sec = '0' + sec;
-				}
+				var format =  diff.format('h:mm:ss', true);
+				format = format.split(':');
+				var hours = format[0];
+				var min = format[1];
+				var sec = format[2];
 				jQuery('#countdown #hour').html(hours);
 				jQuery('#countdown #min').html(min);
 				jQuery('#countdown #sec').html(sec);
