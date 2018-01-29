@@ -24,6 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
+        $schedule->command('queue:work --daemon --tries=10')->everyMinute()->withoutOverlapping();
+        
         $schedule->command('reschedule:lotteries')
                  ->everyMinute();
         $schedule->command('lottery:pick-winner')

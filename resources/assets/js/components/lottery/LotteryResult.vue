@@ -4,17 +4,17 @@
             <img src="/img/logo.png" width="100">
         </div>
         <div class="featured-name col-lg-3 text-center">
-            <span class="h3" v-text="lottery.name"></span>
+            <span class="h3" v-text="lottery.winner_draw.draw_number"></span>
         </div>
-        <div class="featured-price col-lg-2 text-center">
-            <span class="h4"><i class="fa fa-gbp"></i> <span v-text="lottery.prize"></span></span>
+        <div class="featured-price col-lg-3 text-center">
+            <span class="h4"> <span v-text="lottery.name"></span></span>
 
         </div>
-        <div class="featured-timer col-lg-3 text-center">
-            <span class="h4" v-text="remainingTime"></span>
+        <div class="featured-timer col-lg-2 text-center">
+           <span class="h4"><i class="fa fa-gbp"></i><span  v-text="lottery.prize"></span></span>
         </div>
         <div class=" featured-play col-lg-2 text-center">
-            <a class="btn btn-primary btn-lg work-button2 featured-play-button" style="padding: 8px 1.5rem;" :href="`/lotteries/${lottery.parent_lottery_id}/buy`" role="button" @click="preventIfExpired" :disabled="remainingTime == 'End'">{{ remainingTime == 'End' ? 'Closed' : 'Buy Now' }}</a>
+            <span class="h4" v-text="lottery.winner.name"> </span>
         </div>
     </div>
 </template>

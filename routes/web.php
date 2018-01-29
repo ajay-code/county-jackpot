@@ -12,8 +12,10 @@
 */
 
 Route::get('/', 'MainController@index');
+Route::get('/results', 'MainController@results');
 Route::get('/test', 'MainController@test');
 Route::view('/terms-and-conditions', 'terms-and-conditions');
+Route::view('/policy', 'policy');
 
 Auth::routes();
 

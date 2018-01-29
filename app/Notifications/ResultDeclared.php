@@ -2,27 +2,24 @@
 
 namespace App\Notifications;
 
-use App\Models\UserLottery;
+use App\Models\Lottery;
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class SuccessFullyEnteredDraw extends Notification implements ShouldQueue
+class ResultDeclared extends Notification implements ShouldQueue
 {
-    use Queueable, SerializesModels;
-    
-    public $draw;
-
+    use Queueable;
+    public $lottery;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(UserLottery $draw)
+    public function __construct(Lottery $lottery)
     {
-        $this->draw = $draw;
+        $this->lottery = $lottery;
     }
 
     /**
@@ -44,8 +41,9 @@ class SuccessFullyEnteredDraw extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        $this->draw->load('lottery');
-        return (new MailMessage)->markdown('mail.entered-draw', ['draw' => $this->draw]);
+        return (new MailMessage)->markdown('mail.result-declared', [
+            'lottery' => $this->lottery
+        ]);
     }
 
     /**

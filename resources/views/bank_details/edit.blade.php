@@ -3,7 +3,7 @@
 @section('title', 'Counties')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>Edit Bank Account Details</h1>
     <ol class="breadcrumb">
         <li>
             <a href="/admin/home">
@@ -11,11 +11,10 @@
             </a>
         </li>
         <li>
-            <a href="{{route('admin.counties.index')}}">
-                <i class="fa fa-flag"></i> Counties
-            </a>
+            
+                <i class="fa fa-flag"></i> Bank Account Details
         </li>
-        <li class="active">Create</li>
+        <li class="active">Edit</li>
     </ol>
 @stop
 
@@ -24,7 +23,7 @@
     <div class="col-md-8 col-md-offset-2">
         <div class="box box-success">
             <div class="box-header with-border">
-                <h3 class="box-title">Lottery Edit Form # {{ $user->name }}</h3>
+                <h3 class="box-title">Edit bank details for User Account: {{ $user->name }}</h3>
             </div>
             @if ($errors->any())
             <div class="alert alert-danger">

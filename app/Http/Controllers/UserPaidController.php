@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Notifications\WithDrawalNotification;
 
 class UserPaidController extends Controller
 {
@@ -31,6 +32,9 @@ class UserPaidController extends Controller
         $user->update([
             'balance' => 0
         ]);
+
+        $user->notify(new WithDrawalNotification($user));
+
         $request->session()->flash('paid', 'Your payment request has been received. You will receieve the amount in your linked bank account within 5 days.');
         return back();
     }

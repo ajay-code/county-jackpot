@@ -9,8 +9,6 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Salsa|Share|Sniglet" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Oregano|Passion+One" rel="stylesheet">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="{{ asset('vendor/adminlte/vendor/font-awesome/css/font-awesome.min.css') }}">
 </head>
@@ -36,12 +34,12 @@
 						<a class="nav-link" href="/results">Draw Results</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="/terms-and-conditions">Terms</a>
-					</li>
-
-					<li class="nav-item">
-							<a class="nav-link" href="/policy">Policy</a>
+							<a class="nav-link" href="/terms-and-conditions">Terms</a>
 						</li>
+	
+						<li class="nav-item">
+								<a class="nav-link" href="/policy">Policy</a>
+							</li>
 					@guest
 					<li class="nav-item">
 						<a class="nav-link" href="/login">Sign in</a>
@@ -51,8 +49,8 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link" href="#" id="dropdown01" data-toggle="dropdown" aria-expanded="false">My Account</a>
 						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown01">
-							<a class="dropdown-item" href="/lotteries">Draws</a>
-							<a class="dropdown-item" href="/my-lotteries">My draws</a>
+							<a class="dropdown-item" href="/lotteries">Lotteries</a>
+							<a class="dropdown-item" href="/my-lotteries">My Lotteries</a>
 							<a class="dropdown-item" href="/profile">Profile</a>
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" href="#"
@@ -83,109 +81,42 @@
 
 
 
-	<section id="app" class="featured">
-		<h1 class="text-center featured-heading">Weekly Draws</h1>
-			<div class="container">
-				<div class="row featured-line d-none d-lg-flex">
-					<div class=" col-lg-2 ">
-						<h4></h4>
-					</div>
-					<div class=" col-lg-3 text-center">
-						<h4>County</h4>
-					</div>
-					<div class=" col-lg-2 text-center">
-						<h4>Jackpot</h4>
-					</div>
-					<div class=" col-lg-3 text-center">
-						<h4>Time to draw</h4>
-					</div>
-					<div class=" col-lg-2 text-center">
-						<h4>Click to buy</h4>
-					</div>
-				</div>
-				@foreach ($lotteries as $lottery)
-				<lottery-display-item :lottery="{{ $lottery->currentLottery }}"></lottery-display-item>
+
+	<section id="app" class="container-fluid clearfix" style="padding-bottom:8rem; padding-top:5rem">
+			<h1 class="text-center text-">Weekly Draws</h1>
+			<br>
+			<br>
+            <div class="container">
+                <div class="row featured-line d-none d-lg-flex">
+                    <div class=" col-lg-2 ">
+                        <h4></h4>
+                    </div>
+                    <div class=" col-lg-3 text-center">
+                            <h4>Winner's Draw Number</h4>
+                    </div>
+                    <div class=" col-lg-3 text-center">
+                        <h4>Draw name</h4>
+                    </div>
+                    <div class=" col-lg-2 text-center">
+                        <h4>Jackpot</h4>
+                    </div>
+                    <div class=" col-lg-2 text-center">
+                        <h4>Winner</h4>
+                    </div>
+                </div>
+
+                @foreach ($lotteries as $lottery)
+                <div class="text-center">
+                    <h6 class="text-"> Results Declared on : {{ $lottery->resultLottery->expire_at->format('jS F, Y') }}  </h6>
+                </div>
+				<lottery-result :lottery="{{ $lottery->resultLottery }}"></lottery-result>
 				@endforeach
-			</div>
+                
+            </div>
 	</section>
-
-	<section class="container-fluid process clearfix" style="padding-bottom:3rem;">
-		<h3 class="text-center " style="color: white">Easy and Quick Process</h3>
-		<h1 class="text-center" style="color: white">What makes us best in the market?</h1>
-		<div class="card-group ">
-			<div class="card ">
-				<div style="text-align: center;">
-					<img class="card-img-top img-fluid" src="img/cash.png" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title text-center">1. Pay Entery Fees</h4>
-					<p class="card-text text-center">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little
-						bit longer.</p>
-				</div>
-			</div>
-			<div class="card">
-				<div style="text-align: center;">
-					<img class="card-img-top img-fluid" src="img/game.png" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title text-center">2. Play a game and answer</h4>
-					<p class="card-text text-center">This card has supporting text below as a natural lead-in to additional content.</p>
-				</div>
-			</div>
-			<div class="card">
-				<div style="text-align: center;">
-					<img class="card-img-top img-fluid" src="img/winner.png" alt="Card image cap">
-				</div>
-				<div class="card-body">
-					<h4 class="card-title text-center">3. Wait for the draw results</h4>
-					<p class="card-text text-center">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<div class="container clearfix">
-		<section id="timer">
-			<h1 class="text-center" style="font-size: 2.5rem; color: #1ea5ea; padding-bottom:2rem ;"> Featured Draw</h1>
-			<div class="text-center ">
-				{{--  <img class="img-fluid" src="img/powerball.png" width="500px" height="120px">  --}}
-				<img class="img-fluid" width="500" src="img/logo.png" alt="" srcset="">
-			</div>
-
-			<div class="row">
-				<div class=" col-sm-12 col-md-6 countdown-wrapper text-center mb20">
-					<div class="card">
-
-						<div class="card-block">
-							<div id="countdown">
-								<div class="well">
-									<span id="hour" class="timer bg-success"></span>
-									<span id="min" class="timer bg-info"></span>
-									<span id="sec" class="timer bg-primary"></span>
-								</div>
-							</div>
-						</div>
-
-					</div>
-				</div>
-
-			</div>
-		</section>
-	</div>
 	
-	<h2 class="text-center">Jackpot Prize :
-		<span style="color: #28a745; font-weight: 700;"> <i class="fa fa-gbp"></i> {{ number_format($featured->prize, 2, '.', ',') }}</span>
-	</h2>
-	<div class="text-center">
-		<a href="/lotteries/{{ $featured->id }}/buy" class="buy-button">Enter Draw</a>
-	</div>
-	<h3 class="text-center" style="margin-bottom: 4rem!important;">
-		<a href="/results" style=" font-weight: 700; cursor: pointer;">Go to results page</a>
-	</h3>
-	</section>
 
 	<section>
-
 		<div class="m-t-3"></div>
 		<footer class="mainfooter" role="contentinfo">
 
@@ -314,30 +245,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			var t = new Date('{{ $featured->expire_at->endOfDay()->toW3cString() }}');
-			var interval = setInterval(function time() {
-				d = new Date()
-				if(t - d <= 0){
-					clearInterval(interval)
-				}
-				var hours =  t.getHours() - d.getHours();
-				var min =  t.getMinutes() - d.getMinutes();
-				if ((min + '').length == 1) {
-					min = '0' + min;
-				}
-				var sec = t.getSeconds() - d.getSeconds();
-				if ((sec + '').length == 1) {
-					sec = '0' + sec;
-				}
-				jQuery('#countdown #hour').html(hours);
-				jQuery('#countdown #min').html(min);
-				jQuery('#countdown #sec').html(sec);
-			}, 1000);
-		});
-		
-	</script>
 </body>
 
 </html>

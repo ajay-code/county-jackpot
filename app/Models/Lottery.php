@@ -22,6 +22,7 @@ class Lottery extends Model
         'entry_fee',
         'expire_at',
         'winner_id',
+        'winner_draw_id',
         'prize_money_approved'
     ];
 
@@ -98,6 +99,11 @@ class Lottery extends Model
     public function winner()
     {
         return $this->belongsTo(User::class, 'winner_id');
+    }
+
+    public function winnerDraw()
+    {
+        return $this->belongsTo(UserLottery::class, 'winner_draw_id');
     }
 
     public function participants()

@@ -31,7 +31,7 @@ class PurchasesLotteryController extends Controller
      */
     public function store(Request $request, ParentLottery $parentLottery)
     {
-        $currentLottery = $parentLottery->currentLottery();
+        $currentLottery = $parentLottery->currentLottery;
         $user = auth()->user();
         Stripe::setApiKey(config('services.stripe.secret'));
 

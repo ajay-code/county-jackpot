@@ -6,6 +6,7 @@ use App\Models\Lottery;
 use Illuminate\Http\Request;
 use App\Models\ParentLottery;
 use App\Http\Controllers\Controller;
+use App\Notifications\PrizeApproved;
 
 class CountyDrawController extends Controller
 {
@@ -72,6 +73,8 @@ class CountyDrawController extends Controller
             $status = $winner->update([
                 'balance' => $winner->balance + $countyDraw->prize
             ]);
+
+            $winner->notify(new PrizeApproved($countyDraw));
 
             return back();
         }

@@ -1,23 +1,23 @@
 @extends('adminlte::page')
 
-@section('title', 'Counties')
+@section('title', 'Get Paid')
 
 @section('content_header')
-    <h1>Counties</h1>
+    <h1>Withdrawal History</h1>
     <ol class="breadcrumb">
         <li>
             <a href="#">
                 <i class="fa fa-dashboard"></i> Home
             </a>
         </li>
-        <li class="active">Counties</li>
+        <li class="active">Withdrawal History</li>
     </ol>
 @stop
 
 @section('content')
 <div class="box box-success">
     <div class="box-header">
-        <h3 class="box-title">Data Table With Full Features</h3>
+        <h3 class="box-title">Withdrawal History</h3>
     </div>
     <!-- /.box-header -->
     <div class="box-body">

@@ -86,6 +86,14 @@ class ParentLottery extends Model
     }
 
     /**
+     * Return the Latest Result of Lottery
+     */
+    public function resultLottery()
+    {
+        return $this->hasOne(Lottery::class, 'parent_lottery_id')->whereNotNull('winner_id')->latest();
+    }
+
+    /**
      * Tells if the Lottery is Active
      */
     public function isActive()

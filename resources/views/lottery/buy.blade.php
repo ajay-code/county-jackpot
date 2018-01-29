@@ -10,7 +10,7 @@
     <div  class="box box-success" >
         <div class="box-body">
                 <div id="app">
-                    <lottery :lottery="{{ json_encode($parentLottery->currentLottery())}}"></lottery>
+                    <lottery :lottery="{{$parentLottery->currentLottery}}"></lottery>
                 </div>
         </div>
     </div>

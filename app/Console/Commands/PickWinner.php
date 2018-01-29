@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Models\ParentLottery;
 use Illuminate\Console\Command;
+use App\Notifications\WinnerEmail;
 
 class PickWinner extends Command
 {
@@ -42,18 +43,26 @@ class PickWinner extends Command
         
         foreach ($parentLotteries as $parentLottery) {
             $currentLottery = $parentLottery->currentLottery;
+            $this->info("CurrentLottery ID: {$currentLottery->id}");
             if (!$currentLottery->hasWinner()) {
                 $currentLottery->load(['draws' => function ($q) {
                     $q = $q->with('user')->where('result', 'won');
                 }]);
 
-                $users = $currentLottery->draws->pluck('user');
+                $draws = $currentLottery->draws;
                 
-                $winner = $users->shuffle()[0];
-                
+                $winner = $draws->shuffle()[0];
                 $currentLottery->update([
-                    'winner_id' => $winner->id
+                    'winner_id' => $winner->user->id,
+                    'winner_draw_id' => $winner->id
                 ]);
+
+                // Send Emails
+                $winner->notify(new WinnerEmail($currentLottery, $winner));
+                $participants = $currentLottery->participants->unique();
+                $participants = $participants->keyBy('id');
+                $participants = $participants->forget($winner->id);
+                Notification::send($participents, new ResultDeclared($currentLottery));
             }
         }
     }
