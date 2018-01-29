@@ -20,6 +20,7 @@ class CreateParentLotteriesTable extends Migration
             $table->string('name');
             $table->integer('entry_fee');
             $table->integer('prize');
+            $table->boolean('featured')->default(false);
             $table->date('expire_at');
             $table->timestamps();
             $table->softDeletes();

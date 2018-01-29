@@ -84,7 +84,7 @@
 
 
 	<section id="app" class="featured">
-		<h1 class="text-center featured-heading">Weekly Draws</h1>
+		<h1 class="text-center featured-heading">Active Draws</h1>
 			<div class="container">
 				<div class="row featured-line d-none d-lg-flex">
 					<div class=" col-lg-2 ">
@@ -145,7 +145,7 @@
 
 	<div class="container clearfix">
 		<section id="timer">
-			<h1 class="text-center" style="font-size: 2.5rem; color: #1ea5ea; padding-bottom:2rem ;"> Featured Draw</h1>
+			<h1 class="text-center" style="font-size: 2.5rem; color: #b5009b; padding-bottom:2rem ;"> Featured Draw</h1>
 			<div class="text-center ">
 				{{--  <img class="img-fluid" src="img/powerball.png" width="500px" height="120px">  --}}
 				<img class="img-fluid" width="500" src="img/logo.png" alt="" srcset="">
@@ -179,7 +179,7 @@
 		<a href="/county-draw/{{ $featured->id }}/buy" class="buy-button">Enter Draw</a>
 	</div>
 	<h3 class="text-center" style="margin-bottom: 4rem!important;">
-		<a href="/results" style=" font-weight: 700; cursor: pointer;">Go to results page</a>
+		<a class="a-link" href="/results" style=" font-weight: 700; cursor: pointer;">Go to results page</a>
 	</h3>
 	</section>
 
@@ -297,7 +297,7 @@
 					<div class="row">
 						<div class="col-12">
 							<!--Footer Bottom-->
-							<p class="text-center">&copy; Copyright 2016 - City of USA. All rights reserved.</p>
+							<p class="text-center">&copy; Copyright 2018 All rights reserved.</p>
 						</div>
 					</div>
 				</div>

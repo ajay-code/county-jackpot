@@ -17,6 +17,15 @@ Route::get('/test', 'MainController@test');
 Route::view('/terms-and-conditions', 'terms-and-conditions');
 Route::view('/policy', 'policy');
 
+Route::get('/scheduler', function () {
+    Artisan::call('schedule:run');
+    return 'done';
+});
+Route::get('/clear-cache', function () {
+    $exitCode = Artisan::call('cache:clear');
+    return 'done';
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

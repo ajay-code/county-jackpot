@@ -254,7 +254,7 @@
 					<div class="row">
 						<div class="col-12">
 							<!--Footer Bottom-->
-							<p class="text-center">&copy; Copyright 2016 - City of USA. All rights reserved.</p>
+							<p class="text-center">&copy; Copyright 2018 All rights reserved.</p>
 						</div>
 					</div>
 				</div>

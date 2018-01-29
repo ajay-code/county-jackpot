@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
             $table->string('gender')->nullable();
             $table->string('phone', 11)->nullable();
-            $table->decimal('balance', 12, 2);
+            $table->decimal('balance', 12, 2)->default(0.00);
             $table->integer('county_id')->unsigned()->nullable();
             $table->text('street_address')->nullable();
             $table->enum('status', ['active', 'deactive'])->default('active');

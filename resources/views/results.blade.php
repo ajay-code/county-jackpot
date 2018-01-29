@@ -87,6 +87,7 @@
 			<br>
 			<br>
             <div class="container">
+				@if ($results_count > 0)
                 <div class="row featured-line d-none d-lg-flex">
                     <div class=" col-lg-2 ">
                         <h4></h4>
@@ -111,6 +112,10 @@
                 </div>
 				<lottery-result :lottery="{{ $lottery->resultLottery }}"></lottery-result>
 				@endforeach
+					
+				@else
+					<h3>No Results To show</h3>
+				@endif
                 
             </div>
 	</section>
@@ -229,7 +234,7 @@
 					<div class="row">
 						<div class="col-12">
 							<!--Footer Bottom-->
-							<p class="text-center">&copy; Copyright 2016 - City of USA. All rights reserved.</p>
+							<p class="text-center">&copy; Copyright 2018 All rights reserved.</p>
 						</div>
 					</div>
 				</div>

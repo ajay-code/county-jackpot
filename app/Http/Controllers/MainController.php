@@ -18,15 +18,17 @@ class MainController extends Controller
         $lotteries = ParentLottery::NotExpired()->get();
         $lotteries->load('currentLottery');
         $featured = ParentLottery::featured()->first();
-        // return $featured;
+        if (!$featured) {
+            $featured = ParentLottery::first();
+        }
         return view('welcome', compact('lotteries', 'featured'));
     }
 
     public function results()
     {
-        $lotteries = ParentLottery::with('resultLottery.winner', 'resultLottery.winnerDraw')->get();
-        // return $lotteries;
-        return view('results', compact('lotteries'));
+        $lotteries = ParentLottery::with('resultLottery.winner', 'resultLottery.winnerDraw')->WithCount('resultLottery')->get();
+        $results_count = $lotteries->each->resultLottery->pluck('result_lottery_count')->sum();
+        return view('results', compact('lotteries', 'results_count'));
     }
 
     public function game()
@@ -38,11 +40,7 @@ class MainController extends Controller
     {
         $lottery = Lottery::find(2);
         $user = User::find(1);
-        $participants = $lottery->participants->unique();
-        $participants = $participants->keyBy('id');
-        $participants = $participants->forget($user->id);
-        $user->notify(new WinnerEmail($lottery, $user));
-        Notification::send($participants, new ResultDeclared($lottery));
-        return $participants;
+        $user->notify(new TestNotice);
+        return $user;
     }
 }

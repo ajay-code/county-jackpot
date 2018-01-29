@@ -38,14 +38,12 @@
                         <b>Total Draws</b>
                         <span class="pull-right">
                             {{ $user->lotteries()->count() }}
-                            <a href="/admin/users/{{$user->id}}/draws"> View</a>
                         </span>
                     </li>
                     <li class="list-group-item">
                         <b>Draws Won</b>
                         <span class="pull-right">
                             {{ $user->lotteriesWon()->count() }}
-                            <a href="/admin/users/{{$user->id}}/draws/won" > View</a>
                         </span>
                     </li>
                 </ul>
