@@ -42,8 +42,9 @@ class RescheduleLottery extends Command
         $parentLotteries = ParentLottery::with('currentLottery')
                                             ->expired()
                                             ->alwaysActive()
-                                            ->get()
-                                            ->dump();
+                                            ->get();
+        // ->dump();
+        
         foreach ($parentLotteries as $parentLottery) {
             $this->info($parentLottery->id);
             // $currentLottery = $parentLottery->currentLottery;

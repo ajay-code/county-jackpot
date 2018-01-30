@@ -105,7 +105,8 @@ class LotteryController extends Controller
         ]);
 
         $parentLottery->update($validatedData);
-        $parentLottery->currentLottery()->update($validatedData);
+
+        $parentLottery->currentLottery->update($validatedData);
 
 
         return redirect()->route('admin.county-draw-info.index');

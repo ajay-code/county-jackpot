@@ -13,7 +13,7 @@
                 <div class="message">
                     <h2 class="text-center">
 
-                        You have successfully paid the entry fee<br>
+                       <br>
                     </h2>
                     <h4>
                         To enter the draw you will need to play a little memory game. A group of pictures will be shown on the screen, some of those pictures will be the copy of each other.
@@ -21,10 +21,10 @@
                                 Your question will be based on the number of their occurence.
                             </b><br>
                     </h4>
-                    <h4 style="margin: 2rem 0px;" class="text-center">
+                    <h2 style="margin: 2rem 0px;" class="text-center">
                         For example: Picture A is repeated 2 times, Picture B is repeated 3 times etc.
 
-                    </h4>
+                    </h2>
                     
         
                     <div class="text-center" style="margin-top:6rem">
@@ -34,8 +34,7 @@
                     </div>
 
                     <h3 style="margin-top:4rem; color:red" class="text-center">
-                            NOTE: You will enter the draw only if you answer the question correctly
-                        
+                Best of luck!                        
                         </h3>
                 </div>
 

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Notification;
 use App\Models\ParentLottery;
 use Illuminate\Console\Command;
 use App\Notifications\WinnerEmail;
@@ -58,11 +59,13 @@ class PickWinner extends Command
                 ]);
 
                 // Send Emails
-                $winner->notify(new WinnerEmail($currentLottery, $winner));
+                $winner->user->notify(new WinnerEmail($currentLottery, $winner->user));
                 $participants = $currentLottery->participants->unique();
                 $participants = $participants->keyBy('id');
-                $participants = $participants->forget($winner->id);
-                Notification::send($participents, new ResultDeclared($currentLottery));
+                $participants = $participants->forget($winner->user->id);
+                if ($participants->count() > 0) {
+                    Notification::send($participents, new ResultDeclared($currentLottery));
+                }
             }
         }
     }

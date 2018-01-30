@@ -18,7 +18,8 @@ Route::view('/terms-and-conditions', 'terms-and-conditions');
 Route::view('/policy', 'policy');
 
 Route::get('/scheduler', function () {
-    Artisan::call('schedule:run');
+    Artisan::call('lottery:pick-winner');
+    Artisan::call('reschedule:lotteries');
     return 'done';
 });
 Route::get('/clear-cache', function () {

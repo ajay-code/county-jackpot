@@ -26,7 +26,7 @@ class MainController extends Controller
 
     public function results()
     {
-        $lotteries = ParentLottery::with('resultLottery.winner', 'resultLottery.winnerDraw')->WithCount('resultLottery')->get();
+        $lotteries = ParentLottery::has('resultLottery')->with('resultLottery.winner', 'resultLottery.winnerDraw')->WithCount('resultLottery')->get();
         $results_count = $lotteries->each->resultLottery->pluck('result_lottery_count')->sum();
         return view('results', compact('lotteries', 'results_count'));
     }

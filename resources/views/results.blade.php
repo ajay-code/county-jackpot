@@ -107,8 +107,8 @@
                 </div>
 
                 @foreach ($lotteries as $lottery)
-                <div class="left">
-                    <h6 class="text-"> Results Declared on : {{ $lottery->resultLottery->expire_at->format('jS F, Y') }}  </h6>
+                <div >
+                    <h6 class="text-center"> Results Declared on : {{ $lottery->resultLottery->expire_at->format('jS F, Y') }}  </h6>
                 </div>
 				<lottery-result :lottery="{{ $lottery->resultLottery }}"></lottery-result>
 				@endforeach
