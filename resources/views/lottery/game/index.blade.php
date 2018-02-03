@@ -23,7 +23,6 @@
                     </h4>
                     <h2 style="margin: 2rem 0px;" class="text-center">
                         For example: Picture A is repeated 2 times, Picture B is repeated 3 times etc.
-
                     </h2>
                     
         

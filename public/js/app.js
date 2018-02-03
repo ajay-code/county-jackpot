@@ -51406,7 +51406,10 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
             return columnName.replace("_", " ").toUpperCase();
         },
         nl2br: function nl2br(columnValue) {
-            return columnValue.replace(/\n/g, "<br />");
+            if (columnValue) {
+                return columnValue.replace(/\n/g, "<br />");
+            }
+            return "";
         }
     },
     mounted: function mounted() {
@@ -53153,7 +53156,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -53164,6 +53167,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -53187,7 +53192,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 // import moment from "moment";
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
     data: function data() {
         return {
             currentTime: new Date()
@@ -53229,7 +53234,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     mounted: function mounted() {
         setInterval(this.updateTime, 1000);
     }
-});
+}, "computed", {
+    winnerName: function winnerName() {
+        var winner = lottery.winner.name.split(" ");
+        if (winner.length > 1) {
+            return winner[0][0] + ". " + winner[1];
+        } else {
+            return winner[0];
+        }
+    }
+}));
 
 /***/ }),
 /* 188 */
@@ -53265,7 +53279,7 @@ var render = function() {
     _c("div", { staticClass: " featured-play col-lg-2 text-center" }, [
       _c("span", {
         staticClass: "h4",
-        domProps: { textContent: _vm._s(_vm.lottery.winner.name) }
+        domProps: { textContent: _vm._s(_vm.winnerName) }
       })
     ])
   ])
@@ -53375,7 +53389,7 @@ exports = module.exports = __webpack_require__(3)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);", ""]);
 
 // module
-exports.push([module.i, "\n*[data-v-709f841c],\n*[data-v-709f841c]:before,\n*[data-v-709f841c]:after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nbody[data-v-709f841c] {\n  font: 14px/20px \"Lato\", Arial, sans-serif;\n  color: #9e9e9e;\n  margin-top: 30px;\n}\n.slide-container[data-v-709f841c] {\n  margin: auto;\n  max-width: 600px;\n  text-align: center;\n}\n.wrapper[data-v-709f841c] {\n  padding-top: 40px;\n  padding-bottom: 40px;\n  background: inherit;\n}\n.wrapper[data-v-709f841c]:focus {\n    outline: 0;\n}\n.clash-card[data-v-709f841c] {\n  background: white;\n  width: 376px;\n  display: inline-block;\n  margin: auto;\n  border-radius: 19px;\n  position: relative;\n  text-align: center;\n  -webkit-box-shadow: -1px 15px 30px -12px black;\n          box-shadow: -1px 15px 30px -12px black;\n  z-index: 9999;\n}\n.clash-card__image[data-v-709f841c] {\n  position: relative;\n  height: 230px;\n  margin-bottom: 35px;\n  border-top-left-radius: 14px;\n  border-top-right-radius: 14px;\n}\n.clash-card__image--barbarian[data-v-709f841c] {\n  background: #ada8a8;\n}\n.clash-card__image--barbarian img[data-v-709f841c] {\n    width: 397px;\n    position: absolute;\n    top: -45px;\n    left: -10px;\n}\n.clash-card__level[data-v-709f841c] {\n  text-transform: uppercase;\n  font-size: 12px;\n  font-weight: 700;\n  margin-bottom: 3px;\n}\n.clash-card__level--barbarian[data-v-709f841c] {\n  color: #ec9b3b;\n}\n.clash-card__unit-name[data-v-709f841c] {\n  font-size: 4rem;\n  color: #ec9b3b;\n  font-weight: 900;\n  margin-bottom: 5px;\n}\n.clash-card__unit-description[data-v-709f841c] {\n  padding: 20px;\n  font-size: 2rem;\n  margin-bottom: 10px;\n}\n.clash-card__unit-stats--barbarian[data-v-709f841c] {\n  background: #ec9b3b;\n}\n.clash-card__unit-stats--barbarian .one-third[data-v-709f841c] {\n    border-right: 1px solid #bd7c2f;\n}\n.clash-card__unit-stats[data-v-709f841c] {\n  color: white;\n  font-weight: 700;\n  font-size: 32px;\n  border-bottom-left-radius: 14px;\n  border-bottom-right-radius: 14px;\n}\n.clash-card__unit-stats .one-third[data-v-709f841c] {\n    width: 33%;\n    float: left;\n    padding: 20px 15px;\n}\n.clash-card__unit-stats sup[data-v-709f841c] {\n    position: absolute;\n    bottom: 4px;\n    font-size: 45%;\n    margin-left: 2px;\n}\n.clash-card__unit-stats .stat[data-v-709f841c] {\n    position: relative;\n    font-size: 24px;\n    margin-bottom: 10px;\n}\n.clash-card__unit-stats .stat-value[data-v-709f841c] {\n    text-transform: uppercase;\n    font-weight: 400;\n    font-size: 12px;\n}\n.clash-card__unit-stats .no-border[data-v-709f841c] {\n    border-right: none;\n}\n.clearfix[data-v-709f841c]:after {\n  visibility: hidden;\n  display: block;\n  font-size: 0;\n  content: \" \";\n  clear: both;\n  height: 0;\n}\n.buy[data-v-709f841c]:hover {\n  cursor: pointer;\n  outline: none;\n  background: #e49a43;\n  -webkit-box-shadow: inset 0px 0px 4px #d79951;\n          box-shadow: inset 0px 0px 4px #d79951;\n}\n", ""]);
+exports.push([module.i, "\n*[data-v-709f841c],\n*[data-v-709f841c]:before,\n*[data-v-709f841c]:after {\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n}\nbody[data-v-709f841c] {\n  font: 14px/20px \"Lato\", Arial, sans-serif;\n  color: #9e9e9e;\n  margin-top: 30px;\n}\n.slide-container[data-v-709f841c] {\n  margin: auto;\n  max-width: 600px;\n  text-align: center;\n}\n.card-wrapper[data-v-709f841c] {\n  padding-top: 40px;\n  padding-bottom: 40px;\n  background: inherit;\n  max-width: 100%;\n}\n.card-wrapper[data-v-709f841c]:focus {\n    outline: 0;\n}\n.clash-card[data-v-709f841c] {\n  background: white;\n  width: 376px;\n  max-width: 100%;\n  display: inline-block;\n  margin: auto;\n  border-radius: 19px;\n  position: relative;\n  text-align: center;\n  -webkit-box-shadow: -1px 15px 30px -12px black;\n          box-shadow: -1px 15px 30px -12px black;\n  z-index: 9999;\n}\n.clash-card__image[data-v-709f841c] {\n  position: relative;\n  height: 230px;\n  margin-bottom: 35px;\n  border-top-left-radius: 14px;\n  border-top-right-radius: 14px;\n}\n.clash-card__image--barbarian[data-v-709f841c] {\n  background: #ada8a8;\n}\n.clash-card__image--barbarian img[data-v-709f841c] {\n    width: 105%;\n    position: absolute;\n    top: -45px;\n    left: -10px;\n}\n.clash-card__level[data-v-709f841c] {\n  text-transform: uppercase;\n  font-size: 12px;\n  font-weight: 700;\n  margin-bottom: 3px;\n}\n.clash-card__level--barbarian[data-v-709f841c] {\n  color: #aa3695;\n}\n.clash-card__unit-name[data-v-709f841c] {\n  font-size: 4rem;\n  color: #aa3695;\n  font-weight: 900;\n  margin-bottom: 5px;\n}\n.clash-card__unit-description[data-v-709f841c] {\n  padding: 20px;\n  font-size: 2rem;\n  margin-bottom: 10px;\n}\n.clash-card__unit-stats--barbarian[data-v-709f841c] {\n  background: #aa3695;\n}\n.clash-card__unit-stats--barbarian .one-third[data-v-709f841c] {\n    border-right: 1px solid #832a73;\n}\n.clash-card__unit-stats[data-v-709f841c] {\n  color: white;\n  font-weight: 700;\n  font-size: 32px;\n  border-bottom-left-radius: 14px;\n  border-bottom-right-radius: 14px;\n}\n.clash-card__unit-stats .one-third[data-v-709f841c] {\n    width: 33%;\n    float: left;\n    padding: 20px 15px;\n}\n.clash-card__unit-stats sup[data-v-709f841c] {\n    position: absolute;\n    bottom: 4px;\n    font-size: 45%;\n    margin-left: 2px;\n}\n.clash-card__unit-stats .stat[data-v-709f841c] {\n    position: relative;\n    font-size: 24px;\n    margin-bottom: 10px;\n}\n.clash-card__unit-stats .stat-value[data-v-709f841c] {\n    text-transform: uppercase;\n    font-weight: 400;\n    font-size: 12px;\n}\n.clash-card__unit-stats .no-border[data-v-709f841c] {\n    border-right: none;\n}\n.clearfix[data-v-709f841c]:after {\n  visibility: hidden;\n  display: block;\n  font-size: 0;\n  content: \" \";\n  clear: both;\n  height: 0;\n}\n.buy[data-v-709f841c]:hover {\n  cursor: pointer;\n  outline: none;\n  background: #a23e90;\n  -webkit-box-shadow: inset 0px 0px 4px #944c87;\n          box-shadow: inset 0px 0px 4px #944c87;\n}\n", ""]);
 
 // exports
 
@@ -53429,20 +53443,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
             loading: false,
-            currentTime: new Date(),
-            stripe: "",
-            formData: {
-                stripeEmail: "",
-                stripeToken: ""
-            },
-            card: ""
+            currentTime: new Date()
         };
     },
 
@@ -53501,7 +53508,7 @@ var render = function() {
     [
       _vm.loading ? _c("loader") : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "wrapper" }, [
+      _c("div", { staticClass: "card-wrapper" }, [
         _c("div", { staticClass: "clash-card barbarian" }, [
           _vm._m(0),
           _vm._v(" "),
@@ -53555,7 +53562,9 @@ var render = function() {
                   })
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "stat-value" }, [_vm._v("Prize")])
+                _c("div", { staticClass: "stat-value" }, [
+                  _vm._v("Minimum Win")
+                ])
               ])
             ]
           )
@@ -53746,7 +53755,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
                 "3": "",
                 "2": ""
             },
-            timeleft: 15,
+            timeleft: 10,
             isAnswered: false,
             answerImageRepeatTime: "",
             showBuy: false,

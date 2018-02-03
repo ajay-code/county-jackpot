@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Get Paid')
+@section('title', 'Withdrawal History')
 
 @section('content_header')
     <h1>Withdrawal History</h1>

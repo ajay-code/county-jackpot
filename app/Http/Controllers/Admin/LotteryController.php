@@ -134,14 +134,13 @@ class LotteryController extends Controller
 
     public function changeFeatured(Request $request)
     {
-        $this->validate($request, [
-            'featured' => 'required'
-        ]);
         $affected = DB::table('parent_lotteries')->where('featured', 1)->update(['featured' => 0]);
-        $featured = ParentLottery::find($request->featured);
-        $status = $featured->update([
-            'featured' => true
-        ]);
+        if ($request->featured) {
+            $featured = ParentLottery::find($request->featured);
+            $status = $featured->update([
+                'featured' => true
+            ]);
+        }
         return back();
     }
 }

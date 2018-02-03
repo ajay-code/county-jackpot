@@ -3,13 +3,13 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>County Draws</h1>
+    <h1>Active Draws</h1>
 @stop
 
 @section('content')
     <div id="app" class="box box-success">
         <div class="box-header">
-            <h3 class="box-title">County Draws</h3>
+            <h3 class="box-title">Active Draws</h3>
         </div>
         <div class="box-body">
             @foreach ($lotteries as $lottery)

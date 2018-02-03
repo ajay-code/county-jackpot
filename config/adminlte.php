@@ -110,7 +110,7 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text'        => 'County Draws',
+            'text'        => 'Active Draws',
             'url'         => 'county-draw',
             'icon'        => 'file',
         ],

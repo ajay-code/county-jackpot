@@ -16,7 +16,7 @@ Route::get('/featured', 'Admin\LotteryController@featured')->name('featured');
 Route::put('/featured', 'Admin\LotteryController@changeFeatured')->name('featured');
 
 /**
- * County Draws
+ * Active Draws
  */
 Route::get('/county-draws', 'Admin\CountyDrawController@index')->name('county-draws.draws');
 Route::get('/county-draws/{countyDraw}/participants', 'Admin\CountyDrawController@participants')->name('county-draws.draws.participents');

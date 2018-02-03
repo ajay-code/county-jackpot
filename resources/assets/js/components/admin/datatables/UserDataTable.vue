@@ -340,7 +340,10 @@ export default {
             return columnName.replace("_", " ").toUpperCase();
         },
         nl2br(columnValue) {
-            return columnValue.replace(/\n/g, "<br />");
+            if (columnValue) {
+                return columnValue.replace(/\n/g, "<br />");
+            }
+            return "";
         }
     },
     mounted() {

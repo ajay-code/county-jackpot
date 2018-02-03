@@ -23,6 +23,10 @@
                         <span class="pull-right">{{ $user->gender }}</span>
                     </li>
                     <li class="list-group-item">
+                        <b>DOB</b>
+                        <span class="pull-right">{{ $user->dob ? $user->dob->format('jS F, Y') : '--' }}</span>
+                    </li>
+                    <li class="list-group-item">
                         <b>Phone</b>
                         <span class="pull-right">{{ $user->phone }}</span>
                     </li>
@@ -51,24 +55,16 @@
                 <p class="text-muted text-center">Bank Details</p>
                 <ul class="list-group list-group-unbordered">
                     <li class="list-group-item">
-                        <b> IBAN </b>
-                        <span class="pull-right"> {{$user->bankDetail->iban}} </span>
-                    </li>
-                    <li class="list-group-item">
-                        <b> BBAN </b>
-                        <span class="pull-right"> {{$user->bankDetail->bban}} </span>
-                    </li>
-                    <li class="list-group-item">
-                        <b> Bank Identifier </b>
-                        <span class="pull-right"> {{$user->bankDetail->bank_identifier}} </span>
-                    </li>
-                    <li class="list-group-item">
-                        <b> Branch Identifier </b>
-                        <span class="pull-right"> {{$user->bankDetail->branch_identifier}} </span>
+                        <b> Bank Name </b>
+                        <span class="pull-right"> {{$user->bankDetail->bank_name}} </span>
                     </li>
                     <li class="list-group-item">
                         <b> Account Number </b>
                         <span class="pull-right"> {{$user->bankDetail->account_number}} </span>
+                    </li>
+                    <li class="list-group-item">
+                        <b> Sort Code </b>
+                        <span class="pull-right"> {{$user->bankDetail->sort_code}} </span>
                     </li>
                 </ul>
                 <a href="/profile/edit" class="btn btn-primary btn-block"><b>Edit</b></a>

@@ -26,7 +26,7 @@ class UpdateProfile extends FormRequest
         return [
             'name' => 'required',
             'gender' => 'nullable',
-            'phone' => 'required|numeric|digits_between:0,10',
+            'phone' => 'required|numeric|digits_between:7,11',
             'street_address' => 'nullable',
             'county_id' => 'required|numeric'
         ];

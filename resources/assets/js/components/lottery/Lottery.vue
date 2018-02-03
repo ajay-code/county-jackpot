@@ -1,7 +1,7 @@
 <template>
     <div class="slide-container">
         <loader v-if="loading"></loader>
-        <div class="wrapper">
+        <div class="card-wrapper">
             <div class="clash-card barbarian">
                 <div class="clash-card__image clash-card__image--barbarian">
                     <img src="/img/logo.png" alt="barbarian" />
@@ -28,14 +28,13 @@
                         <div class="stat">
                             <i class="fa fa-gbp"></i> <span v-text="lottery.prize"></span>
                         </div>
-                        <div class="stat-value">Prize</div>
+                        <div class="stat-value">Minimum Win</div>
                     </div>
-
                 </div>
             </div>
             <!-- end clash-card barbarian-->
         </div>
-        <!-- end wrapper -->
+        <!-- end card-wrapper -->
     </div>
     <!-- end container -->
 </template>
@@ -46,13 +45,7 @@ export default {
     data() {
         return {
             loading: false,
-            currentTime: new Date(),
-            stripe: "",
-            formData: {
-                stripeEmail: "",
-                stripeToken: ""
-            },
-            card: ""
+            currentTime: new Date()
         };
     },
     props: {
@@ -103,7 +96,7 @@ export default {
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700,900);
 
 $border-radius-size: 14px;
-$barbarian: #ec9b3b;
+$barbarian: #aa3695;
 
 *,
 *:before,
@@ -123,10 +116,11 @@ body {
     text-align: center;
 }
 
-.wrapper {
+.card-wrapper {
     padding-top: 40px;
     padding-bottom: 40px;
     background: inherit;
+    max-width: 100%;
     &:focus {
         outline: 0;
     }
@@ -135,6 +129,7 @@ body {
 .clash-card {
     background: white;
     width: 376px;
+    max-width: 100%;
     display: inline-block;
     margin: auto;
     border-radius: $border-radius-size + 5;
@@ -155,7 +150,7 @@ body {
 .clash-card__image--barbarian {
     background: #ada8a8;
     img {
-        width: 397px;
+        width: 105%;
         position: absolute;
         top: -45px;
         left: -10px;
@@ -190,7 +185,7 @@ body {
     background: $barbarian;
 
     .one-third {
-        border-right: 1px solid #bd7c2f;
+        border-right: 1px solid darken($barbarian, 10%);
     }
 }
 

@@ -18,9 +18,6 @@ class MainController extends Controller
         $lotteries = ParentLottery::NotExpired()->get();
         $lotteries->load('currentLottery');
         $featured = ParentLottery::featured()->first();
-        if (!$featured) {
-            $featured = ParentLottery::first();
-        }
         return view('welcome', compact('lotteries', 'featured'));
     }
 

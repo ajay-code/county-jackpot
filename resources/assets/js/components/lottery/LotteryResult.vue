@@ -14,10 +14,10 @@
            <span class="h4"><i class="fa fa-gbp"></i><span  v-text="lottery.prize"></span></span>
         </div>
         <div class=" featured-play col-lg-2 text-center">
-            <span class="h4" v-text="lottery.winner.name"> </span>
+            <span class="h4" v-text="winnerName"> </span>
         </div>
     </div>
-</template>
+</template> 
 
 <script>
 // import moment from "moment";
@@ -63,6 +63,16 @@ export default {
     },
     mounted() {
         setInterval(this.updateTime, 1000);
+    },
+    computed: {
+        winnerName() {
+            let winner = lottery.winner.name.split(" ");
+            if (winner.length > 1) {
+                return `${winner[0][0]}. ${winner[1]}`;
+            } else {
+                return winner[0];
+            }
+        }
     }
 };
 </script>

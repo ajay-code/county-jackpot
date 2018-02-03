@@ -29,7 +29,7 @@
                         Amount
                     </th>
                     <th>
-                        Lottery
+                        Draw
                     </th>
                     <th>
                         On

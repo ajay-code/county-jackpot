@@ -12,7 +12,7 @@
         </li>
         <li>
             
-                <i class="fa fa-flag"></i> Bank Account Details
+            <i class="fa fa-flag"></i> Bank Account Details
         </li>
         <li class="active">Edit</li>
     </ol>

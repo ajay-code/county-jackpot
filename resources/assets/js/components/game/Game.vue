@@ -53,7 +53,7 @@ export default {
                 "3": "",
                 "2": ""
             },
-            timeleft: 15,
+            timeleft: 10,
             isAnswered: false,
             answerImageRepeatTime: "",
             showBuy: false,

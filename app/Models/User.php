@@ -16,8 +16,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'gender', 'county_id' ,'phone', 'street_address', 'status', 'balance'
+        'name', 'email', 'password', 'gender', 'county_id' ,'phone', 'street_address', 'dob' , 'status', 'balance'
     ];
+
+    /**
+    * The attributes that should be mutated to dates.
+    *
+    * @var array
+    */
+    protected $dates = ['dob'];
 
     /**
      * The attributes that should be hidden for arrays.

@@ -12,13 +12,20 @@ class BankDetail extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'iban', 'bban',
-        'bank_identifier', 'branch_identifier', 'account_number'
+        'user_id',
+        'bank_name',
+        'account_number',
+        'sort_code'
     ];
 
     public function notComplete()
     {
-        return ! ($this->iban and $this->bban and $this->bank_identifier and $this->branch_identifier and $this->account_number);
+        return ! ($this->bank_name and $this->account_number and $this->sort_code);
+    }
+
+    public function complete()
+    {
+        return ($this->bank_name and $this->account_number and $this->sort_code);
     }
 
     /**

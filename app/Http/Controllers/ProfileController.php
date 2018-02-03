@@ -28,7 +28,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->with('bankDetail')->first();
+        $user = auth()->user()->load('bankDetail');
         return view('profile.index', compact('user'));
     }
 

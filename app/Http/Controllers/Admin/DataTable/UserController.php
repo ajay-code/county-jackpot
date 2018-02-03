@@ -9,7 +9,6 @@ use Illuminate\Database\Eloquent\Builder;
 
 class UserController extends DataTableController
 {
-
     protected $allowCreation = false;
 
     /**
@@ -47,7 +46,7 @@ class UserController extends DataTableController
      */
     public function getDisplayableColumns()
     {
-        return [        
+        return [
             'id', 'name', 'email', 'gender' ,'phone', 'street_address', 'status'
         ];
     }
@@ -59,7 +58,7 @@ class UserController extends DataTableController
      */
     public function getUpdatableColumns()
     {
-        return [        
+        return [
             'name', 'email', 'gender' ,'phone', 'street_address', 'status'
         ];
     }

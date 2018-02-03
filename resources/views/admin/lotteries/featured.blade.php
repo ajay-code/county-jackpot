@@ -72,8 +72,8 @@
                 {{ method_field('PUT') }}
                 <div class="form-group">
                     <div class="col-sm-6">
-                        <select class="form-control" name="featured" required>
-                            <option value="">Select Draw</option>
+                        <select class="form-control" name="featured" >
+                            <option value="">Select Featured Draw</option>
                             @foreach ($lotteries as $lottery)
                                 <option value="{{ $lottery->id }}" 
                                     {{ $lottery->isFeatured() ? 'selected': '' }}

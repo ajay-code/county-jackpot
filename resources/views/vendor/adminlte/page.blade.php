@@ -3,6 +3,22 @@
 @section('adminlte_css')
     <link rel="stylesheet"
           href="{{ asset('vendor/adminlte/dist/css/skins/skin-' . config('adminlte.skin', 'blue') . '.min.css')}} ">
+    <style>
+            @media (min-width: 768px){
+                .main-header .logo{
+                    height: auto;
+                }
+                .sidebar-mini.sidebar-collapse .main-header .logo{
+                    width: 100px;
+                }
+                .sidebar-mini.sidebar-collapse .main-header .navbar{
+                    margin-left: 100px;
+                }
+            }
+            .sidebar-mini.sidebar-collapse .main-header .sidebar-toggle{
+                padding: 31px 15px;
+            }
+    </style>
     @stack('css')
     @yield('css')
 @stop
@@ -18,32 +34,13 @@
 
         <!-- Main Header -->
         <header class="main-header">
-            @if(config('adminlte.layout') == 'top-nav')
-            <nav class="navbar navbar-static-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="navbar-brand">
-                            {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
-                        </a>
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-                            <i class="fa fa-bars"></i>
-                        </button>
-                    </div>
-
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
-                        <ul class="nav navbar-nav">
-                            @each('adminlte::partials.menu-item-top-nav', $adminlte->menu(), 'item')
-                        </ul>
-                    </div>
-                    <!-- /.navbar-collapse -->
-            @else
+            
             <!-- Logo -->
             <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>LT') !!}</span>
+                <span class="logo-mini"><img src="/img/logo-mini.png" width="100" alt="TheCountyJackPot" srcset=""></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>
+                <span class="logo-lg"><img src="/img/logo-mini.png" width="50" alt="TheCountyJackPot" srcset=""> {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>
             </a>
 
             <!-- Header Navbar -->
@@ -52,7 +49,6 @@
                 <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
                     <span class="sr-only">{{ trans('adminlte::adminlte.toggle_navigation') }}</span>
                 </a>
-            @endif
                 <!-- Navbar Right Menu -->
                 <div class="navbar-custom-menu">
 
@@ -60,10 +56,10 @@
                         <li>
                             <a href="/"> <i class="fa fa-home"></i> Home</a>
                         </li>
-                        <li>
+                        <li class="hidden-xs">
                             <a href="/terms-and-conditions"> <i class="fa fa-chain"></i> Terms</a>
                         </li>
-                        <li>
+                        <li class="hidden-xs">
                             <a href="/policy"> <i class="fa fa-file-text"></i> Policy</a>
                         </li>
                         <li>
