@@ -47,36 +47,22 @@
                 {{ csrf_field() }} {{ method_field('PUT') }}
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="iban">IBAN</label>
-                        <input autofocus name="iban" type="text" class="form-control" id="name" value="{{old('iban') ?old('iban') :$user->bankDetail->iban}}"
-                            placeholder="IBAN" required>
+                        <label for="bank_name">Bank Name</label>
+                        <input id="bank_name" autofocus  name="bank_name" type="text" class="form-control" value="{{old('bank_name') ?old('bank_name') :$user->bankDetail->bank_name}}"
+                            placeholder="Bank Name" required>
                     </div>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="iban">BBAN</label>
-                        <input  name="bban" type="text" class="form-control" id="name" value="{{old('bban') ?old('bban') :$user->bankDetail->bban}}"
-                            placeholder="IBAN" required>
+                        <label for="sort_code">Sort Code</label>
+                        <input id="sort_code"  name="sort_code" type="text" class="form-control" value="{{old('sort_code') ?old('sort_code') :$user->bankDetail->sort_code}}"
+                            placeholder="Sort Code" required>
                     </div>
                 </div>
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="iban">Bank Identifier</label>
-                        <input  name="bank_identifier" type="text" class="form-control" id="name" value="{{old('bank_identifier') ?old('bank_identifier') :$user->bankDetail->bank_identifier}}"
-                            placeholder="Bank Identifier" required>
-                    </div>
-                </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <label for="iban">Branch Identifier</label>
-                        <input  name="branch_identifier" type="text" class="form-control" id="name" value="{{old('branch_identifier') ?old('branch_identifier') :$user->bankDetail->branch_identifier}}"
-                            placeholder="Branch Identifier" required>
-                    </div>
-                </div>
-                <div class="box-body">
-                    <div class="form-group">
-                        <label for="iban">Account Number</label>
-                        <input  name="account_number" type="text" class="form-control" id="name" value="{{old('account_number') ?old('account_number') :$user->bankDetail->account_number}}"
+                        <label for="account_number">Account Number</label>
+                        <input id="account_number" name="account_number" type="text" class="form-control" value="{{old('account_number') ?old('account_number') :$user->bankDetail->account_number}}"
                             placeholder="Account Number" required>
                     </div>
                 </div>

@@ -137,6 +137,8 @@
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/dist/js/adminlte.min.js') }}"></script>
+    <script src="{{ asset('vendor/sweetalert/script.js') }}"></script>
     @stack('js')
     @yield('js')
+    @include('sweet::alert')
 @stop

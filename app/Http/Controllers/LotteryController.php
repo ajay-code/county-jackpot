@@ -37,6 +37,18 @@ class LotteryController extends Controller
      */
     public function buy(ParentLottery $parentLottery)
     {
+        $parentLottery->load('currentLottery');
+        
+        $user = auth()->user();
+        
+        $user->load(['lotteries' => function ($q) use ($parentLottery) {
+            $q = $q->where('lottery_id', $parentLottery->currentLottery->id);
+        }]);
+
+        if ($user->lotteries->count() > 5) {
+            alert()->info('Reached Limit of 5 Times')->autoclose('3000');
+            return back();
+        }
         return view('lottery.buy', compact('parentLottery'));
     }
 

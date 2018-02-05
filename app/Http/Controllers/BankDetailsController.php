@@ -25,10 +25,8 @@ class BankDetailsController extends Controller
     public function update(Request $request)
     {
         $validatedData = $this->validate($request, [
-            'iban' => 'required',
-            'bban' => 'required',
-            'bank_identifier' => 'required',
-            'branch_identifier' => 'required',
+            'bank_name' => 'required',
+            'sort_code' => 'required',
             'account_number' => 'required',
         ]);
 

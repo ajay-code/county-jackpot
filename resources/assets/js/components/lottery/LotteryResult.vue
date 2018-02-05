@@ -66,7 +66,7 @@ export default {
     },
     computed: {
         winnerName() {
-            let winner = lottery.winner.name.split(" ");
+            let winner = this.lottery.winner.name.split(" ");
             if (winner.length > 1) {
                 return `${winner[0][0]}. ${winner[1]}`;
             } else {

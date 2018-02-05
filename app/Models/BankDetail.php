@@ -14,8 +14,8 @@ class BankDetail extends Model
     protected $fillable = [
         'user_id',
         'bank_name',
+        'sort_code',
         'account_number',
-        'sort_code'
     ];
 
     public function notComplete()

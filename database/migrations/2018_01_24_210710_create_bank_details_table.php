@@ -16,10 +16,8 @@ class CreateBankDetailsTable extends Migration
         Schema::create('bank_details', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('iban')->nullable();
-            $table->string('bban')->nullable();
-            $table->string('bank_identifier')->nullable();
-            $table->string('branch_identifier')->nullable();
+            $table->string('bank_name')->nullable();
+            $table->string('sort_code')->nullable();
             $table->string('account_number')->nullable();
             $table->timestamps();
 

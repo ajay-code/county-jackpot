@@ -54,6 +54,16 @@ class User extends Authenticatable
         return $this->balance > 0;
     }
 
+    public function isActive()
+    {
+        return $this->status == 'active';
+    }
+
+    public function isDeactive()
+    {
+        return $this->status == 'deactive';
+    }
+
     /**
      * Relationships
      */

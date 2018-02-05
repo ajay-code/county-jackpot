@@ -97,33 +97,18 @@
 
                     <div class="col-sm-12">
                         <div class="col-xs-6 col-sm-2">
-                            IBAN
+                            Bank Name
                         </div>
                         <div class="col-xs-6 col-sm-10">
-                            : {{$user->bankDetail->iban}}
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="col-xs-6 col-sm-2">
-                            BBAN
-                        </div>
-                        <div class="col-xs-6 col-sm-10">
-                            : {{$user->bankDetail->bban}}
+                            : {{$user->bankDetail->bank_name}}
                         </div>
                         <div class="clearfix"></div>
 
                         <div class="col-xs-6 col-sm-2">
-                            Bank Identifier
+                            Sort Code
                         </div>
                         <div class="col-xs-6 col-sm-10">
-                            : {{$user->bankDetail->bank_identifier}}
-                        </div>
-                        <div class="clearfix"></div>
-
-                        <div class="col-xs-6 col-sm-2">
-                            Branch Identifier
-                        </div>
-                        <div class="col-xs-6 col-sm-10">
-                            : {{$user->bankDetail->branch_identifier}}
+                            : {{$user->bankDetail->sort_code}}
                         </div>
                         <div class="clearfix"></div>
 

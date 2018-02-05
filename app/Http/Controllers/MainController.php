@@ -23,7 +23,7 @@ class MainController extends Controller
 
     public function results()
     {
-        $lotteries = ParentLottery::has('resultLottery')->with('resultLottery.winner', 'resultLottery.winnerDraw')->WithCount('resultLottery')->get();
+        $lotteries = ParentLottery::has('resultLottery')->with('resultLottery.winner', 'resultLottery.winnerDraw')->WithCount('resultLottery')->orderBy('updated_at', 'desc')->get();
         $results_count = $lotteries->each->resultLottery->pluck('result_lottery_count')->sum();
         return view('results', compact('lotteries', 'results_count'));
     }
@@ -35,9 +35,8 @@ class MainController extends Controller
 
     public function test()
     {
-        $lottery = Lottery::find(2);
-        $user = User::find(1);
-        $user->notify(new TestNotice);
-        return $user;
+        // alert()->info('Reached Limit of 5 Times');
+        alert()->info('Reached Limit of 5 Times')->autoclose('3000');
+        return redirect('/county-draw');
     }
 }
