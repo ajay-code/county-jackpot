@@ -109,6 +109,18 @@
 		<a class="a-link" href="/results" style=" font-weight: 700; cursor: pointer;">Go to results page</a>
 	</h3>
 </section>
+@else
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 @endif
 
 @endsection

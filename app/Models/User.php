@@ -64,6 +64,11 @@ class User extends Authenticatable
         return $this->status == 'deactive';
     }
 
+    public function isUser()
+    {
+        return true;
+    }
+
     /**
      * Relationships
      */

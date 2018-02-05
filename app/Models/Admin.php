@@ -28,6 +28,16 @@ class Admin extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function isUser()
+    {
+        return false;
+    }
+
+    public function isAdmin()
+    {
+        return true;
+    }
+
     /**
      * Send the password reset notification.
      *
