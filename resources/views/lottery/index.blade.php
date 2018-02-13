@@ -13,7 +13,7 @@
         </div>
         <div class="box-body">
             @foreach ($lotteries as $lottery)
-                <lottery-display-item :lottery="{{ $lottery->currentLottery}}"></lottery-display-item>
+                <lottery-display-item-bs3 :lottery="{{ $lottery->currentLottery}}"></lottery-display-item-bs3>
             @endforeach
         </div>
     </div>

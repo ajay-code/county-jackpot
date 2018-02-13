@@ -35,15 +35,12 @@
 						<a class="nav-link" href="/">Home</a>
 					</li>
 					<li class="nav-item">
+						<a class="nav-link" href="/about">About Us</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="/results">Draw Results</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/terms-and-conditions">Terms</a>
-					</li>
-
-					<li class="nav-item">
-							<a class="nav-link" href="/policy">Privacy Policy</a>
-						</li>
+					
 					@guest
 					<li class="nav-item">
 						<a class="nav-link" href="/login">Sign in</a>
@@ -104,8 +101,15 @@
 						<div class="col-lg-4 ">
 							<!--Column1-->
 							<div class="footer-pad">
-								<h4>About Us</h4>
-								<p>Thecountyjackpot.com offers one of the best platforms to enter into online draws. If you have any queries or problems, feel free to contact us on our given emails.</p>
+								<h4>Links</h4>
+								<ul class="list-unstyled">
+									<li>
+										<a href="/about">About Us</a>
+									</li>
+									<li>
+										<a href="/disclaimer">Disclaimer</a>
+									</li>
+								</ul>
 							</div>
 						</div>
 
@@ -140,7 +144,10 @@
 					<div class="row">
 						<div class="col-12">
 							<!--Footer Bottom-->
-							<p class="text-center">&copy; Copyright 2018 All rights reserved.</p>
+							<p class="text-center">You must only enter your county's prize draws. Any entry made into a prize draw outside of your county of residence will be forfeit an non- refundable. Proof of identification and address may be required upon winning before any prize is given.</p>
+							<p class="text-center">The maximum entry limit for each prize draw is 5. Any entries made over this limit will be forfeit and non-refundable.</p>
+							<p class="text-center">Entrants must be aged 16 or over and must permanently reside in one of the 48 English Counties.</p>
+							<p class="text-center">&copy; Copyright 2018 The County Jackpot all rights reserved.</p>
 						</div>
 					</div>
 				</div>

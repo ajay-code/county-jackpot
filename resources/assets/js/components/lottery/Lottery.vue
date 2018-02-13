@@ -55,7 +55,7 @@ export default {
     },
     computed: {
         entry() {
-            return this.lottery.entry_fee / 100;
+            return Number(this.lottery.entry_fee / 100).toFixed(2);
         },
         expireAt() {
             return moment(this.lottery.expire_at).format("LL");

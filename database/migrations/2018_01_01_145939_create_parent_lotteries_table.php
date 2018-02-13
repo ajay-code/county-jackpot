@@ -15,7 +15,7 @@ class CreateParentLotteriesTable extends Migration
     {
         Schema::create('parent_lotteries', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('county_id')->unsigned();
+            $table->integer('county_id')->unsigned()->nullable();
             $table->enum('always_active', ['yes', 'no'])->default('yes');
             $table->string('name');
             $table->integer('entry_fee');

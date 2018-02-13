@@ -85,7 +85,7 @@ class Lottery extends Model
 
     public function entryInPound()
     {
-        return $this->entry_fee / 100;
+        return number_format($this->entry_fee / 100, 2);
     }
 
     /**

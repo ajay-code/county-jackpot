@@ -30,14 +30,14 @@
 			</div>
 		</div>
 		@foreach ($lotteries as $lottery)
-		<lottery-display-item :lottery="{{ $lottery->currentLottery }}"></lottery-display-item>
+		<lottery-display-item-bs4 :lottery="{{ $lottery->currentLottery }}"></lottery-display-item-bs4>
 		@endforeach
 	</div>
 </section>
 
 <section class="container-fluid process clearfix" style="padding-bottom:3rem;">
 	{{--  <h3 class="text-center " style="color: white">Easy and Quick Process</h3>  --}}
-	<h1 class="text-center text-light" >How to Enter ?</h1>
+	<h1 class="text-center text-light" >How to Enter</h1>
 	<div class="card-group ">
 		<div class="card ">
 			<div style="text-align: center;">

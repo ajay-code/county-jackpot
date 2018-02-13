@@ -85,6 +85,22 @@
                         </span>
                     @endif
                 </div>
+                <div class="form-group has-feedback {{ $errors->has('county_id') ? 'has-error' : '' }}">
+                    <select name="county_id" 
+                            class="form-control"
+                            >
+                        <option value="" {{ old('county_id') == '' ? 'selected': '' }}>Select County</option>
+                        @foreach ($counties as $county)
+                            <option value="{{$county->id}}" {{ old('county_id') == $county->id ? 'selected': '' }}>{{ $county->name }}</option>
+                        @endforeach
+                    </select>
+                    <span class="glyphicon glyphicon-map-marker form-control-feedback"></span>
+                    @if ($errors->has('county_id'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('county_id') }}</strong>
+                        </span>
+                    @endif
+                </div>
                 <button type="submit" class="btn btn-success btn-block btn-flat">
                 {{ trans('adminlte::adminlte.register') }}
                 </button>

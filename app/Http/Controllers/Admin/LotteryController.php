@@ -92,7 +92,7 @@ class LotteryController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255|unique:parent_lotteries,name,'.$parentLottery->id,
-            'county_id' => 'required|numeric',
+            'county_id' => 'nullable|numeric',
             'entry_fee' =>  'required|numeric',
             'prize' =>  'required|numeric',
             'expire_at' =>  'required|date',

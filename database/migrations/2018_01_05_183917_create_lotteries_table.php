@@ -16,7 +16,7 @@ class CreateLotteriesTable extends Migration
         Schema::create('lotteries', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('parent_lottery_id')->unsigned();
-            $table->integer('county_id')->unsigned();
+            $table->integer('county_id')->unsigned()->nullable();
             $table->string('name');
             $table->integer('entry_fee');
             $table->integer('prize');

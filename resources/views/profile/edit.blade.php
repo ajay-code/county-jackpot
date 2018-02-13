@@ -54,6 +54,12 @@
             </div>
             <div class="box-body">
                 <div class="form-group">
+                    <label for="phone">DOB</label>
+                    <input name="dob" type="date" class="form-control" id="phone" value="{{$user->dob->toDateString()}}" placeholder="Phone" >
+                </div>
+            </div>
+            <div class="box-body">
+                <div class="form-group">
                     <label for="phone">Phone</label>
                     <input name="phone" type="number" class="form-control" id="phone" value="{{$user->phone}}" placeholder="Phone" >
                 </div>

@@ -72,6 +72,12 @@ class User extends Authenticatable
     /**
      * Relationships
      */
+
+    public function county()
+    {
+        return $this->belongsTo(County::class);
+    }
+    
     public function socialProviders()
     {
         return $this->hasMany(SocialProvider::class);

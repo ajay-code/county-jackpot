@@ -76,7 +76,10 @@
             The Terms and Rules found below apply when using www.thecountyjackpot.com, partaking in any County Jackpot draws and accessing
             your County Jackpot account:
             <h3>Account Terms</h3>
-            1st Edition effective as of 25th January 2018 The following Account Terms state the applicable rules and procedures in relation
+            1st Edition effective as of 25th January 2018 
+            <br>
+            <br>
+            The following Account Terms state the applicable rules and procedures in relation
             to opening an account and its use when partaking in all County Jackpot prize draws (including mobile devices and by direct
             debit) and for all other reasons. By accepting these Terms, you thereby agree to be bound by the documents found below:
             <ul>
@@ -188,12 +191,7 @@
                             <ul>
                                 The maximum attempted entry limit is 5 per draw. You must not exceed this limit and any entry that you make over the 5-entry
                                 limit will be forfeit regardless of whether your submitted answer is correct and will not be included
-                                in that specific draw. Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
-                                laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
-                                assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                                sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table,
-                                raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                in that specific draw.
                             </ul>
                         </div>
                     </div>
@@ -253,26 +251,21 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false"
                                 aria-controls="collapse6">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                7. Prize Draw Requirements and Entry Purchases
+                                6. Prize Draw Requirements and Entry Purchases
                             </a>
                         </h4>
                     </div>
                     <div id="collapse6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6">
                         <div class="panel-body">
-                            {!! nl2br('<ul><li>7.1 All payments made in relation to all current and future prize draws provided by The County Jackpot
+                            {!! nl2br('<ul><li>6.1 All payments made in relation to all current and future prize draws provided by The County Jackpot
                                         are non-refundable.</li>
-                                    <li>7.2 You are responsible for reading these terms and conditions and making sure you are eligible for
+                                    <li>6.2 You are responsible for reading these terms and conditions and making sure you are eligible for
                                         entry into the provided prize draws.</li>
-                                    <li>7.3 A prerequisite memory game must be completed before entry into a prize draw can be attempted.
+                                    <li>6.3 A prerequisite memory game must be completed before entry into a prize draw can be attempted.
                                         This includes an element of human memory-based skill and requires you to memorise a pattern of
                                         images and then answer a question in relation to those images. You must submit the answer you
                                         believe to be correct (via payment) for consideration into said prize draw and you will not be
                                         told whether or not your answer was correct</li>
-                                    <li>7.4 Completion of the prerequisite memory game and the submission (through payment) of your chosen
-                                        answer for entry into a prize draw does not guarantee your entry into said prize draw. By confirming
-                                        and authorising payment, you are thereby accepting these terms and conditions and accept that
-                                        if your submitted answer was not correct you will not be entered into said prize draw and hold
-                                        no claim to any refunds or prizes.</li>
                                 </ul>') !!}
                         </div>
                     </div>
@@ -284,39 +277,42 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false"
                                 aria-controls="collapse7">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                8. Use of the Site
+                                7. Use of the Site
                             </a>
                         </h4>
                     </div>
                     <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                         <div class="panel-body">
-                            {!! nl2br('<ul><li>8.1 You agree that: a). the site and prize draws are for your own personal, non-commercial use; and
+                            {!! nl2br('<ul><li>7.1 You agree that: 
+                                    a). the site and prize draws are for your own personal, non-commercial use; and
                                     b). you are only allowed to use your account and the site, and take part in prize draws via your
-                                    account, as set out in these terms, the applicable Game Rules, and Game Procedures and any Game
-                                    Specific Rules, or on the Game Details Screen.</li>
-                                <li>8.2 You also agree that you will use your account, the site and the partake in the prize draws in
-                                    an appropriate and lawful manner only and will not: a). receive, access or transmit any content
+                                        account, as set out in these terms, the applicable Game Rules, and Game Procedures and any Game
+                                        Specific Rules, or on the Game Details Screen.</li>
+                                <li>7.2 You also agree that you will use your account, the site and the partake in the prize draws in
+                                    an appropriate and lawful manner only and will not: 
+                                    a). receive, access or transmit any content
                                     which is pornographic, obscene, racist, threatening, menacing, offensive, defamatory, in breach
                                     of any intellectual property right, (including, without limit, copyright), in breach of confidence
-                                    or otherwise objectionable or unlawful; or b). knowingly or recklessly transmit any content (including,
-                                    without limit, viruses) through the site and/or The County Jackpot’s computer system which will
+                                    or otherwise objectionable or unlawful; or 
+                                    b). knowingly or recklessly transmit any content (including, without limit, viruses) through the site and/or The County Jackpot’s computer system which will
                                     cause, or be likely to cause, detriment or harm in any degree, to computer systems owned by The
-                                    County Jackpot or others; or c). hack into, make excessive traffic demands on or cause any impairment
+                                    County Jackpot or others; or 
+                                    c). hack into, make excessive traffic demands on or cause any impairment
                                     of the functions of any computer system, deliver or forward chain letters, “junk mail” of any
                                     kind, surveys, contests, pyramid schemes or otherwise engage in any behaviour intended to prevent
                                     others from partaking in prize draws or using the site or any other website, or which is otherwise
                                     likely to damage the reputation or business of The County Jackpot or of any third party; or d).
                                     authorize or allow anyone to do the above.</li>
-                                <li>8.3 You agree to indemnify The County Jackpot against any costs, losses, damages and expenses which
+                                <li>7.3 You agree to indemnify The County Jackpot against any costs, losses, damages and expenses which
                                     The County Jackpot may suffer or incur arising out of or in relation to any clam, legal proceeding
                                     or demand made by yourself or any third party due to or arising out of your wrongful or negligent
                                     use of your account, partaking of prize draws, access to the site and/or The County Jackpot’s
                                     computer system, or breach by you of these terms.</li>
-                                <li>8.4 There is no guarantee that the site will display correctly on all devices it can be viewed on.</li>
-                                <li>8.5 The County Jackpot is the owner or licensee of all the copyright, trade marks and other intellectual
+                                <li>7.4 There is no guarantee that the site will display correctly on all devices it can be viewed on.</li>
+                                <li>7.5 The County Jackpot is the owner or licensee of all the copyright, trade marks and other intellectual
                                     property rights in, to and in respect of the prize draws and the site, and you will not acquire
                                     any rights in any of these.</li>
-                                <li>8.6 You must not: a). copy, disclose, transmit or otherwise make available or remove or change any
+                                <li>7.6 You must not: a). copy, disclose, transmit or otherwise make available or remove or change any
                                     material available on the site; b). reverse engineer or decompile (whether in whole or in part)
                                     any software used in connection with the site and/or the provision of the prize draws (except
                                     to the extent expressly permitted by applicable law); or c). remove, obscure or change any copyright,
@@ -332,20 +328,20 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false"
                                 aria-controls="collapse8">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                9. Your information
+                                8. Your information
                             </a>
                         </h4>
                     </div>
                     <div id="collapse8" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8">
                         <div class="panel-body">
-                            {!! nl2br('<ul><li>9.1 The processing of your games-related information will be carried out by The County Jackpot in
+                            {!! nl2br('<ul><li>8.1 The processing of your games-related information will be carried out by The County Jackpot in
                                         line with the Privacy Policy. You agree that when you contact the customer care team, you will
                                         supply any games-related information required by The County Jackpot.</li>
-                                    <li>9.2 If you win a prize, you understand and accept that The County Jackpot may, if required by law,
+                                    <li>8.2 If you win a prize, you understand and accept that The County Jackpot may, if required by law,
                                         provide a third party with details of any prize claimed by you or on your behalf of, or paid
                                         to you.</li>
-                                    <li>9.3 By passing information (including games-related information) to The County Jackpot, you agree
-                                        and consent to The County Jackpot holding and processing it in line with this Section 11 and
+                                    <li>8.3 By passing information (including games-related information) to The County Jackpot, you agree
+                                        and consent to The County Jackpot holding and processing it in line with this Section and
                                         the Privacy Policy. The County Jackpot is entitled to hold and process such information in relation
                                         to a prize claim but will only disclose it to anyone if required by law.</li></ul>') !!}
                         </div>
@@ -358,22 +354,22 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false"
                                 aria-controls="collapse9">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                10. Limitation of Liability
+                                9. Limitation of Liability
                             </a>
                         </h4>
                     </div>
                     <div id="collapse9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading9">
                         <div class="panel-body">
-                            {!! nl2br('<ul><li>10.1 The County Jackpot’s only obligation is to pay the prizes won in any prize draw to the rightful
+                            {!! nl2br('<ul><li>9.1 The County Jackpot’s only obligation is to pay the prizes won in any prize draw to the rightful
                                         owners of winning entries. The County Jackpot will not be liable in any circumstances for any
-                                        loss of whatever nature other than, subject to Section 9.2, the non-payment of a prize. In particular,
+                                        loss of whatever nature other than, subject to Section 8.2, the non-payment of a prize. In particular,
                                         but without limitation, The County Jackpot will not be liable for any loss of profits, indirect,
                                         special or consequential loss, suffered or incurred by you (or any holder or owner of a entry,
                                         any person who submits a clam for a prize during the applicable claim period, or any other person)
                                         that arises out of the withdrawal of any prize draw or from the participation or non-participation
                                         of you or any person in any prize draw. This includes the loss, for whatever reason, of the chance
                                         to participate in such prize draw.</li>
-                                    <li>10.2 The county Jack will not be liable to any person for: a). Events beyond its reasonable control
+                                    <li>9.2 The county Jack will not be liable to any person for: a). Events beyond its reasonable control
                                         and expectations (for example war, strike, lockout, industrial action, fire, flood, drought,
                                         power cut and/or failure or obstruction of any network, broadcasting or telecommunications service);
                                         b). The failure or destruction of, or damage to, all or part of the computer systems or records
@@ -390,11 +386,11 @@
                                         contact details; h). any losses caused by the failure or malfunction of your equipment or technology
                                         or your internet service provider or mobile phone network operator, or the equipment, technology,
                                         internet service provider or mobile phone network operator of any other person or third party.</li>
-                                    <li style="text-align: left;">10.3 Nothing in these Terms excludes or limits (a) any person’s liability (i) for fraud; or (ii)
+                                    <li style="text-align: left;">9.3 Nothing in these Terms excludes or limits (a) any person’s liability (i) for fraud; or (ii)
                                         for death or personal injury caused by breach of any duty that person may have to take reasonable
                                         care or exercise reasonable skill; or (b) any other liability which cannot lawfully be excluded
                                         or limited.</li>
-                                    <li style="text-align: left;">10.4 You acknowledge and agree that in accepting these Terms you do not rely on, and shall have no
+                                    <li style="text-align: left;">9.4 You acknowledge and agree that in accepting these Terms you do not rely on, and shall have no
                                         remedy in respect of any statement, representation, warranty (in each case weather negligently
                                         or innocently made) or understanding of any person weather or not that person is a party to these
                                         Terms.</li></ul>') !!}
@@ -408,7 +404,7 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false"
                                 aria-controls="collapse10">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                11. The County Jackpot’s Discretion is Binding
+                                10. The County Jackpot’s Discretion is Binding
                             </a>
                         </h4>
                     </div>
@@ -427,18 +423,18 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false"
                                 aria-controls="collapse11">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                12. General
+                                11. General
                             </a>
                         </h4>
                     </div>
                     <div id="collapse11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading11">
                         <div class="panel-body">
-                            {!! nl2br('<ul><li>12.1 Any person who partakes in a prize draw or claims a prize in whatever capacity, agrees to be bound by the provisions of any applicable legislation, these Terms, the relevant Game Rules and Game Procedures (and any relevant Game Specific Rules) (all as amended from time to time) and any other statements or explanations or rules or procedures The County Jackpot may issue from time to time in respect of that game.</li>
-                                    <li>12.2 The County Jackpot may change these Terms (including the Privacy Policy) and any game rules, game procedures and game specific rules, and any other rules and procedures issued by The County Jackpot from time to time, for any and/or all of the games, at any time. The changes will be effective from the date of their publication on the site (or any earlier time The County Jackpot states), or on notification to you that the changes have taken place (whichever takes place sooner) and will apply to potential entries bought after the date on which the changes become effective, and/or potential entries bought before that date if reasonable in the circumstances. Notification will be by email or any other form of communication reasonably decided by The County Jackpot. You agree that you will be bound by the changes when you next partake in a prize draw, access your account or claim a prize after the changes have become effective, or (where relevant) when you expressly accept the changes, whichever takes place first.</li>
-                                    <li>12.3 These Terms, the Privacy Policy (which is incorporated by reference into these Terms), the applicable Game Rules, Game Procedures, any Game Specific Rules and statements (where appropriate) set out the full extent of The County Jackpot’s obligations and liabilities to you when you partake in prize draws from your account and use the site and form the contract between The County Jackpot and you. If there is any conflict between these documents, they will apply in the following order (unless The County Jackpot states otherwise: (a) the applicable Game Specific Rules (taking first priority); (b) the applicable Game Procedures; (c) the applicable Game Rules; (d) these Terms (excluding, for this purpose, the Privacy Policy); (e) all statements and explanations appearing throughout the terms and conditions; (f) the Privacy Policy.</li>
-                                    <li>12.4 If any provision (or part of a provision) in any of the documents mentioned in section 12.3 is decided by a court of competent jurisdiction to be void and/or unenforceable, that decision will only affect the particular provision (or part of the provision) and will not, in itself, make the other provisions void or unenforceable.</li>
-                                    <li>12.5 You may not assign or otherwise transfer (in whole or in part) your rights and/or obligations uder these Terms. Any breach of this Section may result in the use of your account. The provision of the prize draws and/or access to the site being terminated immediately by The County Jackpot. The County Jackpot may assign or otherwise their rights and/or obligations under these Terms in whole or in party to any third party at its sole discretion.</li>
-                                    <li>14.6 Except if The County Jackpot assigns or transfers its rights and/or obligations under these Terms, a person who is not a party to these Terms has no rights under the Contracts (Rights of Third Parties) act 1999 (as amended or re-enacted from time to time, and any subordinate legislation made under that Act) or otherwise to enforce any provision of these Terms.</li></ul>') !!}
+                            {!! nl2br('<ul><li>11.1 Any person who partakes in a prize draw or claims a prize in whatever capacity, agrees to be bound by the provisions of any applicable legislation, these Terms, the relevant Game Rules and Game Procedures (and any relevant Game Specific Rules) (all as amended from time to time) and any other statements or explanations or rules or procedures The County Jackpot may issue from time to time in respect of that game.</li>
+                                    <li>11.2 The County Jackpot may change these Terms (including the Privacy Policy) and any game rules, game procedures and game specific rules, and any other rules and procedures issued by The County Jackpot from time to time, for any and/or all of the games, at any time. The changes will be effective from the date of their publication on the site (or any earlier time The County Jackpot states), or on notification to you that the changes have taken place (whichever takes place sooner) and will apply to potential entries bought after the date on which the changes become effective, and/or potential entries bought before that date if reasonable in the circumstances. Notification will be by email or any other form of communication reasonably decided by The County Jackpot. You agree that you will be bound by the changes when you next partake in a prize draw, access your account or claim a prize after the changes have become effective, or (where relevant) when you expressly accept the changes, whichever takes place first.</li>
+                                    <li>11.3 These Terms, the Privacy Policy (which is incorporated by reference into these Terms), the applicable Game Rules, Game Procedures, any Game Specific Rules and statements (where appropriate) set out the full extent of The County Jackpot’s obligations and liabilities to you when you partake in prize draws from your account and use the site and form the contract between The County Jackpot and you. If there is any conflict between these documents, they will apply in the following order (unless The County Jackpot states otherwise: (a) the applicable Game Specific Rules (taking first priority); (b) the applicable Game Procedures; (c) the applicable Game Rules; (d) these Terms (excluding, for this purpose, the Privacy Policy); (e) all statements and explanations appearing throughout the terms and conditions; (f) the Privacy Policy.</li>
+                                    <li>11.4 If any provision (or part of a provision) in any of the documents mentioned in section 11.3 is decided by a court of competent jurisdiction to be void and/or unenforceable, that decision will only affect the particular provision (or part of the provision) and will not, in itself, make the other provisions void or unenforceable.</li>
+                                    <li>11.5 You may not assign or otherwise transfer (in whole or in part) your rights and/or obligations uder these Terms. Any breach of this Section may result in the use of your account. The provision of the prize draws and/or access to the site being terminated immediately by The County Jackpot. The County Jackpot may assign or otherwise their rights and/or obligations under these Terms in whole or in party to any third party at its sole discretion.</li>
+                                    <li>11.6 Except if The County Jackpot assigns or transfers its rights and/or obligations under these Terms, a person who is not a party to these Terms has no rights under the Contracts (Rights of Third Parties) act 1999 (as amended or re-enacted from time to time, and any subordinate legislation made under that Act) or otherwise to enforce any provision of these Terms.</li></ul>') !!}
                         </div>
                     </div>
                 </div>
@@ -449,7 +445,7 @@
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false"
                                 aria-controls="collapse12">
                                 <i class="more-less glyphicon glyphicon-plus"></i>
-                                13. Law
+                                12. Law
                             </a>
                         </h4>
                     </div>
@@ -544,8 +540,7 @@
                     <div class="panel-body">
                         {!! nl2br('<ul><li>2.1 All payments made in relation to all current and future prize draws provided by The County Jackpot are non-refundable.</li>
                                 <li>2.2 You are responsible for reading these terms and conditions and making sure you are eligible for entry into the provided prize draws.</li>
-                                <li>2.3 A prerequisite memory game must be completed before entry into a prize draw can be attempted. This includes an element of human memory-based skill and requires you to memorise a pattern of images and then answer a question in relation to those images. You must submit the answer you believe to be correct (via payment) for consideration into said prize draw and you will not be told whether or not your answer was correct.</li>
-                                <li>2.4 Completion of the prerequisite memory game and the submission (through payment) of your chosen answer for entry into a prize draw does not guarantee your entry into said prize draw. By confirming and authorising payment, you are thereby accepting these terms and conditions and accept that if your submitted answer was not correct you will not be entered into said prize draw and hold no claim to any refunds or prizes.</li></ul>') !!}
+                                <li>2.3 A prerequisite memory game must be completed before entry into a prize draw can be attempted. This includes an element of human memory-based skill and requires you to memorise a pattern of images and then answer a question in relation to those images. You must submit the answer you believe to be correct (via payment) for consideration into said prize draw and you will not be told whether or not your answer was correct.</li></ul>') !!}
                     </div>
                 </div>
             </div>
@@ -602,9 +597,9 @@
                         {!! nl2br('<ul><li>5.1 You can only claim a prize if you are the holder of an account with a winning entry.</li>
                                 <li>5.2 Upon winning a prize draw:
                            
-                           a). you will be notified via email (from winner@thecountyjackpot.com) upon winning a prize draw. You are responsible for keeping your account information accurate and up to date as The County Jackpot will only ever contact you through the email address provided by you through your County Jackpot online account. Please make sure to check your junk email as the winner email may be diverted into this area of your emails.
+                           a). you will be notified via email (from draw@thecountyjackpot.com) upon winning a prize draw. You are responsible for keeping your account information accurate and up to date as The County Jackpot will only ever contact you through the email address provided by you through your County Jackpot online account. Please make sure to check your junk email as the winner email may be diverted into this area of your emails.
                            
-                           b). Said email will contain a unique winners code. Upon receiving this email you must contact winner@thecountyjackpot.com via the same email address registered with your County Jackpot account and state this unique code. Upon verification of this code your prize will paid to you, in full via bank transfer or in the event of winning a prize of £50,000 or more you will have the option of receiving your prize via check (this will be written out using the information provided by you on your account) which must also be stated by you in your reply email. You may also be required to provide further information to confirm your identity or debit card information. Please not that The County Jackpot will only ever contact you online about your win via the email address stated throughout Section 5 and you should not trust or provide any sensitive information to any other email address no matter what the email claims.
+                           b). Please note that The County Jackpot will only ever contact you online about your win via the email address stated throughout Section 5 and you should not trust or provide any sensitive information to any other email address no matter what the email claims.
                            
                            c). you have 200 days to claim your prize after the winner email (of that relevant prize draw) is sent to your email address. If after the end of the 200th day you have not claimed your prize, your entitlement to said prize will be lost and the prize will not be paid. The County Jackpot may attempt to make contact via telephone to the phone number provided by you on your account to notify you of your win and inform you of the winner email you have received. Please note that The County Jackpot will never ask for any sensitive information from you during this phone conversation, nor are The County Jackpot employees at liberty to discuss any information in regard to your win apart from notifying you of the winner email.</li>
                                 <li>5.3 You are responsible for making sure you keep all sensitive information (including the unique winner code) about you private, secure and confidential and do not reveal this information to anybody else outside of The County Jackpot winner team. The County Jackpot can not be help responsible for any loss or harm inflicted as the result of breach of confidentiality. This includes the event of others gaining access to your emails and claiming to be you or gaining access to your account using sensitive information you have purposely or inadvertently supplied them with.</li>
@@ -636,29 +631,6 @@
                            
                             <h4>Payment of Prizes to persons with a disability</h4>
                            5.10 If you are a person with a legal, physical or other disability and are claiming a Prize, Camelot may pay the Prize to Your authorised representative.</li></ul>') !!}
-                    </div>
-                </div>
-            </div>
-
-            <div class="panel panel-default">
-                <div class="panel-heading" role="tab" id="heading-6">
-                    <h4 class="panel-title">
-                        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-6" aria-expanded="false"
-                            aria-controls="collapse-6">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
-                            6. Prize Draws and Selected Winners
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapse-6" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-6">
-                    <div class="panel-body">
-                        {!! nl2br('<ul><li>6.1 The County Jackpot will decide the time, frequency, date and method of the draws for each prize draw.</li>
-                                <li>6.2 Each draw will select a winner at random from the successful entrants who were able to correctly answer the prerequisite memory game question.</li>
-                                <li>6.3 If a draw is interrupted because of equipment failure or for any other reason, the draw will be completed in line with the applicable draw procedures for that game. If a draw can’t take place on the date or at the time fixed, it will take place as soon as reasonably possible after that date.</li>
-                                <li>6.4 If any draw is declared invalid, another draw will take place in line with the applicable draw procedures to determine a winner.</li>
-                                <li>6.5 The County Jackpot will only pay a prize based on the official results of the relevant draw recorded electronically in The County Jackpot’s computer system. The County Jackpot will not pay a prize based on results recorded elsewhere, including for example in newspapers, winning telephone lines, or on the site.</li>
-                                <li>6.6 The County Jackpot will not be required to make any payment against any incorrectly announced winners.</li>
-                                <li>6.7 Where The County Jackpot considers it reasonable to do so, it may postpone a draw for as long as it considers to be appropriate in the circumstances. In that case (by way of example only, where there has been a significant disruption of the sale of potential entries for that draw) The County Jackpot may continue to sell potential entries for that draw beyond that draw’s normal draw break.</li></ul>') !!}
                     </div>
                 </div>
             </div>
@@ -729,16 +701,16 @@
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-9" aria-expanded="false"
                             aria-controls="collapse-9">
                             <i class="more-less glyphicon glyphicon-plus"></i>
-                            8. Limitation of Liability
+                            9. Limitation of Liability
                         </a>
                     </h4>
                 </div>
                 <div id="collapse-9" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-9">
                     <div class="panel-body">
-                        {!! nl2br('<ul><li>8.1 No refunds will be given in any circumstances.</li>
-                                            <li>8.2 If The County Jackpot is fully satisfied after proper and careful inquiries that a cancellation of an entry was wholly and directly the result of The Count Jackpot’s fraud, negligence or error, and that entry would, but for that cancellation, have been a winning entry, then The County Jackpot will not refund the cost of the entry and The County Jackpot’s only liability will be to pay an amount equal to the prize you would have been entitled to if the cancellation did not take place.</li>
-                                            <li>8.3 The County Jackpot’s only obligation is to pay the prizes won in any prize draw to the rightful owners of winning entries. The County Jackpot will not be liable in any circumstances for any loss of whatever nature other than the non-payment of a prize you are entitled to under these rules. In particular, but without limitation, The County Jackpot will not be liable for any loss of profits, special, indirect or consequential loss, suffered or incurred by you (or any holder or owner of any entry, any person claiming a prize during the claim period or any other person) that arises out of the withdrawal of any game or from the participation or non-participation of you our any person in any prize draw. This includes the loss, for whatever reason, of the chance to participate in that game.</li>
-                                            <li>8.4 The County Jackpot will not be liable to any person for:
+                        {!! nl2br('<ul><li>9.1 No refunds will be given in any circumstances.</li>
+                                            <li>9.2 If The County Jackpot is fully satisfied after proper and careful inquiries that a cancellation of an entry was wholly and directly the result of The Count Jackpot’s fraud, negligence or error, and that entry would, but for that cancellation, have been a winning entry, then The County Jackpot will not refund the cost of the entry and The County Jackpot’s only liability will be to pay an amount equal to the prize you would have been entitled to if the cancellation did not take place.</li>
+                                            <li>9.3 The County Jackpot’s only obligation is to pay the prizes won in any prize draw to the rightful owners of winning entries. The County Jackpot will not be liable in any circumstances for any loss of whatever nature other than the non-payment of a prize you are entitled to under these rules. In particular, but without limitation, The County Jackpot will not be liable for any loss of profits, special, indirect or consequential loss, suffered or incurred by you (or any holder or owner of any entry, any person claiming a prize during the claim period or any other person) that arises out of the withdrawal of any game or from the participation or non-participation of you our any person in any prize draw. This includes the loss, for whatever reason, of the chance to participate in that game.</li>
+                                            <li>9.4 The County Jackpot will not be liable to any person for:
                                     
                                     a). Events beyond its reasonable control and expectations (for example war, strike, lockout, industrial action, fire, flood. Drought, power cut and/or failure or obstruction of any network, broadcasting or telecommunications service);
                                     
@@ -755,8 +727,8 @@
                                     g). Any losses caused by you, including the misuse or unauthorized use of passwords, money lost by partaking in the prize draws online and the failure to keep The County Jackpot informed of any changes to your account details;
                                     
                                     h). Any losses caused by the failure or malfunction of your equipment or technology, or your internet service provider or mobile phone network operator, or the equipment, technology, internet service provider or mobile phone network operator of any other person or third party.</li>
-                                            <li>8.5 Nothing in these rules excludes or limits a) any person’s liability (i) for fraud; or (ii) for death or personal injury caused by breach of any duty that person may have to take reasonable care or exercise reasonable skill; or (b) any other liability which cannot lawfully be excluded or limited.</li>
-                                            <li>8.6 You acknowledge and agree that you do not rely on, and shall have not remedy in respect of, any statement, representation or warranty (weather negligently or innocently made) or understanding of any person whether or not such person is a party to these Rules.</li></ul>') !!}
+                                            <li>9.5 Nothing in these rules excludes or limits a) any person’s liability (i) for fraud; or (ii) for death or personal injury caused by breach of any duty that person may have to take reasonable care or exercise reasonable skill; or (b) any other liability which cannot lawfully be excluded or limited.</li>
+                                            <li>9.6 You acknowledge and agree that you do not rely on, and shall have not remedy in respect of, any statement, representation or warranty (weather negligently or innocently made) or understanding of any person whether or not such person is a party to these Rules.</li></ul>') !!}
                     </div>
                 </div>
             </div>
@@ -767,14 +739,14 @@
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-10" aria-expanded="false"
                             aria-controls="collapse-10">
                             <i class="more-less glyphicon glyphicon-plus"></i>
-                            9. Disputes and The County Jackpot’s Decisions
+                            10. Disputes and The County Jackpot’s Decisions
                         </a>
                     </h4>
                 </div>
                 <div id="collapse-10" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-10">
                     <div class="panel-body">
-                        {!! nl2br('<ul><li>9.1 The County Jackpot’s decision about whether or not an Entry is a Winning Entry, or in relation to any other matter or dispute arising from the payment or non-payment of Prizes, will be final and binding provided that it is a reasonable decision.</li>
-                            <li>9.2 The County Jackpot may withhold payment of a Prize and/or make an equivalent payment into court until any dispute has been resolved.</li></ul>') !!}
+                        {!! nl2br('<ul><li>10.1 The County Jackpot’s decision about whether or not an Entry is a Winning Entry, or in relation to any other matter or dispute arising from the payment or non-payment of Prizes, will be final and binding provided that it is a reasonable decision.</li>
+                            <li>10.2 The County Jackpot may withhold payment of a Prize and/or make an equivalent payment into court until any dispute has been resolved.</li></ul>') !!}
                     </div>
                 </div>
             </div>
@@ -786,19 +758,19 @@
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-11" aria-expanded="false"
                             aria-controls="collapse-11">
                             <i class="more-less glyphicon glyphicon-plus"></i>
-                            10. General
+                            11. General
                         </a>
                     </h4>
                 </div>
                 <div id="collapse-11" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-11">
                     <div class="panel-body">
-                        {!! nl2br('<ul><li>10.1 Any person who buys a potential Entry or submits an Entry for validation or who claims a Prize in whatever capacity, agrees to be bound by the provisions of any applicable legislation, these Rules, the Privacy Policy, the Account Terms, the Game Procedures, any Game Specific Rules that apply (all as amended from time to time) and any other rules or procedures, statements or explanations The County Jackpot may issue in respect of that Game Played Online.</li>
-                            <li>10.2 The County Jackpot may change these Rules, the relevant Game Procedures and any Game Specific Rules applicable to the Games Played Online, and the Account Terms and User Account Terms (including the Privacy Policy) at any time. These changes will be effective immediately from the date of their publication on the Site (or any earlier time The County Jackpot states), or on notification to You that the changes have taken place (whichever takes place sooner) and will apply to Entries bought after the date on which the changes become effective, and/or Entries bought before that date if reasonable in the circumstances. Notification will be by email, Account notification, post or any other form of communication reasonably decided by The County Jackpot. You agree that You will be bound by the changes when You next play a Game Played Online, access Your Account or claim a Prize after the changes have become effective, or (where relevant) when You expressly accept the changes, whichever takes place first.</li>
-                            <li>10.3 These Rules, the Account Terms, the Privacy Policy, the applicable Game Procedures and any applicable Game Specific Rules set out the full extent of The County Jackpot’s obligations and liabilities to You in relation to Games Played Online and form the contract between The County Jackpot and You for each Game Played Online. If there is any conflict between these documents, they will apply in the following order (unless The County Jackpot states otherwise: (a) the applicable Game Specific Rules (taking first priority); (b) the applicable Game Procedures; (c) these Rules; (d) the Account Terms (excluding, for this purpose, the Privacy Policy); (e) the Privacy Policy.</li>
-                            <li>10.4 If any provision (or part of a provision) in any of the documents mentioned in Rule 10.3 is decided by a court of competent jurisdiction to be void and/or unenforceable, that decision will only affect the particular provision (or part of the provision) and will not, in itself, make the other provisions void or unenforceable.</li>
-                            <li>10.5 You may not assign or otherwise transfer (in whole or in part) Your rights and/or obligations under these Rules. Any breach of this Rule may result in the use of Your Account, Your ability to buy potential Entries for The County Jackpot online prize draws, the provision of the Games Played Online and/or access to the Site being terminated immediately by The County Jackpot. The County Jackpot may assign or otherwise transfer its rights and/or obligations under these Rules in whole or in part to any third party at its sole discretion.</li>
-                            <li>10.6 Except if The County Jackpot assigns or transfers its rights and/or obligations under these Rules, a person who is not a party to these Rules has no rights under the Contracts (Rights of Third Parties) Act 1999 (as amended or re-enacted from time to time, and any subordinate legislation made under that Act) or otherwise to enforce any provision of these Rules.
-                            <li>10.7 You agree that when You contact the Customer Care Team, You will supply any Games-Related Information required by The County Jackpot.</li></ul>') !!}
+                        {!! nl2br('<ul><li>11.1 Any person who buys a potential Entry or submits an Entry for validation or who claims a Prize in whatever capacity, agrees to be bound by the provisions of any applicable legislation, these Rules, the Privacy Policy, the Account Terms, the Game Procedures, any Game Specific Rules that apply (all as amended from time to time) and any other rules or procedures, statements or explanations The County Jackpot may issue in respect of that Game Played Online.</li>
+                            <li>11.2 The County Jackpot may change these Rules, the relevant Game Procedures and any Game Specific Rules applicable to the Games Played Online, and the Account Terms and User Account Terms (including the Privacy Policy) at any time. These changes will be effective immediately from the date of their publication on the Site (or any earlier time The County Jackpot states), or on notification to You that the changes have taken place (whichever takes place sooner) and will apply to Entries bought after the date on which the changes become effective, and/or Entries bought before that date if reasonable in the circumstances. Notification will be by email, Account notification, post or any other form of communication reasonably decided by The County Jackpot. You agree that You will be bound by the changes when You next play a Game Played Online, access Your Account or claim a Prize after the changes have become effective, or (where relevant) when You expressly accept the changes, whichever takes place first.</li>
+                            <li>11.3 These Rules, the Account Terms, the Privacy Policy, the applicable Game Procedures and any applicable Game Specific Rules set out the full extent of The County Jackpot’s obligations and liabilities to You in relation to Games Played Online and form the contract between The County Jackpot and You for each Game Played Online. If there is any conflict between these documents, they will apply in the following order (unless The County Jackpot states otherwise: (a) the applicable Game Specific Rules (taking first priority); (b) the applicable Game Procedures; (c) these Rules; (d) the Account Terms (excluding, for this purpose, the Privacy Policy); (e) the Privacy Policy.</li>
+                            <li>11.4 If any provision (or part of a provision) in any of the documents mentioned in Rule 11.3 is decided by a court of competent jurisdiction to be void and/or unenforceable, that decision will only affect the particular provision (or part of the provision) and will not, in itself, make the other provisions void or unenforceable.</li>
+                            <li>11.5 You may not assign or otherwise transfer (in whole or in part) Your rights and/or obligations under these Rules. Any breach of this Rule may result in the use of Your Account, Your ability to buy potential Entries for The County Jackpot online prize draws, the provision of the Games Played Online and/or access to the Site being terminated immediately by The County Jackpot. The County Jackpot may assign or otherwise transfer its rights and/or obligations under these Rules in whole or in part to any third party at its sole discretion.</li>
+                            <li>11.6 Except if The County Jackpot assigns or transfers its rights and/or obligations under these Rules, a person who is not a party to these Rules has no rights under the Contracts (Rights of Third Parties) Act 1999 (as amended or re-enacted from time to time, and any subordinate legislation made under that Act) or otherwise to enforce any provision of these Rules.
+                            <li>11.7 You agree that when You contact the Customer Care Team, You will supply any Games-Related Information required by The County Jackpot.</li></ul>') !!}
                     </div>
                 </div>
             </div>
@@ -809,7 +781,7 @@
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-12" aria-expanded="false"
                             aria-controls="collapse-12">
                             <i class="more-less glyphicon glyphicon-plus"></i>
-                            11. Law
+                            12. Law
                         </a>
                     </h4>
                 </div>
@@ -821,7 +793,6 @@
                     </div>
                 </div>
             </div>
-
 
         </div>        
         

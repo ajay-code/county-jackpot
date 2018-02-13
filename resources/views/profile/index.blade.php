@@ -7,7 +7,7 @@
     <div class="col-sm-6 col-sm-offset-3">
         <div class="box box-primary">
             <div class="box-body box-profile">
-                <img class="profile-user-img img-responsive img-circle" src="/img/user.png" alt="User profile picture">
+                {{--  <img class="profile-user-img img-responsive img-circle" src="/img/user.png" alt="User profile picture">  --}}
 
                 <h3 class="profile-username text-center">{{ $user->name }}</h3>
 
@@ -33,6 +33,10 @@
                     <li class="list-group-item clearfix">
                         <b>Street Adress</b>
                         <span class="pull-right">{!! nl2br($user->street_address) !!}</span>
+                    </li>
+                    <li class="list-group-item clearfix">
+                        <b>County</b>
+                        <span class="pull-right">{{ $user->county ? $user->county->name : '--' }}</span>
                     </li>
                     <li class="list-group-item">
                         <b>Status</b>

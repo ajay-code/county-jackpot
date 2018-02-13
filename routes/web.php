@@ -16,6 +16,8 @@ Route::get('/results', 'MainController@results');
 Route::get('/test', 'MainController@test');
 Route::view('/terms-and-conditions', 'terms-and-conditions');
 Route::view('/policy', 'policy');
+Route::view('/about', 'about');
+Route::view('/disclaimer', 'disclaimer');
 
 Route::get('/scheduler', function () {
     Artisan::call('lottery:pick-winner');

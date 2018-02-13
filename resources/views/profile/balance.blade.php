@@ -103,6 +103,14 @@
                             : {{$user->bankDetail->bank_name}}
                         </div>
                         <div class="clearfix"></div>
+                        
+                        <div class="col-xs-6 col-sm-2">
+                            Account Number
+                        </div>
+                        <div class="col-xs-6 col-sm-10">
+                            : {{$user->bankDetail->account_number}}
+                        </div>
+                        <div class="clearfix"></div>
 
                         <div class="col-xs-6 col-sm-2">
                             Sort Code
@@ -112,13 +120,6 @@
                         </div>
                         <div class="clearfix"></div>
 
-                        <div class="col-xs-6 col-sm-2">
-                            Account Number
-                        </div>
-                        <div class="col-xs-6 col-sm-10">
-                            : {{$user->bankDetail->account_number}}
-                        </div>
-                        <div class="clearfix"></div>
 
                     </div>
                     <div class="col-sm-12">
@@ -144,40 +145,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 <h4 class="modal-title" id="myModalLabel">
-                    You will get Paid on the following Bank Details
+                    Winnings will be transferred to the following account, please ensure these details are correct before confirmation.
                 </h4>
             </div>
             <div class="modal-body">
                 <div class="row margin-top-bottom">
                     <div class="col-sm-12">
                         <div class="col-xs-6 col-sm-4">
-                            IBAN
+                            Bank Name
                         </div>
                         <div class="col-xs-6 col-sm-8">
-                            : {{$user->bankDetail->iban}}
-                        </div>
-                        <div class="clearfix"></div>
-                        <div class="col-xs-6 col-sm-4">
-                            BBAN
-                        </div>
-                        <div class="col-xs-6 col-sm-8">
-                            : {{$user->bankDetail->bban}}
-                        </div>
-                        <div class="clearfix"></div>
-
-                        <div class="col-xs-6 col-sm-4">
-                            Bank Identifier
-                        </div>
-                        <div class="col-xs-6 col-sm-8">
-                            : {{$user->bankDetail->bank_identifier}}
-                        </div>
-                        <div class="clearfix"></div>
-
-                        <div class="col-xs-6 col-sm-4">
-                            Branch Identifier
-                        </div>
-                        <div class="col-xs-6 col-sm-8">
-                            : {{$user->bankDetail->branch_identifier}}
+                            : {{$user->bankDetail->bank_name}}
                         </div>
                         <div class="clearfix"></div>
 
@@ -188,6 +166,16 @@
                             : {{$user->bankDetail->account_number}}
                         </div>
                         <div class="clearfix"></div>
+
+                        <div class="col-xs-6 col-sm-4">
+                            Sort Code
+                        </div>
+                        <div class="col-xs-6 col-sm-8">
+                            : {{$user->bankDetail->sort_code}}
+                        </div>
+                        <div class="clearfix"></div>
+
+                        
 
                     </div>
                 </div>

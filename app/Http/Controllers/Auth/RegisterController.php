@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\County;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -40,6 +41,17 @@ class RegisterController extends Controller
     }
 
     /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        $counties = County::all();
+        return view('auth.register', compact('counties'));
+    }
+
+    /**
      * Get a validator for an incoming registration request.
      *
      * @param  array  $data
@@ -54,6 +66,7 @@ class RegisterController extends Controller
             'password' => 'required|string|min:6|confirmed',
             'dob' => 'required|date',
             'street_address' => 'required',
+            'county_id' => 'required',
         ]);
     }
 
@@ -72,6 +85,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'dob' => $data['dob'],
             'street_address' => $data['street_address'],
+            'county_id' => $data['county_id'],
         ]);
     }
 }

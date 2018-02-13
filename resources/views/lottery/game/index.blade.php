@@ -3,41 +3,41 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    {{--  <h1>Lotteries</h1>  --}}
+    {{--  <h2>Lotteries</h2>  --}}
 @stop
 
 @section('content')
     <div  class="box box-success" >
         <div class="box-body">
-            <div class="flex-center">
-                <div class="message">
-                    <h2 class="text-center">
+                <p class="h2" style="text-align: center;"><span class="s1"><b>Count the Pictures</b></span></p>
+<p class="h4" style="text-align: center;"><span class="s1">In order to enter into the draw you must complete a quick game which is designed to test your memory skills.</span></p>
+<p class="h4"><strong><span class="s1">Rules:</span></strong></p>
 
-                       <br>
-                    </h2>
-                    <h4>
-                        To enter the draw you will need to play a little memory game. A group of pictures will be shown on the screen, some of those pictures will be the copy of each other.
-                         <br><br><br><b> You need to remember the number of occurences of all the repeating pictures. 
-                                Your question will be based on the number of their occurence.
-                            </b><br>
-                    </h4>
-                    <h2 style="margin: 2rem 0px;" class="text-center">
-                        For example: Picture A is repeated 2 times, Picture B is repeated 3 times etc.
-                    </h2>
-                    
-        
-                    <div class="text-center" style="margin-top:6rem">
-                        <a href="/county-draw/{{$parentLottery->id}}/play" >
-                            <button class="btn btn-success btn-lg" style="padding:11px 67px">Continue</button>
-                        </a>
-                    </div>
+<ol class="ol1">
+ 	<li class="li4"><span class="s1">When you click begin the game will start and you will be shown a series of images. You have 10 seconds to remember how many times each image is repeated.</span></li>
+ 	<li class="li4"><span class="s1">After the timer reaches 0 you will be given a multiple-choice question in relation to the images (e.g. “Which image was repeated 4 times?”).</span></li>
+ 	<li class="li4"><span class="s1">Select the answer you believe to be correct by clicking the image and submit it via payment.</span></li>
+ 	<li class="li4"><span class="s1">After payment has been successful you will be entered into the draw.</span></li>
+</ol>
+<p class="p6" style="text-align: center;"><span class="s1">One entrant with the correct answer will be chosen at random to win the jackpot at the end of the draw.</span></p>
+<p class="h2" style="text-align: center;"><strong><span class="s1">Good Luck</span></strong></p>
 
-                    <h3 style="margin-top:4rem; color:red" class="text-center">
-                Best of luck!                        
-                        </h3>
+<ul class="ul1">
+ 	<li class="li8"><span class="s1">If the prize offered is cash your account balance will be updated upon winning within 3-5 working days. You can view this in the Balance section of your account. From here you can withdraw your winnings into a bank or building society account.</span></li>
+ 	<li class="li8"><span class="s1">If the prize offered is physical, it will be posted to your provided address within 14 working days.</span></li>
+ 	<li class="li8"><span class="s1">If the prize draw is for charity 75% of the proceedings will go towards a predetermined charity and the remaining 25% will go towards a charity of the winners choice.</span></li>
+ 	<li class="li8"><span class="s1">You must only enter your county’s prize draws. Any entry made into a prize draw outside of your county of residence will be forfeit and non-refundable. Proof of identification and proof of address may be required upon winning before any prize is given.</span></li>
+ 	<li class="li8"><span class="s1">The maximum entry limit for each prize draw is 5. Any entries made over this limit will be forfeit and non-refundable.</span></li>
+ 	<li class="li8"><span class="s1">Entrants must be 16 or over and must permanently reside in one of the 48 English Counties.</span></li>
+</ul>
+<p class="p8"><strong><span class="s1">By Selecting Begin, playing the game and submitting your answer via payment you’ll be bound by the </span><span class="s3">Account Terms</span><span class="s1">, the </span><span class="s3">Rules for Draw-Based Games Played Online</span><span class="s1">, the </span><span class="s3">Privacy Policy</span><span class="s4">,</span><span class="s1"> the Game Procedures the </span><span class="s3">Disclaimer</span><span class="s1"> and the information that appears on this page and thereby accept them all.</span></strong></p>
+                <div class="text-center" style="margin-top:6rem">
+                    <a href="/county-draw/{{$parentLottery->id}}/play" >
+                        <button class="btn btn-success btn-lg" style="padding:11px 67px">Continue</button>
+                    </a>
                 </div>
 
-            </div>
+
         </div>
     </div>
 @stop
