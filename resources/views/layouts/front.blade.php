@@ -82,26 +82,10 @@
 			<div class="footer-middle">
 				<div class="container">
 					<div class="row">
-						
-						<div class="col-lg-4 ">
+						<div class="col-lg-4">
 							<!--Column1-->
 							<div class="footer-pad">
-								<h4>Contact Us</h4>
-								<ul class="list-unstyled">
-									<li>
-										<a href="mailto:customercare@thecountyjackpot.com">customercare@thecountyjackpot.com</a>
-									</li>
-									<li>
-										<a href="mailto:enquiries@thecountyjackpot.com">enquiries@thecountyjackpot.com</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-4 ">
-							<!--Column1-->
-							<div class="footer-pad">
-								<h4>Links</h4>
+								<h4>Important Links</h4>
 								<ul class="list-unstyled">
 									<li>
 										<a href="/about">About Us</a>
@@ -112,11 +96,14 @@
 								</ul>
 							</div>
 						</div>
+						
+
+						
 
 						<div class="col-lg-4 ">
 							<!--Column1-->
 							<div class="footer-pad">
-								<h4>Website Links</h4>
+								<h4>Navigation Links</h4>
 								<ul class="list-unstyled">
 									<li>
 										<a href="/results">Draw Results</a>
@@ -136,6 +123,21 @@
 								</ul>
 							</div>
 						</div>
+
+						<div class="col-lg-4 ">
+							<!--Column1-->
+							<div class="footer-pad">
+								<h4>Contact Us</h4>
+								<ul class="list-unstyled">
+									<li>
+										<a href="mailto:customercare@thecountyjackpot.com">customercare@thecountyjackpot.com</a>
+									</li>
+									<li>
+										<a href="mailto:enquiries@thecountyjackpot.com">enquiries@thecountyjackpot.com</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -147,7 +149,7 @@
 							<p class="text-center">You must only enter your county's prize draws. Any entry made into a prize draw outside of your county of residence will be forfeit an non- refundable. Proof of identification and address may be required upon winning before any prize is given.</p>
 							<p class="text-center">The maximum entry limit for each prize draw is 5. Any entries made over this limit will be forfeit and non-refundable.</p>
 							<p class="text-center">Entrants must be aged 16 or over and must permanently reside in one of the 48 English Counties.</p>
-							<p class="text-center">&copy; Copyright 2018 The County Jackpot all rights reserved.</p>
+							<p class="text-center">&copy; Copyright The County Jackpot 2018 all rights reserved.</p>
 						</div>
 					</div>
 				</div>

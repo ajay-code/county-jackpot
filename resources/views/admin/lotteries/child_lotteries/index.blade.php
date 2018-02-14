@@ -44,6 +44,9 @@
                             # Participents
                         </th>
                         <th>
+                            Total Collection
+                        </th>
+                        <th>
                             Prize Approved Status
                         </th>
                     </tr>
@@ -69,6 +72,9 @@
                                     <a href="/admin/county-draws/{{$lottery->id}}/participants">View</a>
                                 @endif
 
+                            </td>
+                            <td>
+                                {{ $lottery->totalCollection() }}
                             </td>
                             <td>
                                 @if ($lottery->hasWinner())

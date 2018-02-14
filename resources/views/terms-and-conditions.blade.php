@@ -614,7 +614,7 @@
                            
                            c). withhold a prize, providing it is acting reasonably, until it is entirely satisfied that an entry is valid and the claim has been made in good faith;
                            
-                           d). withhold a prize (or recover or seek to recover a prize already paid) until it has carried out all appropriate checks and enquiries if in its discretion it believes that you (as the person claiming a prize) are not lawfully entitled to payment of a prize or that a prize has been paid to you in circumstances where The County Jackpot decides that the entry is invalid or defective, or where there is any other reason for The County Jackpot to question entitlement to the prize. Any checks and enquiries will be carried out promptly by The County Jackpot. You shall repay immediately on demand any prize Camelot seeks to recover;
+                           d). withhold a prize (or recover or seek to recover a prize already paid) until it has carried out all appropriate checks and enquiries if in its discretion it believes that you (as the person claiming a prize) are not lawfully entitled to payment of a prize or that a prize has been paid to you in circumstances where The County Jackpot decides that the entry is invalid or defective, or where there is any other reason for The County Jackpot to question entitlement to the prize. Any checks and enquiries will be carried out promptly by The County Jackpot. You shall repay immediately on demand any prize The County Jackpot seeks to recover;
                            
                            e). recover a prize incorrectly paid into your account;
                            
@@ -630,7 +630,7 @@
                                 <li>5.10 No interest will be payable on any prize, including without limitation whilst any checks or enquiries are carried out in relation to a winning entry, whilst a dispute about the entry or prize claim is being resolved, or for the period a prize remains unclaimed.
                            
                             <h4>Payment of Prizes to persons with a disability</h4>
-                           5.10 If you are a person with a legal, physical or other disability and are claiming a Prize, Camelot may pay the Prize to Your authorised representative.</li></ul>') !!}
+                           5.10 If you are a person with a legal, physical or other disability and are claiming a Prize, The County Jackpot may pay the Prize to Your authorised representative.</li></ul>') !!}
                     </div>
                 </div>
             </div>

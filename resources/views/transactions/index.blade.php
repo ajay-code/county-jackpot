@@ -40,7 +40,7 @@
                 @foreach ($user->transactions as $index =>$transaction)
                 <tr>
                     <td>{{$index + 1}}</td>
-                    <td><i class="fa fa-gbp"></i>{{(float)$transaction->amount / 100 }}</td>
+                    <td><i class="fa fa-gbp"></i>{{ number_format($transaction->amount / 100, 2) }}</td>
                     <td>{{$transaction->lottery->name}}</td>
                     <td>{{$transaction->created_at->format('jS F, Y')}}</td>
                 </tr>

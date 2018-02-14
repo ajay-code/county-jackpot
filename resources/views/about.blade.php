@@ -16,7 +16,7 @@
         }
         .terms{
             min-height: 600px;
-            margin-top: 300px;
+            margin-top: 200px;
             margin-bottom: 6rem;
         }
     </style>
@@ -25,7 +25,7 @@
 @endsection
 @section('content')
     <section class="terms container">
-        {!! nl2br('<h1 class="p2" style="text-align: center;"><span class="s1">About Us</span></h1>
+        {!! nl2br('<h1 class="p2 text-purple" style="text-align: center;"><span class="s1">About Us</span></h1>
         <p class="p3" style="text-align: center;"><span class="s1">The County Jackpot is a weekly prize draw competition site that offers a new, fun way to win cash and great prizes. One winner from each county will be chosen at random every week to win their county’s jackpot.</span></p>
         <p class="p3" style="text-align: center;"><span class="s1">We also host a number of free to enter prize draws, National based prize draws and charity events throughout the year.</span></p>
         <p class="p3" style="text-align: center;"><span class="s1">To get involved simply create an account and enter an active draw that is operating in your county either from the “My account” section or the “Active Draw” section homepage. One winner from each county will be chosen at random every week to win their county’s jackpot.</span></p>

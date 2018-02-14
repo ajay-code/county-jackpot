@@ -88,6 +88,11 @@ class Lottery extends Model
         return number_format($this->entry_fee / 100, 2);
     }
 
+    public function totalCollection()
+    {
+        return number_format($this->lotteryTransactions()->sum('amount') / 100, 2);
+    }
+
     /**
      * Relationships
      */
@@ -119,5 +124,9 @@ class Lottery extends Model
     public function approvals()
     {
         return $this->hasMany(Approval::class);
+    }
+    public function lotteryTransactions()
+    {
+        return $this->hasMany(LotteryTransaction::class);
     }
 }

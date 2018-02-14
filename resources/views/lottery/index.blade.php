@@ -3,7 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Active Draws</h1>
+    <h1>Active Draws For Your County</h1>
 @stop
 
 @section('content')

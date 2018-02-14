@@ -49,7 +49,6 @@
                     <label for="county">County</label>
                     <select name="county_id" id="county" class="form-control">
                         <option value="">All Counties</option>
-                        
                         @foreach ($counties as $county)
                             <option value="{{$county->id}}" {{ $parentLottery->county_id == $county->id ? 'selected':'' }}>{{$county->name}}</option>
                         @endforeach

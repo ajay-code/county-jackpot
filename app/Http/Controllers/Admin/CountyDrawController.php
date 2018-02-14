@@ -27,12 +27,27 @@ class CountyDrawController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    // public function participants(Lottery $countyDraw)
+    // {
+    //     $lottery = $countyDraw->load(['participants' => function ($query) {
+    //         $query = $query->withCount('lotteries');
+    //     }], 'winner');
+    //     // return $lottery;
+    //     return view('admin.lotteries.child_lotteries.participants', compact('lottery'));
+    // }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function participants(Lottery $countyDraw)
     {
-        $lottery = $countyDraw->load(['participants' => function ($query) {
-            $query = $query->withCount('lotteries');
+        $lottery = $countyDraw->load(['draws' => function ($query) {
+            $query = $query->with(['user' => function ($query) {
+                $query = $query->withCount('lotteries');
+            }]);
         }], 'winner');
-        // return $lottery;
         return view('admin.lotteries.child_lotteries.participants', compact('lottery'));
     }
 

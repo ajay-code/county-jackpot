@@ -118,7 +118,7 @@ class ParentLottery extends Model
      */
     public function county()
     {
-        return $this->hasOne(County::class);
+        return $this->BelongsTo(County::class);
     }
     public function lotteries()
     {

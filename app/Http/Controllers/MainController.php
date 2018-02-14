@@ -15,10 +15,12 @@ class MainController extends Controller
 {
     public function index()
     {
-        $lotteries = ParentLottery::NotExpired()->get();
+        $lotteries = ParentLottery::NotExpired()->whereNotNull('county_id')->get();
+        $globalLotteries = ParentLottery::NotExpired()->whereNull('county_id')->get();
         $lotteries->load('currentLottery');
+        $globalLotteries->load('currentLottery');
         $featured = ParentLottery::featured()->first();
-        return view('welcome', compact('lotteries', 'featured'));
+        return view('welcome', compact('lotteries', 'globalLotteries', 'featured'));
     }
 
     public function results()
@@ -35,7 +37,6 @@ class MainController extends Controller
 
     public function test()
     {
-        // alert()->info('Reached Limit of 5 Times');
         alert()->info('Reached Limit of 5 Times')->autoclose('3000');
         return redirect('/county-draw');
     }

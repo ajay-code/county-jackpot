@@ -39,21 +39,23 @@ class RescheduleLottery extends Command
      */
     public function handle()
     {
-        $parentLotteries = ParentLottery::with('currentLottery')
-                                            ->expired()
-                                            ->alwaysActive()
-                                            ->get();
+        $parentLotteries = ParentLottery::with(['currentLottery' => function ($q) {
+            $q = $q->withCount('draws');
+        }])
+            ->expired()
+            ->alwaysActive()
+            ->get();
         // ->dump();
         
         foreach ($parentLotteries as $parentLottery) {
-            $this->info($parentLottery->id);
-            // $currentLottery = $parentLottery->currentLottery;
-            // if ($currentLottery->hasWinner()) {
-            $parentLottery->expire_at = Carbon::now()->addWeek();
-            $parentLottery->save();
-            $parentLottery->lotteries()->create($parentLottery->toArray());
-            $this->info("Id is {$parentLottery->id}");
-            // }
+            $currentLottery = $parentLottery->currentLottery;
+            // $this->info("Id is {$parentLottery->id}");
+            if ($currentLottery->hasWinner() || $currentLottery->draws_count <= 0) {
+                $parentLottery->expire_at = Carbon::now()->addDays(6);
+                $parentLottery->save();
+                $parentLottery->lotteries()->create($parentLottery->toArray());
+                // $this->info("Id is {$parentLottery->id}");
+            }
         }
     }
 }

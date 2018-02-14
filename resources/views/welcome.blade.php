@@ -3,8 +3,9 @@
 <section>
 	<div class="jumbotron jumbotron-fluid">
 		<div class="container">
-			<h1 class="display-3 text-center banner-line1">Win Your County's Next Jackpot</h1>
-			{{--  <p class="lead text-center banner-line2">We are one of the best and most trusted weekly draw websites in the UK</p>  --}}
+			<h1 class="display-3 text-center banner-line1">
+				Win Your County&#39;s 
+				Next Jackpot</h1>
 		</div>
 		<div class="overlay"></div>
 	</div>
@@ -30,6 +31,12 @@
 			</div>
 		</div>
 		@foreach ($lotteries as $lottery)
+		<lottery-display-item-bs4 :lottery="{{ $lottery->currentLottery }}"></lottery-display-item-bs4>
+		@endforeach
+		@if (count($globalLotteries) > 0)
+		<p class="text-center h4 text-purple"> Global Draws</p>
+		@endif
+		@foreach ($globalLotteries as $lottery)
 		<lottery-display-item-bs4 :lottery="{{ $lottery->currentLottery }}"></lottery-display-item-bs4>
 		@endforeach
 	</div>

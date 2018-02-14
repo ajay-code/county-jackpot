@@ -42,14 +42,12 @@ class LotteryController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|unique:lotteries|max:255',
+            'name' => 'required|string|max:255',
             'county_id' => 'required|numeric',
             'entry_fee' =>  'required|numeric',
             'prize' =>  'required|numeric',
             'expire_at' =>  'required|date',
         ]);
-
-        // return $validatedData;
 
         $parentLottery = ParentLottery::create($validatedData);
         
@@ -91,7 +89,7 @@ class LotteryController extends Controller
     public function update(Request $request, ParentLottery $parentLottery)
     {
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255|unique:parent_lotteries,name,'.$parentLottery->id,
+            'name' => 'required|string|max:255',
             'county_id' => 'nullable|numeric',
             'entry_fee' =>  'required|numeric',
             'prize' =>  'required|numeric',

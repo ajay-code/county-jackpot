@@ -50,8 +50,17 @@ class PickWinner extends Command
                     $q = $q->with('user')->where('result', 'won');
                 }]);
 
+                if ($currentLottery->draws->count() <= 0) {
+                    $currentLottery->load('draws');
+                    // $this->info("CurrentLottery ID draw count: {$currentLottery->draws->count()}");
+                }
+
+                if ($currentLottery->draws->count() <= 0) {
+                    continue;
+                }
+
                 $draws = $currentLottery->draws;
-                
+
                 $winner = $draws->shuffle()[0];
                 $currentLottery->update([
                     'winner_id' => $winner->user->id,

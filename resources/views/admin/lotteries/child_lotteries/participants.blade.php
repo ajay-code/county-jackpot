@@ -50,6 +50,9 @@
                             Street Address
                         </th>
                         <th>
+                            Result
+                        </th>
+                        <th>
                             All Lotteries Till Now
                         </th>
                         <th>
@@ -58,14 +61,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                        @foreach ($lottery->participants as $index => $participant)
+                        @foreach ($lottery->draws as $index => $draw)
                         <tr>
                             <td>{{ $index + 1 }}</td>
-                            <td>{{ $participant->name }}</td>
-                            <td>{{ $participant->email }}</td>
-                            <td>{{ $participant->phone }}</td>
-                            <td>{{ $participant->street_address }}</td>
-                            <td><a href="/admin/users/{{$participant->id}}/draws">{{ $participant->lotteries_count }}</a></td>
+                            <td>{{ $draw->user->name }}</td>
+                            <td>{{ $draw->user->email }}</td>
+                            <td>{{ $draw->user->phone }}</td>
+                            <td>{{ $draw->user->street_address }}</td>
+                            <td>{{ $draw->result }}</td>
+                            <td> {{ $draw->user->lotteries_count }} <a href="/admin/users/{{$draw->user->id}}/draws"> View</a></td>
                             <td></td>
                         </tr>
                         @endforeach
