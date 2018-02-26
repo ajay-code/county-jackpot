@@ -38,6 +38,6 @@ class MainController extends Controller
     public function test()
     {
         alert()->info('Reached Limit of 5 Times')->autoclose('3000');
-        return redirect('/county-draw');
+        return back();
     }
 }

@@ -342,7 +342,11 @@ nav {
         padding: 13px;
     }
     .jumbotron {
-        padding: 10rem 0rem;
+        padding: 3rem 0rem;
+    }
+    .featured {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
     }
     .coin {
         width: 150px;

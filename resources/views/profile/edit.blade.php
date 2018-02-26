@@ -55,7 +55,7 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="phone">DOB</label>
-                    <input name="dob" type="date" class="form-control" id="phone" value="{{$user->dob->toDateString()}}" placeholder="Phone" >
+                    <input name="dob" type="date" class="form-control" id="phone" value="{{ $user->dob ? $user->dob->toDateString() : ''}}" placeholder="Phone" >
                 </div>
             </div>
             <div class="box-body">

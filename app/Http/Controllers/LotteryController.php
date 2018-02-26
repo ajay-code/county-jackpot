@@ -46,7 +46,6 @@ class LotteryController extends Controller
     public function buy(ParentLottery $parentLottery)
     {
         $parentLottery->load('currentLottery', 'county');
-        
         $user = auth()->user();
         
         if ($parentLottery->county) {
@@ -60,6 +59,7 @@ class LotteryController extends Controller
                 return back();
             }
         }
+        
         $user->load(['lotteries' => function ($q) use ($parentLottery) {
             $q = $q->where('lottery_id', $parentLottery->currentLottery->id);
         }]);
@@ -78,13 +78,20 @@ class LotteryController extends Controller
      */
     public function game(ParentLottery $parentLottery)
     {
+        $parentLottery->load('currentLottery', 'county');
+        $user = auth()->user();
+        
         if ($parentLottery->county) {
             if (!($parentLottery->county->id == $user->county->id)) {
                 alert()->info("You can only enter draws available for your county")->autoclose('3000');
                 return back();
             }
         }
-        $user = auth()->user();
+
+        $user->load(['lotteries' => function ($q) use ($parentLottery) {
+            $q = $q->where('lottery_id', $parentLottery->currentLottery->id);
+        }]);
+
         if ($user->lotteries->count() >= 5) {
             alert()->info('You have reached the maximum number of entries for this draw')->autoclose('3000');
             return back();
