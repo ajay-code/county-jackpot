@@ -78,11 +78,11 @@
                   <a href="#" data-toggle="dropdown">
                     With selected <span class="caret"></span>
                   </a>
-                  <ul class="dropdown-menu">
+                  <!-- <ul class="dropdown-menu">
                     <li>
                         <a href="#" @click.prevent="destroy(selected)">Delete</a>
                     </li>
-                  </ul>
+                  </ul> -->
                 </div>
             </div>
             

@@ -44,6 +44,14 @@ class User extends Authenticatable
         static::created(function ($user) {
             $user->bankDetail()->create();
         });
+
+        static::deleting(function ($user) {
+            $user->bankDetail()->delete();
+            $user->lotteries()->delete();
+            $user->approvals()->delete();
+            $user->getPaids()->delete();
+            $user->lotteriesWon()->update(['winner_id' => null]);
+        });
     }
 
     /**
@@ -111,11 +119,4 @@ class User extends Authenticatable
         return $this->hasMany(GetPaid::class);
     }
 
-    /**
-     * Create Bank Details
-     */
-    // public function bank()
-    // {
-    //     $this->bankDetail()->create();
-    // }
 }

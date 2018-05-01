@@ -16,6 +16,7 @@ abstract class DataTableController extends Controller
      * @var boolean
      */
     protected $allowCreation = true;
+    protected $allowDeletion = true;
 
     /**
      * The entity builder.
@@ -64,7 +65,8 @@ abstract class DataTableController extends Controller
                 'records' => $paginated->items(),
                 'pageInfo' => $this->getPageInfo($paginated),
                 'allow' => [
-                    'creation' => $this->allowCreation
+                    'creation' => $this->allowCreation,
+                    'deletion' => $this->allowDeletion
                 ]
             ]
         ]);

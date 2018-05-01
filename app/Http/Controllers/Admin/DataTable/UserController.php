@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Builder;
 class UserController extends DataTableController
 {
     protected $allowCreation = false;
+    protected $allowDeletion = true;
 
     /**
      * Create a new controller instance.
@@ -61,5 +62,22 @@ class UserController extends DataTableController
         return [
             'name', 'email', 'gender' ,'phone', 'street_address', 'status'
         ];
+    }
+
+    /**
+     * Get the columns that we can update.
+     *
+     * @return array
+     */
+    public function destroy(User $user)
+    {
+        DB::beginTransaction();
+        try {
+            $user->delete();
+            $success = true;
+        } catch (\Exception $e) {
+            $success = false;
+            DB::rollback();
+        }
     }
 }

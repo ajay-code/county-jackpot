@@ -43,7 +43,7 @@ class PurchasesLotteryController extends Controller
         $charge = Charge::create([
             'customer' => $customer->id,
             'amount' => $currentLottery->entry_fee,
-            'currency' => 'usd',
+            'currency' => 'gbp',
         ]);
 
 

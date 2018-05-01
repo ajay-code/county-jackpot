@@ -3,10 +3,14 @@
 namespace App\Http\Controllers;
 
 use Notification;
+use Stripe\Charge;
+use Stripe\Stripe;
 use App\Models\User;
+use Stripe\Customer;
 use App\Models\Lottery;
 use Illuminate\Http\Request;
 use App\Models\ParentLottery;
+use Illuminate\Mail\Markdown;
 use App\Notifications\TestNotice;
 use App\Notifications\WinnerEmail;
 use App\Notifications\ResultDeclared;
@@ -37,7 +41,27 @@ class MainController extends Controller
 
     public function test()
     {
-        alert()->info('Reached Limit of 5 Times')->autoclose('3000');
-        return back();
+        $markdown = new Markdown(view(), config('mail.markdown'));
+        $url = 'test.com';
+        return $markdown->render('mail.test', compact('url'));
+    }
+
+    public function test_payment(Request $request)
+    {
+        // dd($request->all());
+        Stripe::setApiKey(config('services.stripe.secret'));
+
+        $customer = Customer::create([
+            'email' => $request->stripeEmail,
+            'source' => $request->stripeToken,
+        ]);
+
+        $charge = Charge::create([
+            'customer' => $customer->id,
+            'amount' => 2000,
+            'currency' => 'gbp',
+        ]);
+
+        return 'done';
     }
 }

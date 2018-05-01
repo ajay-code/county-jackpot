@@ -14,6 +14,7 @@
 Route::get('/', 'MainController@index');
 Route::get('/results', 'MainController@results');
 Route::get('/test', 'MainController@test');
+Route::post('/test/payment', 'MainController@test_payment');
 Route::view('/terms-and-conditions', 'terms-and-conditions');
 Route::view('/policy', 'policy');
 Route::view('/about', 'about');

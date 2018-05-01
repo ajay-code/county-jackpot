@@ -202,10 +202,10 @@ export default {
             this.stripe.open({
                 name: this.parentLottery.name,
                 email: Lottery.user.email,
-                currency: "gbp",
+                currency: "GBP",
                 description: this.parentLottery.name,
                 amount: this.parentLottery.entry_fee
-            });
+            }); 
         }
     }
 };
