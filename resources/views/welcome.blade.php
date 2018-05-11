@@ -4,7 +4,7 @@
 	<div class="jumbotron jumbotron-fluid">
 		<div class="container">
 			<h1 class="display-3 text-center banner-line1">
-				Win Your County&#39;s 
+				Win Your County&#39;s
 				Next Jackpot</h1>
 		</div>
 		<div class="overlay"></div>
@@ -13,17 +13,23 @@
 <section id="app" class="featured">
 	<h1 class="text-center featured-heading">Active Draws</h1>
 	<div class="container">
+		@if (count($lotteries) > 0)
+		<p class="text-center h4 text-purple">County Draws</p>
+		@endif
 		<div class="row featured-line d-none d-lg-flex">
 			<div class=" col-lg-2 ">
 				<h4></h4>
 			</div>
-			<div class=" col-lg-3 text-center">
+			<div class=" col-lg-2 text-center">
 				<h4>Draw</h4>
 			</div>
 			<div class=" col-lg-2 text-center">
 				<h4>Minimum Win</h4>
 			</div>
-			<div class=" col-lg-3 text-center">
+			<div class=" col-lg-2 text-center">
+				<h4>Price</h4>
+			</div>
+			<div class=" col-lg-2 text-center">
 				<h4>Time to draw</h4>
 			</div>
 			<div class=" col-lg-2 text-center">
@@ -34,7 +40,7 @@
 		<lottery-display-item-bs4 :lottery="{{ $lottery->currentLottery }}"></lottery-display-item-bs4>
 		@endforeach
 		@if (count($globalLotteries) > 0)
-		<p class="text-center h4 text-purple"> Global Draws</p>
+		<p class="text-center h4 text-purple">National Draws</p>
 		@endif
 		@foreach ($globalLotteries as $lottery)
 		<lottery-display-item-bs4 :lottery="{{ $lottery->currentLottery }}"></lottery-display-item-bs4>
@@ -131,7 +137,7 @@
 @endif
 
 @endsection
-	
+
 @section('script')
 @if ($featured)
 <script type="text/javascript">
@@ -154,8 +160,8 @@
 			jQuery('#countdown #sec').html(sec);
 		}, 1000);
 	});
-	
+
 </script>
 @endif
-	
+
 @endsection

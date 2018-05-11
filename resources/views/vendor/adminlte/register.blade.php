@@ -10,7 +10,9 @@
 @section('body')
     <div class="register-box">
         <div class="register-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">
+                <img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
+            </a>
         </div>
 
         <div class="register-box-body">
@@ -59,7 +61,7 @@
                     @endif
                 </div>
                 <button type="submit"
-                        class="btn btn-success btn-block btn-flat"
+                        class="btn btn-purple btn-block btn-flat"
                 >{{ trans('adminlte::adminlte.register') }}</button>
             </form>
             <div class="auth-links">

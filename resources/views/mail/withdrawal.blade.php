@@ -1,23 +1,14 @@
 @component('mail::message')
 
-@component('mail::panel')
-<img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
-@endcomponent
-
 # Balance Withdrawal Notification
 
-You requested for the Withdrawal of £{{ $withDrawal->amount }} from your account balance.
+Hooray, your winnings are on their way to your bank. <br>
+Please allow up to 14 working days for winnings to appear in your account.
 
-
-You will get the money in your linked bank details within 4-5 business days. 
-
+If you did not request this withdrawal please contact our customer care team.
+<a href="mailto:customercare@thecountyjackpot.com">customercare@thecountyjackpot.com</a>
 
 Thanks,<br>
-{{ config('app.name') }}
-
-@component('mail::button', ['url' => config('app.url')])
-Visit Website
-@endcomponent
-
+{{ config('mail.text.footer_from') }}
 
 @endcomponent

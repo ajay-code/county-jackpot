@@ -2,27 +2,27 @@
 
 namespace App\Notifications;
 
-use App\Models\UserLottery;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Notifications\Notification;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 
-class SuccessFullyEnteredDraw extends Notification implements ShouldQueue
+class ResetPasswordNotification extends Notification
 {
-    use Queueable, SerializesModels;
-
-    public $draw;
-
+    use Queueable;
+    protected $token;
+    protected $user;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(UserLottery $draw)
+    public function __construct($token, User $user)
     {
-        $this->draw = $draw;
+        $this->user = $user;
+        $this->token = $token;
+        //
     }
 
     /**
@@ -44,10 +44,16 @@ class SuccessFullyEnteredDraw extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        $this->draw->load('lottery');
         return (new MailMessage)
-            ->subject('Draw entry confirmation')
-            ->markdown('mail.entered-draw', ['draw' => $this->draw]);
+        ->subject('Forgotten password request')
+        ->markdown(
+            'mail.password.reset',
+            [
+            'user' => $this->user,
+            'actionUrl' => url(config('app.url').route('password.reset', $this->token, false)),
+            "actionText" => "Reset Password"
+            ]
+        );
     }
 
     /**

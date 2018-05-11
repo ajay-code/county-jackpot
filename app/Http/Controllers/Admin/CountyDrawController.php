@@ -89,7 +89,7 @@ class CountyDrawController extends Controller
                 'balance' => $winner->balance + $countyDraw->prize
             ]);
 
-            $winner->notify(new PrizeApproved($countyDraw));
+            $winner->notify(new PrizeApproved($countyDraw, $winner));
 
             return back();
         }

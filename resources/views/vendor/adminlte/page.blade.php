@@ -18,6 +18,15 @@
             .sidebar-mini.sidebar-collapse .main-header .sidebar-toggle{
                 padding: 31px 15px;
             }
+            /* navbar */
+            .navbar {
+                display: flex;
+            }
+            .navbar-custom-menu {
+                margin-left: auto;
+                display: flex;
+                align-items: center;
+            }
     </style>
     @stack('css')
     @yield('css')
@@ -40,7 +49,7 @@
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><img src="/img/logo-mini.png" width="100" alt="TheCountyJackPot" srcset=""></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><img src="/img/logo-mini.png" width="50" alt="TheCountyJackPot" srcset=""> {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>
+                <span class="logo-lg"><img src="/img/logo-mini.png" width="50" alt="TheCountyJackPot" srcset=""></span>
             </a>
 
             <!-- Header Navbar -->

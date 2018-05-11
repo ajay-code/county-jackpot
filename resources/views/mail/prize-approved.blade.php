@@ -1,22 +1,12 @@
 @component('mail::message')
 
-@component('mail::panel')
-<img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
-@endcomponent
+{{ $user->name }}, we have some exciting news.
 
-# You Prize money Approved
+Your prize for the {{ $countyDraw->expire_at->format('jS F, Y') }} {{ $countyDraw->name }} draw has been approved.
 
-You Prize money for the draw <b>{{ $countyDraw->name }}</b> that you won on {{ $countyDraw->expire_at->format('jS F, Y') }}
-has been approved. 
-
-Check Your Profile to get More Info
+For more information or to withdraw your winnings please click on this [link]({{ config('app.url').'/balance' }}).
 
 Thanks,<br>
 {{ config('app.name') }}
-
-@component('mail::button', ['url' => config('app.url').'/balance'])
-Check Balance
-@endcomponent
-
 
 @endcomponent

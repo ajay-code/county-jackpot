@@ -76,22 +76,24 @@
             The Terms and Rules found below apply when using www.thecountyjackpot.com, partaking in any County Jackpot draws and accessing
             your County Jackpot account:
             <h3>Account Terms</h3>
-            1st Edition effective as of 25th January 2018 
+            1st Edition effective as of 25th January 2018
             <br>
             <br>
             The following Account Terms state the applicable rules and procedures in relation
             to opening an account and its use when partaking in all County Jackpot prize draws (including mobile devices and by direct
             debit) and for all other reasons. By accepting these Terms, you thereby agree to be bound by the documents found below:
+            <br>
+            <br>
             <ul>
                 <li>Rules for County Jackpot Online Prize Draws.</li>
                 <li>The Game Specific Rules (if any) and the procedures for each individual Prize Draw.</li>
             </ul>
-            When attempting entry for a county-based prize draw, you must only enter the prize draws that match your county of permanent
-            residence. For example, if you reside in Warwickshire, you must only enter Warwickshire based prize draws. Failure to
-            do so will result in the forfeit of your entry and any winnings. A prerequisite memory game must be completed before
-            entry into a prize draw can be attempted. This includes an element of human memory-based skill and requires you to memorise
-            a pattern of images and then answer a question in relation to those images.
-            <br>
+            {!! nl2br("
+            -If the prize offered is cash your account balance will be updated upon winning within 7 working days. You can view this in the Balance section of your account. From here you can withdraw your winnings into a bank or building society account.
+            -If the prize offered is physical, it will be posted to your provided address within 14 working days.
+            -You must only enter your county’s prize draws. Any entry made into a prize draw outside of your county of residence will be forfeit and non-refundable. Proof of identification and proof of address may be required upon winning before any prize is given.
+            -The maximum entry limit for each prize draw is 5 per person. Any entries made over this limit will be forfeit and non-refundable.
+            -Entrants must be 16 or over and must permanently reside in one of the 48 English Counties.") !!}
             <br>
             <br>
             <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
@@ -162,14 +164,14 @@
                                     it being used without your permission. You should:
 
                                     a). always remember your password and never
-                                    tell it to anybody; 
+                                    tell it to anybody;
 
                                     b). never leave any physical trace of your password (writing it down, making
                                     note of it on your computer or other electronic device) or record it in a way that others could
-                                    understand it; 
+                                    understand it;
 
                                     c). destroy any communications from The County Jackpot relating to your password
-                                    immediately after reading them; 
+                                    immediately after reading them;
 
                                     d). do not create a password that is easy to guess by others;</li></ul>') !!}
                         </div>
@@ -283,20 +285,20 @@
                     </div>
                     <div id="collapse7" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading7">
                         <div class="panel-body">
-                            {!! nl2br('<ul><li>7.1 You agree that: 
+                            {!! nl2br('<ul><li>7.1 You agree that:
                                     a). the site and prize draws are for your own personal, non-commercial use; and
                                     b). you are only allowed to use your account and the site, and take part in prize draws via your
                                         account, as set out in these terms, the applicable Game Rules, and Game Procedures and any Game
                                         Specific Rules, or on the Game Details Screen.</li>
                                 <li>7.2 You also agree that you will use your account, the site and the partake in the prize draws in
-                                    an appropriate and lawful manner only and will not: 
+                                    an appropriate and lawful manner only and will not:
                                     a). receive, access or transmit any content
                                     which is pornographic, obscene, racist, threatening, menacing, offensive, defamatory, in breach
                                     of any intellectual property right, (including, without limit, copyright), in breach of confidence
-                                    or otherwise objectionable or unlawful; or 
+                                    or otherwise objectionable or unlawful; or
                                     b). knowingly or recklessly transmit any content (including, without limit, viruses) through the site and/or The County Jackpot’s computer system which will
                                     cause, or be likely to cause, detriment or harm in any degree, to computer systems owned by The
-                                    County Jackpot or others; or 
+                                    County Jackpot or others; or
                                     c). hack into, make excessive traffic demands on or cause any impairment
                                     of the functions of any computer system, deliver or forward chain letters, “junk mail” of any
                                     kind, surveys, contests, pyramid schemes or otherwise engage in any behaviour intended to prevent
@@ -461,11 +463,11 @@
             <!-- panel-group -->
         </div>
         <!-- container -->
-        
+
         <br>
         <br>
         <br>
-        
+
         <h3>Rules for Draw-Based Games Played Online</h3>
         <em>1st Edition effective as of 25th January 2018</em>
         <br>
@@ -596,39 +598,39 @@
                     <div class="panel-body">
                         {!! nl2br('<ul><li>5.1 You can only claim a prize if you are the holder of an account with a winning entry.</li>
                                 <li>5.2 Upon winning a prize draw:
-                           
+
                            a). you will be notified via email (from draw@thecountyjackpot.com) upon winning a prize draw. You are responsible for keeping your account information accurate and up to date as The County Jackpot will only ever contact you through the email address provided by you through your County Jackpot online account. Please make sure to check your junk email as the winner email may be diverted into this area of your emails.
-                           
+
                            b). Please note that The County Jackpot will only ever contact you online about your win via the email address stated throughout Section 5 and you should not trust or provide any sensitive information to any other email address no matter what the email claims.
-                           
+
                            c). you have 200 days to claim your prize after the winner email (of that relevant prize draw) is sent to your email address. If after the end of the 200th day you have not claimed your prize, your entitlement to said prize will be lost and the prize will not be paid. The County Jackpot may attempt to make contact via telephone to the phone number provided by you on your account to notify you of your win and inform you of the winner email you have received. Please note that The County Jackpot will never ask for any sensitive information from you during this phone conversation, nor are The County Jackpot employees at liberty to discuss any information in regard to your win apart from notifying you of the winner email.</li>
                                 <li>5.3 You are responsible for making sure you keep all sensitive information (including the unique winner code) about you private, secure and confidential and do not reveal this information to anybody else outside of The County Jackpot winner team. The County Jackpot can not be help responsible for any loss or harm inflicted as the result of breach of confidentiality. This includes the event of others gaining access to your emails and claiming to be you or gaining access to your account using sensitive information you have purposely or inadvertently supplied them with.</li>
                                 <li>5.4 You are responsible for keeping all information on your County Jackpot account accurate and up to date and any prize that is paid into the wrong account due to you not keeping your County Jackpot account information accurate and up to date or by providing false information will not be refunded to you and your claim to said prize will be lost.</li>
                                 <li>5.5 You can only claim for the highest prize tier your entry has won in. You cannot claim a prize for a lower prize tier, or any otherwise unclaimed prize in that particular prize draw or prize pool.</li>
                                 <li>5.6 In the event of winning a physical prize the same winner email process will occur and the prize will be delivered by third party courier to the residential address stated on your account. You are responsible for keeping this information up to date and accurate and any loss of prize or delivery made to a wrong address will be non-refundable to you and your claim to said prize will be void. The County Jackpot may also take legal action against you to reimburse any costs or losses to The County Jackpot as a result of this.</li>
                                 <li>5.7 The County Jackpot reserves the right to:
-                           
+
                            a). pay prizes by cheque, bank transfer or direct credit. If payment is made by cheque this will be posted (at your risk) to the address registered to your account (or any other address agreed between The County Jackpot and you);
-                           
+
                            b). ask you to claim your prize in person;
-                           
+
                            c). withhold a prize, providing it is acting reasonably, until it is entirely satisfied that an entry is valid and the claim has been made in good faith;
-                           
+
                            d). withhold a prize (or recover or seek to recover a prize already paid) until it has carried out all appropriate checks and enquiries if in its discretion it believes that you (as the person claiming a prize) are not lawfully entitled to payment of a prize or that a prize has been paid to you in circumstances where The County Jackpot decides that the entry is invalid or defective, or where there is any other reason for The County Jackpot to question entitlement to the prize. Any checks and enquiries will be carried out promptly by The County Jackpot. You shall repay immediately on demand any prize The County Jackpot seeks to recover;
-                           
+
                            e). recover a prize incorrectly paid into your account;
-                           
+
                            f). request proof of entitlement to a prize (including, without limitation, identification information, proof of identity and capacity to claim);
-                           
+
                            g). refuse to pay a prize if you are unable to or fail to produce sufficient identification information when claiming a prize;
-                           
+
                            h). photograph anyone claiming a prize for The County Jackpots records;
-                           
+
                            i). request a court to decide who a prize should be paid to and/or make payment into court.</li>
                                 <li>5.8 The right to a prize is not transferable.</li>
                                 <li>5.9 The County Jackpot will not be responsible or liable to any person claiming a prize which has been paid to a person who assumed the identity of the relevant account holder.</li>
                                 <li>5.10 No interest will be payable on any prize, including without limitation whilst any checks or enquiries are carried out in relation to a winning entry, whilst a dispute about the entry or prize claim is being resolved, or for the period a prize remains unclaimed.
-                           
+
                             <h4>Payment of Prizes to persons with a disability</h4>
                            5.10 If you are a person with a legal, physical or other disability and are claiming a Prize, The County Jackpot may pay the Prize to Your authorised representative.</li></ul>') !!}
                     </div>
@@ -711,21 +713,21 @@
                                             <li>9.2 If The County Jackpot is fully satisfied after proper and careful inquiries that a cancellation of an entry was wholly and directly the result of The Count Jackpot’s fraud, negligence or error, and that entry would, but for that cancellation, have been a winning entry, then The County Jackpot will not refund the cost of the entry and The County Jackpot’s only liability will be to pay an amount equal to the prize you would have been entitled to if the cancellation did not take place.</li>
                                             <li>9.3 The County Jackpot’s only obligation is to pay the prizes won in any prize draw to the rightful owners of winning entries. The County Jackpot will not be liable in any circumstances for any loss of whatever nature other than the non-payment of a prize you are entitled to under these rules. In particular, but without limitation, The County Jackpot will not be liable for any loss of profits, special, indirect or consequential loss, suffered or incurred by you (or any holder or owner of any entry, any person claiming a prize during the claim period or any other person) that arises out of the withdrawal of any game or from the participation or non-participation of you our any person in any prize draw. This includes the loss, for whatever reason, of the chance to participate in that game.</li>
                                             <li>9.4 The County Jackpot will not be liable to any person for:
-                                    
+
                                     a). Events beyond its reasonable control and expectations (for example war, strike, lockout, industrial action, fire, flood. Drought, power cut and/or failure or obstruction of any network, broadcasting or telecommunications service);
-                                    
+
                                     b). the failure or destruction of, or damage to, all or part of the computer systems or records of The County Jackpot or any third party (including, without limitation, the site and/or The County Jackpot’s computer system);
-                                    
+
                                     c). any mistakes caused by all or part of the computer systems or records of The County Jackpot or any third party (including, without limitation, the site and/or The County Jackpot’s computer system);
-                                    
+
                                     d). delays, losses, mistakes or omissions in or made by the postal or other delivery service or by the banking system;
-                                    
+
                                     e). any other action or event which prevents or hinders the issue of a valid entry ()including without limitation the failure of the site to display correctly on any device used to view it);
-                                    
+
                                     f). the refusal to sell a potential entry to any person or to allow any person to partake in a prize draw online.
-                                    
+
                                     g). Any losses caused by you, including the misuse or unauthorized use of passwords, money lost by partaking in the prize draws online and the failure to keep The County Jackpot informed of any changes to your account details;
-                                    
+
                                     h). Any losses caused by the failure or malfunction of your equipment or technology, or your internet service provider or mobile phone network operator, or the equipment, technology, internet service provider or mobile phone network operator of any other person or third party.</li>
                                             <li>9.5 Nothing in these rules excludes or limits a) any person’s liability (i) for fraud; or (ii) for death or personal injury caused by breach of any duty that person may have to take reasonable care or exercise reasonable skill; or (b) any other liability which cannot lawfully be excluded or limited.</li>
                                             <li>9.6 You acknowledge and agree that you do not rely on, and shall have not remedy in respect of, any statement, representation or warranty (weather negligently or innocently made) or understanding of any person whether or not such person is a party to these Rules.</li></ul>') !!}
@@ -794,22 +796,22 @@
                 </div>
             </div>
 
-        </div>        
-        
+        </div>
+
         <br>
         <br>
         <br>
         {!! nl2br('<strong>Contact Information</strong>
-        
+
         <strong> Email Addresses:</strong>
         customercare@thecountyjackpot.com
         enquiries@thecountyjackpot.com
-        
+
         <strong>Website</strong>
         www.thecountyjackpot.com
-        
+
         © The County Jackpot 2018') !!}
-        
+
     </section>
 
 

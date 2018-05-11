@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\User;
 use App\Models\Lottery;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Notification;
@@ -12,14 +13,16 @@ class PrizeApproved extends Notification implements ShouldQueue
 {
     use Queueable;
     public $countyDraw;
+    public $user;
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct(Lottery $countyDraw)
+    public function __construct(Lottery $countyDraw, User $user)
     {
         $this->countyDraw = $countyDraw;
+        $this->user = $user;
     }
 
     /**
@@ -41,7 +44,9 @@ class PrizeApproved extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->markdown('mail.prize-approved', ['countyDraw' => $this->countyDraw]);
+        return (new MailMessage)
+            ->subject('Prize Approved')
+            ->markdown('mail.prize-approved', ['countyDraw' => $this->countyDraw, 'user' => $this->user]);
     }
 
     /**

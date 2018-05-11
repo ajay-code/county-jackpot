@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Laravel\Cashier\Billable;
 use Illuminate\Notifications\Notifiable;
+use App\Notifications\ResetPasswordNotification;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -52,6 +53,17 @@ class User extends Authenticatable
             $user->getPaids()->delete();
             $user->lotteriesWon()->update(['winner_id' => null]);
         });
+    }
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token, $this));
     }
 
     /**
@@ -118,5 +130,4 @@ class User extends Authenticatable
     {
         return $this->hasMany(GetPaid::class);
     }
-
 }

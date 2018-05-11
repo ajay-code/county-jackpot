@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     @yield('css')
-    
+
 	<link href="https://fonts.googleapis.com/css?family=Roboto|Salsa|Share|Sniglet" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oregano|Passion+One" rel="stylesheet">
 	<!-- Font Awesome -->
@@ -19,15 +19,15 @@
 
 <body>
 	<header>
-		<nav class="navbar fixed-top navbar-expand-md navbar-light bg-faded clearfix">
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content"
-			    aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
+		<nav class="navbar fixed-top navbar-expand-md navbar-light bg-faded">
 			<!-- Brand -->
 			<a class="navbar-brand logo" href="/">
 				<img src="img/logo.png">
 			</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content"
+			    aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<!-- Links -->
 			<div class="collapse navbar-collapse justify-content-end" id="nav-content">
 				<ul class="navbar-nav">
@@ -40,7 +40,7 @@
 					<li class="nav-item">
 						<a class="nav-link" href="/results">Draw Results</a>
 					</li>
-					
+
 					@guest
 					<li class="nav-item">
 						<a class="nav-link" href="/login">Sign in</a>
@@ -88,17 +88,21 @@
 								<h4>Important Links</h4>
 								<ul class="list-unstyled">
 									<li>
-										<a href="/about">About Us</a>
+										<a href="/terms-and-conditions">Terms & Conditions</a>
 									</li>
+									<li>
+										<a href="/policy">Privacy Policy</a>
+									</li>
+
 									<li>
 										<a href="/disclaimer">Disclaimer</a>
 									</li>
 								</ul>
 							</div>
 						</div>
-						
 
-						
+
+
 
 						<div class="col-lg-4 ">
 							<!--Column1-->
@@ -109,10 +113,7 @@
 										<a href="/results">Draw Results</a>
 									</li>
 									<li>
-										<a href="/terms-and-conditions">Terms & Conditions</a>
-									</li>
-									<li>
-										<a href="/policy">Privacy Policy</a>
+										<a href="/about">About Us</a>
 									</li>
 									<li>
 										<a href="/login">Login</a>
@@ -146,8 +147,6 @@
 					<div class="row">
 						<div class="col-12">
 							<!--Footer Bottom-->
-							<p class="text-center">You must only enter your county's prize draws. Any entry made into a prize draw outside of your county of residence will be forfeit an non- refundable. Proof of identification and address may be required upon winning before any prize is given.</p>
-							<p class="text-center">The maximum entry limit for each prize draw is 5. Any entries made over this limit will be forfeit and non-refundable.</p>
 							<p class="text-center">Entrants must be aged 16 or over and must permanently reside in one of the 48 English Counties.</p>
 							<p class="text-center">&copy; Copyright The County Jackpot 2018 all rights reserved.</p>
 						</div>
@@ -160,10 +159,71 @@
 	<script src="{{ asset('vendor/sweetalert/script.js') }}"></script>
 	@include('sweet::alert')
 	<script src="js/app.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    @yield('script')
+	<script>
+	// $(function () {
+	// 	var lastScrollTop = 0;
+	// 	var $navbar = $('.navbar');
+
+	// 	$(window).scroll(function(event){
+	// 		var st = $(this).scrollTop();
+
+	// 		if (st > lastScrollTop) { // scroll down
+	// 			// use this is jQuery full is used
+	// 			$navbar.fadeOut()
+
+	// 		} else { // scroll up
+	// 			// use this is jQuery full is used
+	// 			$navbar.fadeIn()
+	// 		}
+	// 		lastScrollTop = st;
+	// 	});
+	// 	});
+	$(function () {
+  var lastScrollTop = 0;
+  var $navbar = $('.navbar');
+  var navbarHeight = $navbar.outerHeight();
+  var movement = 0;
+  var lastDirection = 0;
+
+  $(window).scroll(function(event){
+			var st = $(this).scrollTop();
+			movement += st - lastScrollTop;
+
+			if (st > lastScrollTop) { // scroll down
+				if (lastDirection != 1) {
+					movement = 0;
+				}
+				var margin = Math.abs(movement);
+				if (margin > navbarHeight) {
+					margin = navbarHeight;
+				}
+				margin = -(margin + 25);
+				$navbar.css('margin-top', margin+"px")
+
+				lastDirection = 1;
+			} else { // scroll up
+				if (lastDirection != -1) {
+					movement = 0;
+				}
+				var margin = Math.abs(movement);
+				if (margin > navbarHeight) {
+					margin = navbarHeight;
+				}
+				margin = margin-navbarHeight;
+				$navbar.css('margin-top', margin+"px")
+
+				lastDirection = -1;
+			}
+
+			lastScrollTop = st;
+			// console.log(margin);
+		});
+	});
+	</script>
+	@yield('script')
 </body>
 
 </html>

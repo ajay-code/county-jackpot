@@ -17,10 +17,17 @@
                 </div>
             </section>
             <section v-if="timeleft == 0 && !showBuy" class="img-display" :key="'images-question'">
-                <div v-for="(image, index) in questionImages" :key="index" @click="checkAnswer(image.id)">
+                <div v-for="(image, index) in questionImages" :key="index" @click="setAnswer(image.id)" :class="{ 'border-purple' : userAnswer == image.id }">
                     <img :src="`/game/${image.name}`" alt="">
                 </div>
             </section>
+        </transition>
+        <transition name="slide" mode="out-in">
+            <section v-if="timeleft" :key="'images-empty'">
+            </section>
+            <div class="text-center" v-if="timeleft == 0 && !showBuy" :key="'confirm-button'">
+                <button class="btn btn-purple" @click="buy" :disabled="!userAnswer">Confirm Answer</button>
+            </div>
         </transition>
 
         <section class="question hide">
@@ -47,7 +54,7 @@ export default {
             questionImages: [],
             displayableImages: [],
             questionImagesArrayLength: 4,
-            displayableImagesArrayLenght: 16,
+            displayableImagesArrayLenght: 15,
             repeat: {
                 "4": "",
                 "3": "",
@@ -190,22 +197,23 @@ export default {
             }
             this.questionImages = _.shuffle(this.questionImages);
         },
-        checkAnswer(id) {
+        setAnswer(id) {
             this.isAnswered = true;
-            this.showBuy = true;
-            if (!this.userAnswer) {
-                this.userAnswer = id;
-            }
-            setTimeout(this.buy(), 2000);
+            // this.showBuy = true;
+            this.userAnswer = id;
+            // setTimeout(this.buy(), 2000);
         },
         buy() {
-            this.stripe.open({
-                name: this.parentLottery.name,
-                email: Lottery.user.email,
-                currency: "GBP",
-                description: this.parentLottery.name,
-                amount: this.parentLottery.entry_fee
-            }); 
+            this.showBuy = true;
+            setTimeout(() => {
+                this.stripe.open({
+                    name: this.parentLottery.name,
+                    email: Lottery.user.email,
+                    currency: "GBP",
+                    description: this.parentLottery.name,
+                    amount: this.parentLottery.entry_fee
+                });
+            }, 2000);
         }
     }
 };
@@ -222,7 +230,7 @@ export default {
     font-size: 0;
     flex-flow: row wrap;
     display: flex;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     justify-content: center;
     padding: 50px;
@@ -230,10 +238,27 @@ export default {
 
 .img-display div {
     flex: auto;
-    width: calc(100% * (1/4) - 10px);
+    width: calc(100% * (1/5) - 10px);
     position: relative;
     margin: 5px;
     box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+@media (max-width: 575.98px) {
+    .img-display {
+        max-width: none;
+        margin: 0;
+        justify-content: center;
+        padding: 0;
+        padding-top: 20px;
+    }
+
+    .img-display div {
+        max-width: calc(100% * (1/3) - 10px);
+        width: calc(100% * (1/3) - 10px);
+        margin: 5px;
+        box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 }
 
 .shake div {
@@ -269,6 +294,10 @@ export default {
 }
 .slide-leave-active {
     animation: out 1s ease-in-out;
+}
+
+.border-purple {
+    border: 3px solid #923088;
 }
 
 @keyframes out {

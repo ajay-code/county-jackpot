@@ -120,4 +120,8 @@ return [
         ],
     ],
 
+    'text' => [
+        'footer_from' => 'The County Jackpot'
+    ]
+
 ];

@@ -50,4 +50,4 @@ Route::put('bank-details', 'BankDetailsController@update')->name('bank-detail.up
  * Get Paid
  */
 Route::post('/get-paid', 'UserPaidController@getPaid')->name('get-paid');
-Route::get('/withdrawal-history', 'UserPaidController@withdrawalHistory')->name('withdrawal-history');
+Route::get('/withdrawal-history', '<UserP></UserP>aidController@withdrawalHistory')->name('withdrawal-history');

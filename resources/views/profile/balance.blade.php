@@ -29,8 +29,8 @@
     <div class="col-xs-12">
         <div class="box">
             <div class="box-body">
-                @if ($user->hasBalance()) 
-                    @if ($user->bankDetail->notComplete()) 
+                @if ($user->hasBalance())
+                    @if ($user->bankDetail->notComplete())
                     <span class="h3"> Complete Bank Details To Withdraw Winnings </span>
                     @else
                     <a href="{{ route('get-paid') }}" data-toggle="modal" data-target="#getPaidConfirm" class="btn btn-success btn-lg">
@@ -40,7 +40,7 @@
                     <form id="get-paid-form" action="{{ route('get-paid') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
-                    @endif 
+                    @endif
                 @endif
                 <span class="pull-right">
                     <span class="h2">Balance :
@@ -87,7 +87,7 @@
             <div class="box-body">
                 @if($user->bankDetail->notComplete())
                 <div class="text-center">
-                    <p class="h4">To widthraw winnings you need to provide your bank details</p>
+                    <p class="h4">Please complete your bank details to withdraw your winnings.</p>
                     <a href="bank-details/edit" class="btn btn-primary btn-lg"> Complete Bank Details </a>
                 </div>
                 @else
@@ -103,7 +103,7 @@
                             : {{$user->bankDetail->bank_name}}
                         </div>
                         <div class="clearfix"></div>
-                        
+
                         <div class="col-xs-6 col-sm-2">
                             Account Number
                         </div>
@@ -175,7 +175,7 @@
                         </div>
                         <div class="clearfix"></div>
 
-                        
+
 
                     </div>
                 </div>

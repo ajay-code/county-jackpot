@@ -44,7 +44,9 @@ class WinnerEmail extends Notification implements ShouldQueue
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)->markdown('mail.winner-email', [
+        return (new MailMessage)
+        ->subject('Congratulations')
+        ->markdown('mail.winner-email', [
             'lottery' => $this->lottery,
             'user' => $this->user
         ]);

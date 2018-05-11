@@ -1,10 +1,7 @@
 @component('mail::message')
 
-@component('mail::panel')
-<img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
-@endcomponent
-
-# You have successfully Entered The Draw {{ $draw->lottery->name }}
+# You have successfully Entered The Draw {{ $draw->lottery->name }}.
+Results will be declared after the draw ends at 11:59pm GMT this {{ $draw->lottery->expire_at->format('l') }}.
 
 @component('mail::table', ['url' => config('app.url')])
 |                       |                                                          |
@@ -16,7 +13,7 @@
 @endcomponent
 
 Thanks,<br>
-{{ config('app.name') }}
+{{ config('mail.text.footer_from') }}
 
 @component('mail::button', ['url' => config('app.url')])
 Visit Website

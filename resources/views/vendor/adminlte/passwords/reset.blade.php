@@ -10,7 +10,9 @@
 @section('body')
     <div class="login-box">
         <div class="login-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">
+                <img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
+            </a>
         </div>
         <!-- /.login-logo -->
         <div class="login-box-body">
@@ -51,7 +53,7 @@
                     @endif
                 </div>
                 <button type="submit"
-                        class="btn btn-success btn-block btn-flat"
+                        class="btn btn-purple btn-block btn-flat"
                 >{{ trans('adminlte::adminlte.reset_password') }}</button>
             </form>
         </div>

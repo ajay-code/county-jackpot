@@ -1,5 +1,4 @@
-module.exports = [
-    {
+module.exports = [{
         id: 1,
         name: '1.jpg'
     },

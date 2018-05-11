@@ -42,8 +42,9 @@ class MainController extends Controller
     public function test()
     {
         $markdown = new Markdown(view(), config('mail.markdown'));
-        $url = 'test.com';
-        return $markdown->render('mail.test', compact('url'));
+        $user = User::first();
+        $countyDraw = Lottery::first();
+        return $markdown->render('mail.withdrawal', compact('user', 'countyDraw'));
     }
 
     public function test_payment(Request $request)

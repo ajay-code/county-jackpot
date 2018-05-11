@@ -1,21 +1,17 @@
 @component('mail::message')
 
-@component('mail::panel')
-<img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
-@endcomponent
+# Congratulations {{ $user->name }}!
 
-# You have won the draw {{ $lottery->name }}
+Get the party started because you have just won this week’s {{ $lottery->name }} jackpot. Well done.
 
-Congratulations {{ $user->name }}, the results of draw {{ $lottery->name }} were declared today and you have won the draw.
+Please allow up to 48 hours for us to approve your prize before it appears in the Balance section on your County Jackpot account. From here you will be able to withdraw all winnings to a bank account of your choice.
 
-You will recieve the Prize money in your profile balance within 1-2 days. For more info visit our website or results page
+In the meantime, if you wish to see information regarding the results please visit the Draw Results page on the County Jackpot Website.
+
+Thanks for playing and we hope you enjoy your prize,
+The County Jackpot Team
 
 Thanks,<br>
-{{ config('app.name') }}
-
-@component('mail::button', ['url' => config('app.url')])
-Visit Website
-@endcomponent
-
+{{ config('mail.text.footer_from') }}
 
 @endcomponent

@@ -48,51 +48,18 @@
             </strong>
         </p>
 
-        <ul class="ul1">
-            <li class="li8">
-                <span class="s1">If the prize offered is cash your account balance will be updated upon winning within 3-5 working days. You
-                    can view this in the Balance section of your account. From here you can withdraw your winnings into a
-                    bank or building society account.</span>
-            </li>
-            <li class="li8">
-                <span class="s1">If the prize offered is physical, it will be posted to your provided address within 14 working days.</span>
-            </li>
-            <li class="li8">
-                <span class="s1">If the prize draw is for charity 75% of the proceedings will go towards a predetermined charity and the remaining
-                    25% will go towards a charity of the winners choice.</span>
-            </li>
-            <li class="li8">
-                <span class="s1">You must only enter your county’s prize draws. Any entry made into a prize draw outside of your county of
-                    residence will be forfeit and non-refundable. Proof of identification and proof of address may be required
-                    upon winning before any prize is given.</span>
-            </li>
-            <li class="li8">
-                <span class="s1">The maximum entry limit for each prize draw is 5. Any entries made over this limit will be forfeit and non-refundable.</span>
-            </li>
-            <li class="li8">
-                <span class="s1">Entrants must be 16 or over and must permanently reside in one of the 48 English Counties.</span>
-            </li>
-        </ul>
-        <p class="p8">
-            <strong>
-                <span class="s1">By Selecting Begin, playing the game and submitting your answer via payment you’ll be bound by the </span>
-                <span
-                    class="s3">Account Terms</span>
-                    <span class="s1">, the </span>
-                    <span class="s3">Rules for Draw-Based Games Played Online</span>
-                    <span class="s1">, the </span>
-                    <span class="s3">Privacy Policy</span>
-                    <span class="s4">,</span>
-                    <span class="s1"> the Game Procedures the </span>
-                    <span class="s3">Disclaimer</span>
-                    <span class="s1"> and the information that appears on this page and thereby accept them all.</span>
-            </strong>
+        <p class="p6" style="text-align: center;">
+            <span class="s1">Please familiarize yourself with the <a href="/terms-and-conditions">Terms and conditions</a>, the <a href="/policy">Privacy Policy</a> and the <a href="/disclaimer">Disclaimer</a>.</span>
         </p>
-        <div class="text-center" style="margin-top:6rem">
-            <a href="/county-draw/{{$parentLottery->id}}/play">
-                <button class="btn btn-success btn-lg" style="padding:11px 67px">Continue</button>
-            </a>
-        </div>
+        <form action="/county-draw/{{$parentLottery->id}}/play">
+            <p class="p6" style="text-align: center;">
+                <span class="s1"> <label style="font-weight: 400"> <input type="checkbox" required> By ticking the box and selecting Begin you'll be bound by The County Jackpot Terms and Conditions. Please tick the box to confirm that you accept the Terms and Conditions. </label></span>
+            </p>
+
+            <div class="text-center" style="margin-top:4rem">
+                <input class="btn btn-purple btn-lg" type="submit" style="padding:11px 67px" value="Begin">
+            </div>
+        </form>
 
 
     </div>

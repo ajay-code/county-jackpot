@@ -6,7 +6,7 @@
 @if ($level == 'error')
 # Whoops!
 @else
-# Hi 
+# Hi
 @endif
 @endif
 
@@ -27,7 +27,7 @@
             $color = 'red';
             break;
         default:
-            $color = 'blue';
+            $color = 'purple';
     }
 ?>
 @component('mail::button', ['url' => $actionUrl, 'color' => $color])

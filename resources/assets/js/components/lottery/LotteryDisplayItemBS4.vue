@@ -3,7 +3,7 @@
         <div class="featured-logo col-lg-2 text-center  ">
             <img src="/img/logo.png" width="100">
         </div>
-        <div class="featured-name col-lg-3">
+        <div class="featured-name col-lg-2">
             <div class="row">
                 <div class="col-6 col-xs-6 d-lg-none text-right">
                     <span class="text-size display-label">Draw : </span>
@@ -23,11 +23,21 @@
                 </div>
             </div>
         </div>
-        <div class="featured-timer col-lg-3 text-center">
+        <div class="featured-price col-lg-2">
+            <div class="row">
+                <div class="col-6 col-xs-6 hidden-md  d-lg-none text-right">
+                    <span class="text-size display-label">Price : </span>
+                </div>
+                <div class="col-6 col-xs-6 col-lg-12 text-lg-center">
+                    <span class="text-size"><i class="fa fa-gbp"></i> <span v-text="entryFee"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="featured-timer col-lg-2 text-center">
             <span class="h4" v-text="remainingTime"></span>
         </div>
         <div class=" featured-play col-lg-2 text-center ">
-            <a class="btn btn-primary btn-lg work-button2 featured-play-button" style="padding: 8px 1.5rem; margin: 10px 0" :href="`/county-draw/${lottery.parent_lottery_id}/buy`" role="button" @click="preventIfExpired" :disabled="remainingTime == 'End'">{{ remainingTime == 'End' ? 'Closed' : 'Buy Now' }}</a>
+            <a class="btn btn-purple" style="padding: 8px 1.5rem;" :href="`/county-draw/${lottery.parent_lottery_id}/buy`" role="button" @click="preventIfExpired" :disabled="remainingTime == 'End'">{{ remainingTime == 'End' ? 'Closed' : 'Enter' }}</a>
         </div>
     </div>
 </template>
@@ -46,6 +56,9 @@ export default {
         }
     },
     computed: {
+        entryFee() {
+            return Number(this.lottery.entry_fee / 100).toFixed(2);
+        },
         remainingTime() {
             this.currentTime;
             if (this.lottery.expire_at) {

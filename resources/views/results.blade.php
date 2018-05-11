@@ -1,27 +1,14 @@
 @extends('layouts.front')
 @section('content')
-<section>
-	<div class="jumbotron jumbotron-fluid">
-		<div class="container">
-			<h1 class="display-3 text-center banner-line1">Win Your County's Next Jackpot</h1>
-		</div>
-		<div class="overlay"></div>
-	</div>
-</section>
-
-
-<section id="app" class=" clearfix" style="padding-bottom:8rem; padding-top:5rem">
+<section id="app" class="clearfix" style="margin-top:190px">
 	<h1 class="purple-heading text-center text-light">Draw Results</h1>
 	<br>
 	<br>
 	<div class="container">
 		@if ($results_count > 0)
 		<div class="row featured-line d-none d-lg-flex">
-			<div class=" col-lg-2 ">
+			<div class=" col-lg-3 ">
 				<h4></h4>
-			</div>
-			<div class=" col-lg-3 text-center">
-				<h4>Winner's Draw Number</h4>
 			</div>
 			<div class=" col-lg-3 text-center">
 				<h4>Draw name</h4>

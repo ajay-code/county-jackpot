@@ -2,16 +2,18 @@
 
 @section('adminlte_css')
 	<link rel="stylesheet" href="{{ asset('vendor/adminlte/plugins/iCheck/square/blue.css') }}">
-	<link rel="stylesheet" href="{{ asset('vendor/adminlte/css/auth.css') }}"> 
-	@yield('css') 
-@stop 
+	<link rel="stylesheet" href="{{ asset('vendor/adminlte/css/auth.css') }}">
+	@yield('css')
+@stop
 
-@section('body_class', 'login-page') 
+@section('body_class', 'login-page')
 
 @section('body')
 <div class="login-box">
 	<div class="login-logo">
-		<a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+		<a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">
+				<img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
+		</a>
 	</div>
 	<!-- /.login-logo -->
 	<div class="login-box-body">
@@ -47,7 +49,7 @@
 				</div>
 				<!-- /.col -->
 				<div class="col-xs-4">
-					<button type="submit" class="btn btn-success btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
+					<button type="submit" class="btn btn-purple btn-block btn-flat">{{ trans('adminlte::adminlte.sign_in') }}</button>
 				</div>
 				<!-- /.col -->
 			</div>
@@ -73,7 +75,7 @@
 	<!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-@stop 
+@stop
 
 @section('adminlte_js')
 <script src="{{ asset('vendor/adminlte/plugins/iCheck/icheck.min.js') }}"></script>
@@ -86,6 +88,6 @@
             });
         });
 </script>
-@yield('js') 
+@yield('js')
 
 @stop

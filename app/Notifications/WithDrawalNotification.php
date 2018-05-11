@@ -42,10 +42,12 @@ class WithDrawalNotification extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         $withDrawal = $this->user->getPaids()->latest()->first();
-        return (new MailMessage)->markdown('mail.withdrawal', [
-            'withDrawal' => $withDrawal,
-            'user' => $this->user
-        ]);
+        return (new MailMessage)
+            ->subject('Withdrawal Notification')
+            ->markdown('mail.withdrawal', [
+                'withDrawal' => $withDrawal,
+                'user' => $this->user
+            ]);
     }
 
     /**

@@ -1,3 +1,18 @@
-.filter{
+.filter {
     // filter: blur(20px);
+}
+
+.btn-purple {
+    background-color: #b5009b;
+    color: #fff;
+    &:hover {
+        color: #fff;
+    }
+}
+
+/* AdminLTE Changes */
+
+.login-page,
+.register-page {
+    background: #f7f7f7;
 }

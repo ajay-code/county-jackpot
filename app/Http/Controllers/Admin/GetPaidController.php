@@ -21,8 +21,6 @@ class GetPaidController extends Controller
             'status' => true,
             'approved_on' => Carbon::now()
         ]);
-        
-        
 
         return back();
     }

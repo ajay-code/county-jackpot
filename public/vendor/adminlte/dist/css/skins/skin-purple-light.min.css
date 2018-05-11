@@ -1,5 +1,5 @@
 .skin-purple-light .main-header .navbar {
-    background-color: #8d345f;
+    background-color: #b73a9c;
 }
 .skin-purple-light .main-header .navbar .nav > li > a {
     color: #fff;
@@ -39,15 +39,15 @@
     }
 }
 .skin-purple-light .main-header .logo {
-    background-color: #8d345f;
+    background-color: #b73a9c;
     color: #fff;
     border-bottom: 0 solid transparent;
 }
 .skin-purple-light .main-header .logo:hover {
-    background-color: #8d345f;
+    background-color: #b73a9c;
 }
 .skin-purple-light .main-header li.user-header {
-    background-color: #8d345f;
+    background-color: #b73a9c;
 }
 .skin-purple-light .content-header {
     background: transparent;
@@ -83,7 +83,7 @@
     background: #f4f4f5;
 }
 .skin-purple-light .sidebar-menu > li.active {
-    border-left-color: #8d345f;
+    border-left-color: #b73a9c;
 }
 .skin-purple-light .sidebar-menu > li.active > a {
     font-weight: 600;

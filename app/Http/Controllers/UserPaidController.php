@@ -35,7 +35,7 @@ class UserPaidController extends Controller
 
         $user->notify(new WithDrawalNotification($user));
 
-        $request->session()->flash('paid', 'Your payment request has been received. You will receieve the amount in your linked bank account within 5 days.');
+        $request->session()->flash('Your payment request has been sent. Winnings will be transferred into your bank account within 14 working days.');
         return back();
     }
 

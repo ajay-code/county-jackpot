@@ -3,7 +3,9 @@
 @section('body')
     <div class="register-box">
         <div class="register-logo">
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
+            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">
+                <img src="http://www.thecountyjackpot.com/img/logo.png" alt="logo" style="display:block; margin:auto; width: 150px">
+            </a>
         </div>
 
         <div class="register-box-body">
@@ -62,7 +64,7 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('dob') ? 'has-error' : '' }}">
-                    <input  name="dob" 
+                    <input  name="dob"
                             class="form-control"
                             placeholder="Date Of Birth" type="text" onfocus="(this.type='date')"
                             value="{{ old('dob') }}">
@@ -74,7 +76,7 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('street_address') ? 'has-error' : '' }}">
-                    <textarea   name="street_address" 
+                    <textarea   name="street_address"
                                 class="form-control"
                                 rows="5"
                                 placeholder="Street Address">{{ old('street_address') }}</textarea>
@@ -86,7 +88,7 @@
                     @endif
                 </div>
                 <div class="form-group has-feedback {{ $errors->has('county_id') ? 'has-error' : '' }}">
-                    <select name="county_id" 
+                    <select name="county_id"
                             class="form-control"
                             >
                         <option value="" {{ old('county_id') == '' ? 'selected': '' }}>Select County</option>
@@ -101,7 +103,7 @@
                         </span>
                     @endif
                 </div>
-                <button type="submit" class="btn btn-success btn-block btn-flat">
+                <button type="submit" class="btn btn-purple btn-block btn-flat">
                 {{ trans('adminlte::adminlte.register') }}
                 </button>
             </form>

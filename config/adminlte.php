@@ -136,7 +136,7 @@ return [
             'icon' => 'gbp',
         ],
         [
-            'text' => 'WithDrawal History',
+            'text' => 'Withdrawal History',
             'url'  => '/withdrawal-history',
             'icon' => 'history',
         ],
