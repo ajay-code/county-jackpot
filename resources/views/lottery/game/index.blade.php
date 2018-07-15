@@ -53,7 +53,7 @@
         </p>
         <form action="/county-draw/{{$parentLottery->id}}/play">
             <p class="p6" style="text-align: center;">
-                <span class="s1"> <label style="font-weight: 400"> <input type="checkbox" required> By ticking the box and selecting Begin you'll be bound by The County Jackpot Terms and Conditions. Please tick the box to confirm that you accept the Terms and Conditions. </label></span>
+                <span class="s1"> <label style="font-weight: 400"> <input type="checkbox" required> By ticking this box you confirm that you have read and accept The County Jackpot Terms and Conditions, Privacy Policy and Disclaimer. </label></span>
             </p>
 
             <div class="text-center" style="margin-top:4rem">

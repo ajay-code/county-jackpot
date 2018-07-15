@@ -807,8 +807,16 @@
         customercare@thecountyjackpot.com
         enquiries@thecountyjackpot.com
 
-        <strong>Website</strong>
+        <strong>Website:</strong>
         www.thecountyjackpot.com
+       
+        <strong>The County Jackpot Headquarters Address:</strong>
+        The County Jackpot Ltd.
+        71-75 Shelton Street
+        Covent Garden
+        London
+        WC2H 9JQ
+
 
         © The County Jackpot 2018') !!}
 

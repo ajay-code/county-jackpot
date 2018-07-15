@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\DataTable;
 
+use DB;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -9,13 +10,13 @@ use Illuminate\Database\Eloquent\Builder;
 
 class UserController extends DataTableController
 {
-    protected $allowCreation = false;
+    protected $allowCreation = 'failed';
     protected $allowDeletion = true;
 
     /**
      * Create a new controller instance.
      *
-     * @return void
+     * msg void
      */
     public function __construct()
     {
@@ -74,10 +75,13 @@ class UserController extends DataTableController
         DB::beginTransaction();
         try {
             $user->delete();
-            $success = true;
+            $msg = 'success';
+            DB::commit();
         } catch (\Exception $e) {
-            $success = false;
+            $msg = 'failed';
             DB::rollback();
         }
+
+        echo $msg;
     }
 }

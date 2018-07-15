@@ -53,10 +53,10 @@ export default {
             loading: false,
             questionImages: [],
             displayableImages: [],
-            questionImagesArrayLength: 3,
-            displayableImagesArrayLenght: 9,
+            questionImagesArrayLength: 4,
+            displayableImagesArrayLenght: 15,
             repeat: {
-                // "4": "",
+                "4": "",
                 "3": "",
                 "2": ""
             },
@@ -129,9 +129,9 @@ export default {
             let except = [];
             let filteredArray = this.images.filter(image => !except.includes(image.id));
 
-            // this.repeat["4"] = filteredArray[_.random(0, filteredArray.length - 1)];
-            // except.push(this.repeat["4"].id);
-            // filteredArray = this.images.filter(image => !except.includes(image.id));
+            this.repeat["4"] = filteredArray[_.random(0, filteredArray.length - 1)];
+            except.push(this.repeat["4"].id);
+            filteredArray = this.images.filter(image => !except.includes(image.id));
 
             this.repeat["3"] = filteredArray[_.random(0, filteredArray.length - 1)];
             except.push(this.repeat["3"].id);
@@ -143,9 +143,9 @@ export default {
             return filteredArray;
         },
         setDisplayableImages(filteredArray) {
-            // _.times(4, () => {
-            //     this.displayableImages.push(this.repeat["4"]);
-            // });
+            _.times(4, () => {
+                this.displayableImages.push(this.repeat["4"]);
+            });
             _.times(3, () => {
                 this.displayableImages.push(this.repeat["3"]);
             });
@@ -168,7 +168,13 @@ export default {
                 for (let index = 0; index <= this.displayableImages.length - 2; index++) {
                     // console.log(`index : ${index}`)
                     if (
-                        this.displayableImages[index] == this.displayableImages[index + 1]
+                        this.displayableImages[index] == this.displayableImages[index + 1] ||
+                        this.displayableImages[index] == this.displayableImages[index - 4] ||
+                        this.displayableImages[index] == this.displayableImages[index + 4] ||
+                        this.displayableImages[index] == this.displayableImages[index + 5] ||
+                        this.displayableImages[index] == this.displayableImages[index - 5] ||
+                        this.displayableImages[index] == this.displayableImages[index + 3] ||
+                        this.displayableImages[index] == this.displayableImages[index - 3]
                     ) {
                         shouldShuffle = true;
                     }
@@ -176,8 +182,8 @@ export default {
             }
         },
         selectAnswer() {
-            let selectFrom = ["3", "2"];
-            let selectedIndex = _.random(0, 1);
+            let selectFrom = ["4", "3", "2"];
+            let selectedIndex = _.random(0, 2);
             this.answerImageRepeatTime = selectFrom[selectedIndex];
             this.answer = this.repeat[selectFrom[selectedIndex]];
         },
@@ -232,7 +238,7 @@ export default {
 
 .img-display div {
     flex: auto;
-    width: calc(100% * (1/3) - 10px);
+    width: calc(100% * (1/5) - 10px);
     position: relative;
     margin: 5px;
     box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);

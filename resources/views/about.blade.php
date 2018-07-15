@@ -26,9 +26,9 @@
 @section('content')
     <section class="terms container">
         {!! nl2br('<h1 class="p2 text-purple" style="text-align: center;"><span class="s1">About Us</span></h1>
-        <p class="p3" style="text-align: center;"><span class="s1">The County Jackpot is a weekly prize draw competition site that offers a new, fun way to win cash and great prizes.</span></p>
-        <p class="p3" style="text-align: center;"><span class="s1">We also host a number of free to enter prize draws, National based prize draws and charity events throughout the year.</span></p>
-        <p class="p3" style="text-align: center;"><span class="s1">To get involved simply create an account and enter an active draw that is operating in your county either from the “My account” section or the “Active Draw” section homepage. One winner from each county will be chosen at random every week to win their county’s jackpot.</span></p>
+        <p class="p3" style="text-align: center;"><span class="s1">The County Jackpot hosts weekly prize competitions that offer a fun, new way to win cash and great prizes in your county.</span></p>
+        <p class="p3" style="text-align: center;"><span class="s1">We also host a number of free to enter prize draws, National based prize draws and charity draws throughout the year.</span></p>
+        <p class="p3" style="text-align: center;"><span class="s1">To get involved simply create an account and enter an active draw that is operating in your county either from the “My account” section or the “Active Draw” section homepage. One entrant from each county, who successfully answers the prerequisite memory game question will be chosen at random to win their county\'s jackpot.</span></p>
         <p class="p3" style="text-align: center;"><span class="s1">If you have any enquiries, please feel free to contact the County Jackpot support team via the following email address:</span></p>
         <p class="p5" style="text-align: center;"><span class="s2"><a href="mailto:enquiries@thecountyjackpot.com">enquiries@thecountyjackpot.com</a></span></p>
         <p class="p7"><span class="s1">How to enter:</span></p>

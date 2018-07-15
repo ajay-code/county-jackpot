@@ -131,7 +131,13 @@
 								<h4>Contact Us</h4>
 								<ul class="list-unstyled">
 									<li>
+										For existing accounts:
+									</li>
+									<li>
 										<a href="mailto:customercare@thecountyjackpot.com">customercare@thecountyjackpot.com</a>
+									</li>
+									<li>
+										For all other enquiries:
 									</li>
 									<li>
 										<a href="mailto:enquiries@thecountyjackpot.com">enquiries@thecountyjackpot.com</a>

@@ -56,21 +56,7 @@
                     </li>
                 </ul>
 
-                <p class="text-muted text-center">Bank Details</p>
-                <ul class="list-group list-group-unbordered">
-                    <li class="list-group-item">
-                        <b> Bank Name </b>
-                        <span class="pull-right"> {{$user->bankDetail->bank_name}} </span>
-                    </li>
-                    <li class="list-group-item">
-                        <b> Account Number </b>
-                        <span class="pull-right"> {{$user->bankDetail->account_number}} </span>
-                    </li>
-                    <li class="list-group-item">
-                        <b> Sort Code </b>
-                        <span class="pull-right"> {{$user->bankDetail->sort_code}} </span>
-                    </li>
-                </ul>
+                
                 <a href="/profile/edit" class="btn btn-primary btn-block"><b>Edit</b></a>
             </div>
         </div>
