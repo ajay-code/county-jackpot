@@ -102,7 +102,7 @@
                     <div class="panel-heading" role="tab" id="heading1">
                         <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 1. Account Registration
                             </a>
                         </h4>
@@ -152,7 +152,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false"
                                 aria-controls="collapse2">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 2. Using Your Account
                             </a>
                         </h4>
@@ -183,7 +183,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="false"
                                 aria-controls="collapse3">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 3. Play Limits
                             </a>
                         </h4>
@@ -204,7 +204,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse4" aria-expanded="false"
                                 aria-controls="collapse4">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 4. Entry/Transaction History
                             </a>
                         </h4>
@@ -223,7 +223,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse5" aria-expanded="false"
                                 aria-controls="collapse5">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 5. Account closure/Termination
                             </a>
                         </h4>
@@ -252,7 +252,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse6" aria-expanded="false"
                                 aria-controls="collapse6">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 6. Prize Draw Requirements and Entry Purchases
                             </a>
                         </h4>
@@ -278,7 +278,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse7" aria-expanded="false"
                                 aria-controls="collapse7">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 7. Use of the Site
                             </a>
                         </h4>
@@ -329,7 +329,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse8" aria-expanded="false"
                                 aria-controls="collapse8">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 8. Your information
                             </a>
                         </h4>
@@ -355,7 +355,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse9" aria-expanded="false"
                                 aria-controls="collapse9">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 9. Limitation of Liability
                             </a>
                         </h4>
@@ -405,7 +405,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false"
                                 aria-controls="collapse10">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 10. The County Jackpot’s Discretion is Binding
                             </a>
                         </h4>
@@ -424,7 +424,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse11" aria-expanded="false"
                                 aria-controls="collapse11">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 11. General
                             </a>
                         </h4>
@@ -446,7 +446,7 @@
                         <h4 class="panel-title">
                             <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse12" aria-expanded="false"
                                 aria-controls="collapse12">
-                                <i class="more-less glyphicon glyphicon-plus"></i>
+                                
                                 12. Law
                             </a>
                         </h4>
@@ -484,7 +484,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-1" aria-expanded="false"
                             aria-controls="collapse-1">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             1. Purchasing Potential Entries
                         </a>
                     </h4>
@@ -533,7 +533,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-2" aria-expanded="false"
                             aria-controls="collapse-2">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             2. Prize Draw Requirements and Entry Purchases
                         </a>
                     </h4>
@@ -552,7 +552,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-3" aria-expanded="false"
                             aria-controls="collapse-3">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             3. Play Limits
                         </a>
                     </h4>
@@ -571,7 +571,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-4" aria-expanded="false"
                             aria-controls="collapse-4">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             4. Your Responsibilities
                         </a>
                     </h4>
@@ -589,7 +589,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-5" aria-expanded="false"
                             aria-controls="collapse-5">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             5. Claiming a Prize
                         </a>
                     </h4>
@@ -642,7 +642,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-6" aria-expanded="false"
                             aria-controls="collapse-6">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             6. Prize Draws and Selected Winners
                         </a>
                     </h4>
@@ -665,7 +665,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-7" aria-expanded="false"
                             aria-controls="collapse-7">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             7. Information About Winners
                         </a>
                     </h4>
@@ -683,7 +683,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-8" aria-expanded="false"
                             aria-controls="collapse-8">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             8. Game Closures etc.
                         </a>
                     </h4>
@@ -702,7 +702,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-9" aria-expanded="false"
                             aria-controls="collapse-9">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             9. Limitation of Liability
                         </a>
                     </h4>
@@ -740,7 +740,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-10" aria-expanded="false"
                             aria-controls="collapse-10">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             10. Disputes and The County Jackpot’s Decisions
                         </a>
                     </h4>
@@ -759,7 +759,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-11" aria-expanded="false"
                             aria-controls="collapse-11">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             11. General
                         </a>
                     </h4>
@@ -782,7 +782,7 @@
                     <h4 class="panel-title">
                         <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse-12" aria-expanded="false"
                             aria-controls="collapse-12">
-                            <i class="more-less glyphicon glyphicon-plus"></i>
+                            
                             12. Law
                         </a>
                     </h4>
@@ -816,6 +816,8 @@
         Covent Garden
         London
         WC2H 9JQ
+
+        <strong>Company Registration Number:</strong> 11456191
 
 
         © The County Jackpot 2018') !!}

@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,6 +51,13 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+/* 
+* Paypal Routes
+*/
+
+Route::post('county-draw/{parentLottery}/paypal', 'PaymentController@payWithpaypal')->name('paypal.buy');
+Route::get('county-draw/{parentLottery}/paypal/buy', 'PaymentController@store')->name('paypal.store');
 
 /**
  * Soclia login

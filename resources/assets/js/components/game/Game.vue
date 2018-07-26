@@ -75,7 +75,6 @@ export default {
     created() {
         this.images = Images;
         this.init();
-        this.stripeInit();
         console.log("created");
     },
     mounted() {
@@ -88,32 +87,6 @@ export default {
         console.log("mounted");
     },
     methods: {
-        stripeInit() {
-            this.stripe = StripeCheckout.configure({
-                key: Lottery.stripeKey,
-                image: "https://stripe.com/img/documentation/checkout/marketplace.png",
-                locale: "auto",
-                token: token => {
-                    this.formData.stripeEmail = token.email;
-                    this.formData.stripeToken = token.id;
-                    console.log("Loading....");
-                    this.loading = true;
-                    axios
-                        .post(`/county-draw/${this.parentLottery.id}/buy`, {
-                            ...this.formData,
-                            result: this.userAnswer == this.answer.id ? "won" : "lost"
-                        })
-                        .then(res => {
-                            let transaction = res.data;
-                            window.location = "/my-draws";
-                        })
-                        .catch(err => {
-                            this.loading = false;
-                            alert("something went wrong");
-                        });
-                }
-            });
-        },
         init() {
             let filteredArray = this.selectRepeatingImages();
             this.setDisplayableImages(filteredArray);
@@ -128,10 +101,6 @@ export default {
         selectRepeatingImages() {
             let except = [];
             let filteredArray = this.images.filter(image => !except.includes(image.id));
-
-            // this.repeat["4"] = filteredArray[_.random(0, filteredArray.length - 1)];
-            // except.push(this.repeat["4"].id);
-            // filteredArray = this.images.filter(image => !except.includes(image.id));
 
             this.repeat["3"] = filteredArray[_.random(0, filteredArray.length - 1)];
             except.push(this.repeat["3"].id);
@@ -199,15 +168,29 @@ export default {
         },
         buy() {
             this.showBuy = true;
+            this.loading = true;
             setTimeout(() => {
-                this.stripe.open({
-                    name: this.parentLottery.name,
-                    email: Lottery.user.email,
-                    currency: "GBP",
-                    description: this.parentLottery.name,
-                    amount: this.parentLottery.entry_fee
-                });
-            }, 2000);
+                let Form = document.createElement('form');
+                Form.method = "POST";
+                Form.action = `/county-draw/${this.parentLottery.id}/paypal`;
+                // Create csrf Input
+                var csrf = document.createElement("input");
+                csrf.type = "hidden";
+                csrf.name = "_token";
+                csrf.value = $('meta[name="csrf-token"]').attr('content');
+
+                // Create an input
+                var result = document.createElement("input");
+                result.type = "hidden";
+                result.name = "result";
+                result.value = this.userAnswer == this.answer.id ? "won" : "lost";
+                
+                // Add the input to the form
+                Form.appendChild(csrf);
+                Form.appendChild(result);
+                document.body.appendChild(Form);
+                Form.submit();
+            }, 1000);
         }
     }
 };
