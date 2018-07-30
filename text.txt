@@ -1,22 +1,27 @@
-Hi Pawandeep the contract should now be up and ready to go. I have contacted Brain Tree and am awaiting a response from them, hopefully I should get one by tomorrow in the mean time just go ahead and make a start on the other changes and I will get back to you as soon as I hear back off them.
+Great news I will list all changes below:
 
-Please find attached details of the necessary website changes that need to be made:
+Withdrawal Section:
 
+Where it reads "Bank Account Details" could you change this to "Withdrawal Details" and also change "Update Bank Details" to "Update Withdrawal Details".
 
-Fixes to the Delete User feature:
+Could you also hide the withdrawal details that are displayed on the withdrawal section until the user selects "Update".
 
-Currently when I try to delete a user from the system nothing actually happens and the users account remains in the system.
+Could you please add a password requirement when choosing to update their withdrawal details.
 
-Changes to Memory Game:
+When updating withdrawal details could you change where it reads "Edit Bank Account Details" to Update Withdrawal Details"
 
-Could you also change the amount of tiles to 9 and have them displayed in a 3x3 format across all platforms please.
+Under "Account Number" could you add a heading that reads "PayPal Email Address" for users to enter their paypal address.
 
-Privacy Policy
+And also underneath that could you add a heading that reads "Preferred Method of Withdrawal" and add a selection menu with the options "Withdraw to Bank" and "Withdraw to PayPal".
 
-I will also need to add and alter some text within the privacy policy but I am still writing this up at the moment so I will send you through a separate Word document in the next few days when I have completed it.
+At the bottom of this page could you add the following text in bold: "Please note the chosen PayPal account must be in your name."
 
-If you could make a start on these updates that would be great. As mentioned before I will get back to you hopefully no later than tomorrow with news about a Brain Tree account. If I am unable to apply for one then just go ahead and replace the stripe implementation with PayPal.
+Profile Page:
 
-As always if you have any questions or need anything explaining in more detail just let me know.
+Could you add a heading that reads "Opt out of email marketing?" and add tick box.
 
-Thanks and all the best
+They are all of the changes I would like to make at the moment. If you could get back to me with a price I will go ahead and set up a second milestone.
+
+Thanks
+
+shifting to linux

@@ -31,7 +31,7 @@
             <div class="box-body">
                 @if ($user->hasBalance())
                     @if ($user->bankDetail->notComplete())
-                    <span class="h3"> Complete Bank Details To Withdraw Winnings </span>
+                    <span class="h3"> Complete Withdrawal details To Withdraw Winnings </span>
                     @else
                     <a href="{{ route('get-paid') }}" data-toggle="modal" data-target="#getPaidConfirm" class="btn btn-success btn-lg">
                         Withdraw Winnings
@@ -87,8 +87,8 @@
             <div class="box-body">
                 @if($user->bankDetail->notComplete())
                 <div class="text-center">
-                    <p class="h4">Please complete your bank details to withdraw your winnings.</p>
-                    <a href="bank-details/edit" class="btn btn-primary btn-lg"> Complete Bank Details </a>
+                    <p class="h4">Please complete your details to withdraw your winnings.</p>
+                    <a href="bank-details/edit" class="btn btn-primary btn-lg"> Complete Withdrawal details </a>
                 </div>
                 @else
                 <p class="h4">Bank Account Datails</p>
@@ -125,7 +125,7 @@
                     <div class="col-sm-12">
                         <br>
                         <div class="col-xs-12">
-                            <a href="bank-details/edit" class="btn btn-primary btn-sm"> Update Bank Details </a>
+                            <a href="bank-details/edit" class="btn btn-primary btn-sm"> Update Withdrawal Details </a>
                         </div>
                     </div>
                 </div>

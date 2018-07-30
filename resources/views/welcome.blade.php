@@ -33,7 +33,6 @@
 				<h4>Time to draw</h4>
 			</div>
 			<div class=" col-lg-2 text-center">
-				<h4>Click to buy</h4>
 			</div>
 		</div>
 		@foreach ($lotteries as $lottery)
